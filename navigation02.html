@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내비게이션01</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    .hd { position:relative; height: 100px; }
+    .hd_wrap { width: 1000px; margin: 0 auto; }
+    .logo { display:block; width: 120px; height: 60px; background-color: #333; line-height: 60px; text-align: center; color:#fff; float:left; } 
+    .tnb { float:right; }   
+    .tnb li { float:left; }
+    .tnb li a { color:#333; display:block; padding: 18px 25px;}
+    .gnb { clear:both; }
+    .gnb li { width: 200px; float:left; }
+    .gnb li a.dp1 { display:block; line-height: 40px; background-color: #333; color:#fff; text-align: center; }
+    .gnb li:hover a.dp1 { background-color:deepskyblue; }
+    .gnb li .sub { display:none; position:absolute; z-index:99 }
+    .gnb li:hover .sub { display:block; }
+    .gnb li .sub li { clear:both; float:none; }
+    .gnb li .sub li a { display:block; line-height: 40px; text-align: center; background-color: #f1f1f1;}
+    .content { clear:both; }
+    .vs { width: 1000px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="" class="logo">
+                임시이미지
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="">상단1</a></li>
+                    <li><a href="">상단2</a></li>
+                    <li><a href="">상단3</a></li>
+                    <li><a href="">상단4</a></li>
+                    <li><a href="">상단5</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="" class="dp1">메인메뉴1</a>
+                        <ul class="sub">
+                            <li><a href="">서브메뉴11</a></li>
+                            <li><a href="">서브메뉴12</a></li>
+                            <li><a href="">서브메뉴13</a></li>
+                            <li><a href="">서브메뉴14</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dp1">메인메뉴2</a>
+                        <ul class="sub">
+                            <li><a href="">서브메뉴21</a></li>
+                            <li><a href="">서브메뉴22</a></li>
+                            <li><a href="">서브메뉴23</a></li>
+                            <li><a href="">서브메뉴24</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dp1">메인메뉴3</a>
+                        <ul class="sub">
+                            <li><a href="">서브메뉴31</a></li>
+                            <li><a href="">서브메뉴32</a></li>
+                            <li><a href="">서브메뉴33</a></li>
+                            <li><a href="">서브메뉴34</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dp1">메인메뉴4</a>
+                        <ul class="sub">
+                            <li><a href="">서브메뉴41</a></li>
+                            <li><a href="">서브메뉴42</a></li>
+                            <li><a href="">서브메뉴43</a></li>
+                            <li><a href="">서브메뉴44</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" class="dp1">메인메뉴5</a>
+                        <ul class="sub">
+                            <li><a href="">서브메뉴51</a></li>
+                            <li><a href="">서브메뉴52</a></li>
+                            <li><a href="">서브메뉴53</a></li>
+                            <li><a href="">서브메뉴54</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+    <div class="content">
+        <figure class="vs"><img src="http://placehold.it/1000x300/333" alt="비주얼"></figure>
+    </div>
+</body>
+</html>

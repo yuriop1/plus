@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 크기 관련 및 가시 속성</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width:100%; }
+    ul { list-style:none; }
+    a { text-decoration: none; }
+    .logo { display:block; width:100px; height:48px; border:2px solid deeppink; 
+    padding:10px 8px 6px 4px; margin:20px 15px 10px 5px; border-radius:20px 40px; 
+     border-radius:84px; opacity:0;  }
+
+    /*
+    width:콘텐츠가로크기 - auto | px단위크기 | %단위크기 | vw단위크기 | vh단위크기 | em단위크기
+    height:콘텐츠세로크기 - auto | px단위크기 | %단위크기 | vw단위크기 | vh단위크기 | em단위크기
+        %단위크기 : 부모 요소의 크기에 대한 비율
+        ex) .hd { width:1000px; }
+            .gnb { width:50%; }  =>  width:500px;
+        inline요소는 크기(width, height)를 지정할 수 없으며, 
+            block요소 또는 inline-block 요소만 지정가능    
+    margin:바깥여백-보더의 바깥쪽
+        margin:위 오른쪽 아래 왼쪽;
+        margin:위/아래  왼쪽/오른쪽;
+        margin-left:왼쪽마진 margin-right, margin-top, margin-bottom
+    border:테두리-가로크기와세로크기와 마진과의 경계
+        border:위 오른쪽 아래 왼쪽;
+        border:위/아래  왼쪽/오른쪽;
+        border-left:왼쪽테두리 border-right, border-top, border-bottom
+            ex) border-left:3px solid deeppink;
+        border-style:solid, dotted, dashed, hidden, double, inset, outset, groove, ridge
+            선모양
+        border-width: 선두께로 px단위 또는 pt단위
+        border-color:선색
+        border-left-style, border-top-color => 세세속성
+        border-left-width, border-left-style, border-left-color
+        border-right-width, border-right-style, border-right-color    
+        border-top-width, border-top-style, border-top-color
+        border-bottom-width, border-bottom-style, border-bottom-color
+        border-radius:모서리를 둥글게 - 위왼쪽 위오른쪽 아래오른쪽 아래왼쪽
+            ex) border-radius:20px;
+                border-radius:20px 10px;  위왼쪽/아래오른쪽  위오른쪽/아래왼쪽
+                border-radius:10px 20px 30px 40px; 
+                border-radius:-30px;    모서리를 안쪽으로
+                border-radius:크기의 반절이상값 적용    반원모서리
+    padding:안 여백 - 보더의 안쪽 여백으로 콘텐츠와 보더 사이의 여백
+        padding:위 오른쪽 아래 왼쪽;
+        padding:위/아래  왼쪽/오른쪽;
+        padding-left:왼쪽패딩 padding-right, padding-top, padding-bottom
+    padding-box:paddingSize+contentSize => 120x68
+    border-box:borderSize+paddingSize+contentSize => 124x72
+    outer-box:marginSize+borderSize+paddingSize+contentSize => 164x112
+    display:출력속성 - none | inline | block | inline-block;     
+    visibility:보임/안보임 - hidden | visible
+    opacity:불투명도 - 0~1
+        0:숨김
+        0.05~0.95:희미하게 보임
+        1:완전히 보임
+        배경이든 글자든 콘텐츠든 모두 희미하게 보이게 하려고 할 때 활용
+        만약, 배경만 희미하게 보이게 할 경우는 background:rgba() 또는 background:hsla()를
+        활용해야 함
+    */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <a href="" class="logo">
+                <img src="./img/bts.jpg" alt="로고타입">
+                여기는 로고
+            </a>
+            <script>
+            $(document).ready(function(){
+                $(".logo").delay(1000).animate({"opacity":1}, 800);
+            });    
+            </script>
+            <nav class="gnb">
+                <ul>
+                    <li class="item1"><a href="">메뉴1</a></li>
+                    <li class="item2"><a href="">메뉴2</a></li>
+                    <li class="item3"><a href="">메뉴3</a></li>
+                    <li class="item4"><a href="">메뉴4</a></li>
+                    <li class="item5"><a href="">메뉴5</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>

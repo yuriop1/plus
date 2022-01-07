@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블요소</title>
+    <style>
+        .tb { display:table; width: 600px; border-collapse: collapse;}
+        .tb tr { display:table-row; }
+        .tb th, .tb td {display: table-cell; border-left: 1px solid green; border-bottom: 1px solid blue; }
+        .tb thead tr:first-child th { border-top: 1px solid deepskyblue; }
+        .tb tr th:last-child, .tb tr td:last-child { border-right: 1px solid sienna; }
+        .tb tr td { text-align: center; }
+        .tb .ctxt { text-align: left; padding-left: 20px;}
+    </style>
+</head>
+<body>
+    <h1>표 만들기 예제</h1>
+    <!-- table.tb>caption+(thead>tr*2>th{항목명}*4)+(tbody>tr*5>td{데이터}*4)+(tfoot>tr>td{통계}*4)-->
+    <table class="tb">
+        <caption>더 조은 자바 웹 개발자 과정 성적표</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">연번</th><th>성명</th> <th>점수</th><th>타입</th>
+            </tr>
+            <tr>
+                <th>(name)</th><th>(point)</th><th>(type)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td><td>김기태</td><td>100</td><td>A</td>
+            </tr>
+            <tr>
+                <td>2</td><td>최원영</td><td>80</td><td>B</td>
+            </tr>
+            <tr>
+                <td>3</td><td>이수진</td><td>90</td><td>C</td>
+            </tr>
+            <tr>
+                <td>4</td><td>강태우</td><td>70</td><td>A</td>
+            </tr>
+            <tr>
+                <td>5</td><td>송승원</td><td>88</td><td>A</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="ctxt">총점 : 420</td><td>대표타입 : A</td>
+            </tr>
+        </tfoot>
+    </table>
+    부모>자식
+    형>제
+    (그룹)
+    요소*개수
+</body>
+</html>

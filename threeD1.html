@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차원 큐브</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+
+    .wrap { clear:both; width: 100%; min-height:100vh; }
+    .canvas { clear:both; width: 960px; margin: 10px auto; min-height:100vh; 
+    background-color:#eee; perspective: 1500px; }
+    /* .kkt_wrap { width: 200px; height: 200px; margin:20px auto;  } */
+    .cube { width: 200px; height: 200px; position:relative; 
+        backface-visibility: visible; margin: 20px auto; margin-top: 200px; 
+        transform-style: preserve-3d; animation-name:ani1; animation-duration:3s; 
+        animation-iteration-count:infinite; animation-direction:alternate; }
+    .cube li { position:absolute; width: 200px; height: 200px; opacity:0.75; }
+    .cube li.item1 { background-color:rgb(0, 38, 255); transform:rotateX(90deg) translateZ(100px); }
+    .cube li.item2 { background-color: rgb(255, 0, 0); transform:rotateX(270deg) translateZ(100px);  }
+    .cube li.item3 { background-color: rgb(241, 245, 42); transform:rotateY(90deg) translateZ(100px); }
+    .cube li.item4 { background-color: rgb(104, 240, 122); transform:rotateY(180deg) translateZ(100px); }
+    .cube li.item5 { background-color: rgb(240, 135, 214); transform:rotateY(270deg) translateZ(100px);  }
+    .cube li.item6 { background-color: rgb(121, 156, 167); transform:rotateY(0deg) translateZ(100px);  }
+    .box { width: 200px; height: 200px; line-height: 200px; text-align: center; 
+    color:#000; font-size:40px; }
+    @keyframes ani1 {
+        from { transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+        to { transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);  }
+    }
+    </style>
+</head>
+<body>
+<section class="wrap">
+    <h2 class="title">큐브 만들기</h2>
+    <div class="kkt_wrap">
+    <div class="canvas">
+        <ul class="cube">
+            <li class="item1">
+                <div class="box">1</div>
+            </li>
+            <li class="item2">
+                <div class="box">2</div>
+            </li>
+            <li class="item3">
+                <div class="box">3</div>
+            </li>
+            <li class="item4">
+                <div class="box">4</div>
+            </li>
+            <li class="item5">
+                <div class="box">5</div>
+            </li>
+            <li class="item6">
+                <div class="box">6</div>
+            </li>
+        </ul>
+    </div>    
+</div>
+</section>
+</body>
+</html>

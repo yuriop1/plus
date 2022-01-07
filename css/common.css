@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* common.css */
+* { margin: 0; padding: 0; }
+body, html { width: 100%; overflow-x: hidden; }
+ul { list-style: none; }
+a { text-decoration: none; }  
+.wrap { width: 100%; }
+.hd { width: 100%; background:rgba(30,30,30,0.85); height:120px;  
+    top: 0; left: 0; z-index:999; }
+.hd_wrap { clear:both; width: 1000px; margin:0 auto; }  
+.tnb { width: 100%; }
+.tnb .left { float:left; }
+.tnb .right { float:right; }
+.tnb li { float:left; margin-top: 20px; }
+.tnb .left li { margin-right: 20px; }
+.tnb .right li { margin-left: 20px; }
+.tnb li a { color:#fff; font-size:16px; }
+.logo { display:block; position:absolute;  top:5px; left:50%; margin-left:-50px; }
+/*
+float:블록요소의 배치방향흐름 지정 - none | left | right
+clear:배치방향 지정한 것을 해제 - none | left | right | both
+position: 위치기준 속성 - static | relative | absolute | fixed | sticky
+    모든 요소의 position은 static 으로 설정
+    1) static : 정적 - 콘텐츠가 있는 만큼 차례대로 쌓이도록 위치기준을 지정 -> float, clear, margin
+    2) relative : 상대적 - 콘텐츠(내부요소포함)가 다른 콘텐츠와 떨어진 거리를 좌표값으로 지정할 때
+    -> float, clear, margin
+    3) absolute : 절대좌표값으로 배치 -> top/bottom 과 left/right를 이용하여 절대좌표로 배치함. 앞으로 가져오기 또는 뒤로 보내기는 z-index로 설정하며, 그 값이 클수록 앞에 놓이며, 작을 수록 뒤에 놓인다.
+    4) fixed : 현재 화면에 고정하도록 화면 기준의 값으로 배치 -> top/bottom 과 left/right를 이용하여 절대좌표로 배치함.  앞으로 가져오기 또는 뒤로 보내기는 z-index로 설정하며, 그 값이 클수록 앞에 놓이며, 작을 수록 뒤에 놓인다.  
+    
+    내부요소가 position:absolute이 되면, 기준점을 현재 html문서의 처음 위치(x=0, y=0) 이 되어 부모의 기준에서 떨어진 거리가 되지 못한다.
+    부모의 기준으로 떨어진 거리를 조정하고 싶다면, 부모 요소에 position:relative; 
+left : 왼쪽 맨 처음에서 부터 떨어진 거리를 x좌표 값으로 지정
+right: 오른쪽 맨 끝에서 부터 떨어진 거리를 x좌표 값으로 지정
+top : 위쪽 맨 처음에서 부터 떨어진 거리를 y좌표 값으로 지정
+bottom : 아래 맨 끝에서 부터 떨어진 거리를 y좌표 값으로 지정
+z-index : 레이어 층 값을 지정할 때 (요소가 화면에서 겹쳤을 때 앞으로 가져오기 또는 뒤로 보내기)
+*/
+.gnb { clear:both; width: 100%; }
+.gnb > ul:before { content:""; display:block; background:rgba(22,22,22,0.8); 
+width: 100vw; height: 180px; position:absolute; z-index:998; left: 0; top:119px; 
+visibility:hidden; opacity:0; transition:0.5s; }
+.gnb:hover > ul:before { visibility: visible; opacity:1; }
+.gnb > ul > li { float:left; margin-top: 36px; width: 20%; position:relative; 
+}
+.gnb li a.dp1 { display:block; height: 42px; line-height: 42px; color:#fff;
+text-align:center; background-color:#222; }
+.gnb li:hover a.dp1 { background-color:orange; }
+.gnb li .sub { visibility:hidden; opacity:0; transition:0.5s; 
+position:absolute; z-index:9999; width: 200px;  }
+.gnb:hover li .sub { visibility: visible; opacity:1; }
+.gnb .sub li { clear:both; height: 40px; line-height: 40px; }
+.gnb .sub li a { display:block; height: 40px; line-height: 40px; color:#eee; 
+    padding-left:20px; }
+.gnb .sub li:hover a { color:orange; } 

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거제 관광문화</title>
+    <!-- 파비콘 설정 -->
+    <!-- <link rel="shortcut icon" href="./source/favicon.ico"> -->
+    <link rel="shortcut icon" href="./source/geoje.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="거제 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="거제 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.jeoje.go.kr">
+    <meta property="og:description" content="거제 관광문화, 거제9경, 거제9품, 거제9미">
+    <meta property="og:image" content="./source/site_thumb.jpg" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script src="slick/slick.js"></script>
+    <style>
+    /* font-family: 'TTTogether'; */
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    #item1 { background-image: url("./source/item1_bg.png");}
+    #item2 { background-image: url("./source/item2_bg.jpg");}
+    #item3 { background-image: url("./source/item3_bg.jpg");}
+    #item4 { background-image: url("./source/item4_bg.png");}
+    #item5 { background-image: url("./source/item5_bg.jpg");}
+    #item8 { background-image: url("./source/item8_bg.png");}
+    #item9 { background-image: url("./source/item9_bg.jpg");}
+    #item10 { background-image: url("./source/item10_bg.jpg");}
+    #item11 { background-color: #fff; }
+
+    #vs { clear:both; position:relative; width: 100%; }
+
+    #vs .img_box { width: 400%; }
+    #vs .img_box li { width: 25%; float:left;  } 
+    #vs .img_box li a {display:block; position:relative; }
+    #vs .img_box .vs_img { display:block; width: 100%; } 
+    #vs .img_box li { position:relative;  } 
+    #vs .img_box .tit_box { position:absolute; top:100px; left: 0; z-index:4;
+    padding:60px 280px; color:#fff; text-align: center; }
+    #vs .img_box .vs_tit { font-family: 'TTTogether'; font-size:80px; font-weight:400; text-shadow:2px 2px 2px #333; }
+    #vs .img_box .vs_com { font-size:18px; text-shadow:-1px -1px 2px #333;}
+
+    .btn_box li button {  background-color:transparent; display:block; width: 40px; height: 280px; background-repeat: no-repeat; background-position: center center; 
+    background-size:100% 100%; position:absolute; top:160px; z-index:5; 
+    text-indent:-10000px; cursor:pointer; display:none; }
+    .btn_box li.btn1 button { left:50px; background-image: url("./source/arrow1.png");}
+    .btn_box li.btn2 button { right:50px; background-image: url("./source/arrow2.png");}
+
+    #page1 { position:relative; background:url("./source/bg1.png") center top no-repeat #c0e6d7; background-size:120% auto; }
+    .page:before { content:""; display:block; width: 440px; height: 440px; 
+    position:absolute; background-color:#a0b3ab; border-radius:50%; 
+    left:50%; margin-left: -210px; margin-top: -490px;  opacity:0.7;   }
+    .ptit_box { width: 440px; height: 440px; background-color:#05a4a6; color:#fff; 
+    text-align: center; padding-top: 330px; box-sizing: border-box; position:absolute; left: 50%; margin-left: -222px; border-radius:50%; margin-top: -492px;   }
+    .pg_tit2 {  font-family: 'TTTogether'; font-size:36px; font-weight:400; }
+
+    .col_tit { color:#fff; text-align: center; line-height:3; width: 100%; clear:both; margin-top: 28px; }
+    .col_tit:after { content:""; display:block; width: 40px; height: 2px; 
+background-color: #fff; clear:both; margin:0px auto; margin-bottom: 20px; }
+    .col_com { color:#fff; padding: 20px 60px; font-size:14px; text-align: center;}
+    #page1 .col_link, #page2 .col_link { display:block;  clear:both; float:none; width: 38px; height: 38px; 
+    margin: 10px auto; background-image: url("./source/family-arrow.png");
+    border-radius:21px; border:2px solid #fff;  text-indent:-10000px;
+background-repeat: no-repeat; background-position:center center; 
+    transform: rotate(90deg); }
+
+    .half_tit1 { font-size:24px; padding-left: 100px; padding-top:120px; color:#fff; text-shadow:1px 1px 2px #333; }
+    .half_tit2 { font-size:48px; padding-left: 100px; padding-top:40px; color:#fff; 
+        font-family: 'TTTogether';  font-weight:400; text-shadow:2px 2px 2px #333; }
+    .half_com { color:#fff; padding:40px 100px; font-size:18px; text-shadow:1px 1px 1px #000, -1px -1px 1px #000; }
+
+
+    #page2 { position:relative; 
+        background-image:url("./source/bg2.png"), url("./source/pngwing.png");
+        background-size:120% auto;
+        background-position:center top, center bottom;
+        background-repeat: no-repeat;
+        background-color:#c0e6d7; 
+    }
+    #page2 .ptit_box { background-color: #00436f;}
+    #item6 { width: 400%;  transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item6 li { width: 25%; float:left; }
+    .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 277px; }
+    #item7 { width: 400%; margin-left: 0; transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item7 li { width: 25%; float:left; }
+    #item7 li label { display:block; width: 18px; height: 36px; 
+    background-repeat: no-repeat; background-position:center center; position:absolute; bottom:100px; text-indent:-10000px; cursor:pointer; }
+    #item7 li label.lb1 { left:24px; background-image: url("./source/prev.png"); }
+    #item7 li label.lb2 { right:24px; background-image: url("./source/next.png"); }
+    #item7 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
+    .thumb_vs_wrap #item7 li label { display:none; }
+    .ra { display:none; }
+    #ra1:checked ~ .thumb_vs_wrap #item7 .item1 label { display:block; }
+    #ra2:checked ~ .thumb_vs_wrap #item7 .item2 label { display:block; }
+    #ra3:checked ~ .thumb_vs_wrap #item7 .item3 label { display:block; }
+    #ra4:checked ~ .thumb_vs_wrap #item7 .item4 label { display:block; }
+    #ra1:checked ~ .thumb_vs_wrap #item7 { margin-left: 0; }
+    #ra2:checked ~ .thumb_vs_wrap #item7 { margin-left:-100%; }
+    #ra3:checked ~ .thumb_vs_wrap #item7 { margin-left:-200%; }
+    #ra4:checked ~ .thumb_vs_wrap #item7 { margin-left:-300%; }
+    #ra1:checked ~ #item6 { margin-left: 0; }
+    #ra2:checked ~ #item6 { margin-left:-100%; }
+    #ra3:checked ~ #item6 { margin-left:-200%; }
+    #ra4:checked ~ #item6 { margin-left:-300%; }
+    .col_vs_tit_box { position:absolute; top: 0; left: 0; }
+    .col_vs_tit { clear:both; width: 100%;  padding-top: 50px;  }
+    .col_vs_tit span { display:block; font-family: 'TTTogether';  font-weight:400; 
+padding-left:120px; font-size:48px;}
+    .col_vs_tit .row1 { color:#00436f; }
+    .col_vs_tit .row2 { color:#007bbf; }
+    .col_vs_com { padding-left: 120px; padding-top: 30px; }
+    #item8 .col_tit, #item9 .col_tit { line-height: 1.6; } 
+    #item9 .col_com img { border:2px solid #fff; border-radius:100px; }
+    #page2 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
+    .col_tit.black_txt { color:#000; line-height: 1.6; padding-top: 12px; }
+    .col_tit.black_txt:after { background-color: #00b2a3; }
+    #item11 { position:relative; }
+    #item11 .link_box { position:absolute; bottom: 0; left: 0; width: 100%; }
+    #item11 .link_box li { display:block; width: 50%; float:left; }
+    #item11 .link_box li a { display:block; line-height: 65px; height: 65px; color:#222; background-color: #00b2a3; padding-left:64px; font-size:14px; border-top:1px solid #fff; border-left:1px solid #fff; 
+    background-repeat: no-repeat; background-position:18px center; }
+    #item11 .link_box li:nth-child(2n+1) a { border-left:0px; }
+    #item11 .link_box li.item1 a { background-image: url("./source/pg2_icon1.png"); }
+    #item11 .link_box li.item2 a { background-image: url("./source/pg2_icon2.png"); }
+    #item11 .link_box li.item3 a { background-image: url("./source/pg2_icon3.png"); }
+    #item11 .link_box li.item4 a { background-image: url("./source/pg2_icon4.png"); }
+
+    #page3 { background-image:url("source/bg32.png"), url("./source/bg3.png");
+        background-position:center bottom, left top;
+        background-repeat:no-repeat, repeat;
+        background-color:#c0e6d7;  }
+    #page3 .ptit_box { background-color: #007bbf;}
+    .icon_lst { clear:both; width: 100%; padding-bottom: 50px; }
+    .icon_lst:after { content:""; display:block; clear:both; }
+    .icon_lst li { float:left; width: 10%; }
+    .icon_lst li a { display:block; text-align: center; color:#222; font-size:14px; }
+    .icon_lst li a .ico_box { display:block; width: 80px; height: 80px; 
+    margin:10px auto; border:5px solid transparent; box-sizing:border-box; 
+    border-radius:48px; overflow:hidden; }
+    .icon_lst li a:hover { text-decoration:underline; }
+    .icon_lst li a:hover .ico_box { border:5px solid #007bbf; }
+    .icon_lst li a .ico_box img { display:block; width: 48px; height: 48px; margin: 0 auto; margin-top: 11px; }
+    #page3 .news_lst { clear:both; background-color: #fff; width: 1200px; 
+    margin: 0 auto; }
+    #page3 .news_lst:after { content:""; display:block; clear:both; }
+    #page3 .news_lst > .col6 { float:left; box-sizing:border-box; position:relative;
+    height: 420px; height:390px; overflow:hidden; }
+    .news_tit, .al_tit { font-size:24px; line-height: 3; padding-left: 24px; }
+    .news_lst .more { display:block; width: 24px; height: 24px; 
+    background-image: url("./source/ico_more.png"); background-repeat: no-repeat;
+background-position:center center; position:absolute; top:24px; right:24px; z-index:10; }
+    .noti_lst { clear:both; height: 390px; }
+    .noti_lst li { clear:both; padding: 10px 24px; }
+    .noti_lst li a { display:block; color:#666; font-size:16px; }
+    .noti_lst li a .noti_tit { float:left; font-weight:400; width: 420px; padding-right: 20px; text-overflow: ellipsis; overflow:hidden; white-space:nowrap;}
+    .noti_lst li a .noti_date { float:right; width: 110px; text-align:center; }
+    .noti_lst li:hover a .noti_tit { text-decoration: underline; }
+    .noti_lst li:hover a .noti_date { text-decoration: underline; }
+    .noti_lst li.act:before { content:""; display:block; width: 80px; height: 80px;   background-image: url("./source/notice_act.png"); background-repeat: no-repeat; 
+    background-position:center center; float:left;  }
+    .noti_lst li:nth-child(2) { padding-top: 30px; }
+    .noti_lst li.act a { float:left; width: 460px; overflow:hidden; }
+    .noti_lst li.act a .noti_tit { width:auto; clear:both; font-size:20px; color:#333; }
+    .noti_lst li.act a .noti_com { width:auto; clear:both;  border-bottom:1px solid #999; white-space: pre; width: 460px; display:-webkit-box; 
+    -webkit-line-clamp:3; -webkit-box-orient: vertical; }
+
+    .al_box { width: 199px; float:left; background-color: deepskyblue; height: 390px; }
+    .al_com { padding:8px 20px; }
+    .al_btn_fr { clear:both; width:168px; margin: 20px auto; margin-top: 100px; }
+    .al_btn_fr li { float:left; margin:8px; }
+    .al_btn_fr li button { display:block; width: 40px; height: 40px; 
+    background-repeat: no-repeat; background-position:center center; }
+    .al_btn_fr li button.prev { background-image: url("./source/picLeft.jpg"); }
+    .al_btn_fr li button.play { background-image: url("./source/picPlay.jpg");  }
+    .al_btn_fr li button.next { background-image: url("./source/picRight.jpg");  }
+    .photo_box { width: 399px; float:right; height:390px; overflow:hidden; }
+    .photo_fr { width: 400%; }
+    .photo_fr li { width: 25%; float:left; position:relative; }
+    .photo_tit { position:absolute; top:90px; font-size:28px; color:#fff;
+        text-shadow:1px 1px 2px #333, -1px -1px 2px #333; text-align: center; 
+    width: 395px; }
+    .photo_com { position:absolute; bottom:90px; font-size:20px; color:#fff; 
+        text-shadow:1px 1px 2px #333, -1px -1px 2px #333; text-align: center; 
+        width: 395px;  }
+    .photo_img { display:block; width: 100%; height: auto; margin-top:40px;}
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header class="hd fix">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./source/logo.png" alt="로고">
+                <h2 class="logo_tit">관광문화</h2>
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li class="user_name">OOO님</li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                    <li><a href="logout.html">로그아웃</a></li>
+                    <li><a href="guide.html">여행 가이드 신청</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="geoje1.html" class="dp1">한눈에 거제</a>
+                        <ul class="sub">
+                            <li><a href="geoje1.html#page1">거제9미9경9품</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page2">체험관광</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page3">캠핑여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page4">추천코스</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje2.html" class="dp1">거제여행</a>
+                        <ul class="sub">
+                            <li><a href="geoje2.html#page1">해수욕장</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page2">섬여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page3">음식</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page4">숙박</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje3.html" class="dp1">즐거운 축제</a>
+                        <ul class="sub">
+                            <li><a href="geoje3.html#page1">해맞이 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page2">꽃 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page3">예술제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page4">해변 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje4.html" class="dp1">역사/문화</a>
+                        <ul class="sub">
+                            <li><a href="geoje4.html#page1">국가지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page2">도지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page3">향토문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page4">거제 인물</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail">
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html" class="dp1">커뮤니티</a>
+                        <ul class="sub">
+                            <li><a href="community.html">묻고 답하기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="notice.html">공지사항</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="gallery.html">포토 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="impress.html">이용 후기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="certifyingshot.html">인증샷 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content fix">
+        <figure class="vs" id="vs">
+            <ul class="img_box">
+                <li>
+                    <a href="">
+                        <img src="./source/vs1.jpg" alt="바람의 언덕" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">거제 애(愛) 빠지다</h2>
+                            <p class="vs_com">바람의 언덕. 해금강 가는 길 왼쪽으로 내려가면 도장포 마을이 나오고, 그 마을 북쪽에 자리 잡은 곳이 바로 바람의 언덕이다. 원래의 지명은 ‘띠밭늘’로 불렸으나, 2002년부터 ‘바람의 언덕’으로 바뀌어 불리고 있다.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/vs2.jpg" alt="꽃 축제" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">꽃을 품은 섬, 거제(愛) 취하다</h2>
+                            <p class="vs_com">꽃 축제. 미래 지향적 농업방향 제시와 난지농업의 활로 개척, 관광거제에 부응하는 대표적 가을축제로 정착한 행사이다. 가을국화꽃 전시, 국화작품전시, 꽃동산 전시, 첨단농업전시, 국화전배전시 및 농특산물 홍보 판매 등 다양한 전시 및 행사가 열리고 있다.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/vs3.jpg" alt="청마꽃들축제" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">거제 애(愛) 빠지다</h2>
+                            <p class="vs_com">청마꽃들축제. 가을꽃전시회로 시작된“청마꽃들축제”는 농업개발원의 난지농업 시험장을 기반으로 하여 독창적인 축제모델로 발전시켜 왔으며, 꽃과 문화, 사람이 어우러지는 종합적인 가을꽃 축제입니다.</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="./source/vs4.jpg" alt="학동 흑진주 몽돌해변" class="vs_img">
+                        <div class="tit_box">
+                            <h2 class="vs_tit">거제 애(愛) 빠지다</h2>
+                            <p class="vs_com">학동 흑진주 몽돌해변. 남해안의 맑고 깨끗한 물이 파도쳐서 몽돌을 굴리며 자글자글 아름다운 소리를 내고, 이는 우리나라 자연의 소리 100선에 선정되기도 하였다.</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="btn_box">
+                <li class="btn1"><button>이전</button></li>
+                <li class="btn2"><button>다음</button></li>
+            </ul>
+        </figure>
+        <section class="page fix" id="page1" style="">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">거제9경 및 맞춤관광지</h4>
+                <h2 class="pg_tit2">거제의 여행정보</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="grid">
+                    <li class="col6">
+                        <div class="col6 col_item col277" id="item1">
+                            <h3 class="col_tit">관광지 주차정보</h3>
+                            <p class="col_com">거제 여행지의 주차장 정보와 상황을 보실 수 있습니다.</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item2">
+                            <h3 class="col_tit">홍보동영상</h3>
+                            <p class="col_com">거제 9경에 해당하는 여행지의 소개 동영상을 감상하실 수 있습니다.</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item3">
+                            <h3 class="col_tit">섬&섬길</h3>
+                            <p class="col_com">오랜 세월 자연이 빚어낸 아름다운 보석~! 섬과 섬을 잇는 아름다운 길을 소개합니다.</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col_item col277" id="item4">
+                            <h3 class="col_tit">섬안에 섬여행</h3>
+                            <p class="col_com">외도, 내도, 이수도, 지심도, 저도 등에서 보실 수 있는 섬안에서 섬여행을 즐길 수 있습니다.</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                    </li>
+                    <li class="col6">
+                        <div class="half_box col_item col554" id="item5">
+                            <h4 class="half_tit1">이야기 여행</h4>
+                            <h2 class="half_tit2">거제 해금강</h2>
+                            <p class="half_com">한류의 열풍, 진나라 서불이 이미 다녀갔던 곳</p>
+                            <a href="" class="col_link half_more">더보기</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="page fix" id="page2" style="background-color: #4c7ed4;">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">축제.행사 및 다양한 정보</h4>
+                <h2 class="pg_tit2">거제의 테마여행</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="grid">
+                    <li class="col6 col554">
+                        <div class="half_box col_item col554" style="position:relative;">
+                            <input type="radio" class="ra" name="ra" id="ra1" checked>
+                            <input type="radio" class="ra" name="ra" id="ra2">
+                            <input type="radio" class="ra" name="ra" id="ra3">
+                            <input type="radio" class="ra" name="ra" id="ra4">
+                            <ul class="pic_ban col554" id="item6">
+                                <li class="item1">
+                                    <img src="./source/pic_ban1.jpg" alt="모노레일">
+                                </li>
+                                <li class="item2">
+                                    <img src="./source/pic_ban2.jpg" alt="씨라인">
+                                </li>
+                                <li class="item3">
+                                    <img src="./source/pic_ban3.jpg" alt="크루즈투어">
+                                </li>
+                                <li class="item4">
+                                    <img src="./source/pic_ban4.jpg" alt="요트투어">
+                                </li>
+                            </ul>   
+                            <div class="thumb_vs_wrap">
+                                <ul class="thumb_ban col6 col277 col_item" id="item7" style="background-color: #2e99e4">
+                                    <li class="item1">
+                                        <h3 class="col_tit">모노레일</h3>
+                                        <label for="ra4" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/thumb_ban1.jpg" alt="모노레일"></div>
+                                        <label for="ra2" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item2">
+                                        <h3 class="col_tit">씨라인</h3>
+                                        <label for="ra1" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/thumb_ban2.jpg" alt="씨라인"></div>
+                                        <label for="ra3" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item3">
+                                        <h3 class="col_tit">크루즈투어</h3>
+                                        <label for="ra2" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/thumb_ban3.jpg" alt="크루즈투어"></div>
+                                        <label for="ra4" class="lb2">다음</label>
+                                    </li>
+                                    <li class="item4">
+                                        <h3 class="col_tit">요트투어</h3>
+                                        <label for="ra3" class="lb1">이전</label>
+                                        <div class="tbox"><img src="./source/thumb_ban4.jpg" alt="요트투어"></div>
+                                        <label for="ra1" class="lb2">다음</label>
+                                    </li>
+                                </ul>
+                            </div>   
+                            <div class="col_vs_tit_box">
+                                <h2 class="col_vs_tit">
+                                    <span class="row1">거제에서</span>
+                                    <span class="row2">힐링하자</span>
+                                </h2>
+                                <p class="col_vs_com">거제의 명산, 맛과 멋,<br>
+                                그리고 섬, 바다, 축제 등을 즐기자</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col6 col554">
+                        <div class="col6 col277 col_item" id="item8">
+                            <h3 class="col_tit">Great<br><span class="gold">거제캠페인</span></h3>
+                            <p class="col_com">
+                                <img src="./source/ico_newvr2.png" alt="캠페인로고">
+                            </p>
+                        </div>
+                        <div class="col6 col277 col_item" id="item9">
+                            <h3 class="col_tit">실감나는<br>거제360도VR영상</h3>
+                            <p class="col_com">
+                                <img src="./source/btn_movie_play.png" alt="VR버튼">
+                            </p>
+                        </div>
+                        <div class="col6 col277 col_item" id="item10">
+                            <h3 class="col_tit">거제의 축제</h3>
+                            <p class="col_com">열정의 도시~ 거제의 축제에<br>대해 알려드립니다.</p>
+                            <a href="" class="col_link">더보기</a>
+                        </div>
+                        <div class="col6 col277 col_item" id="item11">
+                            <h3 class="col_tit black_txt">먹고, 자고, 즐기는<br>알찬 거제여행</h3>
+                            <ul class="link_box">
+                                <li class="item1 col6"><a href="">음식</a></li>
+                                <li class="item2 col6"><a href="">숙박</a></li>
+                                <li class="item3 col6"><a href="">체험관광</a></li>
+                                <li class="item4 col6"><a href="">캠핑여행</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="page fix" id="page3">
+            <div class="ptit_box">
+                <h4 class="pg_tit1">소식 및 다양한 정보</h4>
+                <h2 class="pg_tit2">거제의 소식정보</h2>
+            </div>
+            <div class="page_wrap">
+                <ul class="icon_lst">
+                    <li class="item1">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon1.png" alt="관광안내지도"></div>
+                            <span class="ico_txt">관광안내지도</span>
+                        </a>
+                    </li>
+                    <li class="item2">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon2.png" alt="관광안내소"></div>
+                            <span class="ico_txt">관광안내소</span>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon3.png" alt="관광지요금"></div>
+                            <span class="ico_txt">관광지요금</span>
+                        </a>
+                    </li>
+                    <li class="item4">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon4.png" alt="문화관광해설사"></div>
+                            <span class="ico_txt">문화관광해설사</span>
+                        </a>
+                    </li>
+                    <li class="item5">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon5.png" alt="거제관광여행사"></div>
+                            <span class="ico_txt">거제관광여행사</span>
+                        </a>                            
+                    </li>
+                    <li class="item6">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon6.png" alt="교통정보"></div>
+                            <span class="ico_txt">교통정보</span>
+                        </a>
+                    </li>
+                    <li class="item7">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon7.png" alt="렌터카"></div>
+                            <span class="ico_txt">렌터카</span>
+                        </a>
+                    </li>
+                    <li class="item8">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon8.png" alt="조은섬콜택시"></div>
+                            <span class="ico_txt">조은섬콜택시</span>
+                        </a>
+                    </li>
+                    <li class="item9">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon9.png" alt="블루시티투어"></div>
+                            <span class="ico_txt">블루시티투어</span>
+                        </a>
+                    </li>
+                    <li class="item10">
+                        <a href="">
+                            <div class="ico_box"><img src="./source/sec3_icon10.png" alt="거제농특산물"></div>
+                            <span class="ico_txt">거제농특산물</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="news_lst">
+                    <li class="col6">
+                        <h3 class="news_tit">새소식</h3>
+                        <a href="" class="more"></a>
+                        <ul class="noti_lst">
+                            <li class="act">
+                                <a href="">
+                                    <h4 class="noti_tit">
+                                        2022년 경상남도 마을기업 공모 계획
+                                    </h4>
+                                    <p class="noti_com">공모 개요
+• 사 업 명: 2022년 경상남도 마을기업 육성사업
+• 공고 및 접수기간 : 2021. 12. 23.(목) ~ 2022. 1. 13.(목) 18:00
+• 공모대상: 예비, 신규(1회차), 재지정(2회차), 고도화(3회차), 재기 마을기업
+• 사업기간: 마을기업 약정체결 시 ~ 2022. 12. 31.
+• 지원내용: 사업비(1~5천만원) 및 자립 지원(홍보, 판로, 교육, 컨설팅 등)
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1 새소식 제목1</h4>
+                                    <p class="noti_date">2021-12-23</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새소식 제목2</h4>
+                                    <p class="noti_date">2021-12-23</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <h4 class="noti_tit">새소식 제목3</h4>
+                                    <p class="noti_date">2021-12-23</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="col6">
+                        <div class="al_box">
+                            <h3 class="al_tit">내가 찍은 거제</h3>
+                            <p class="al_com">한려수도의 해양관광도시! 거제</p>
+                            <ul class="al_btn_fr">
+                                <li><button class="prev"></button></li>
+                                <li><button class="play"></button></li>
+                                <li><button class="next"></button></li>
+                            </ul>
+                        </div>
+                        <div class="photo_box">
+                            <ul class="photo_fr">
+                                <li>
+                                    <img src="./source/photo1.jpg" alt="사진1" class="photo_img">
+                                    <h4 class="photo_tit">사진제목1</h4>
+                                    <p class="photo_com">2021-12-23</p>
+                                </li>
+                                <li>
+                                    <img src="./source/photo2.jpg" alt="사진2" class="photo_img">
+                                    <h4 class="photo_tit">사진제목2</h4>
+                                    <p class="photo_com">2021-12-23</p>
+                                </li>
+                                <li>
+                                    <img src="./source/photo3.jpg" alt="사진3" class="photo_img">
+                                    <h4 class="photo_tit">사진제목3</h4>
+                                    <p class="photo_com">2021-12-23</p>
+                                </li>
+                                <li>
+                                    <img src="./source/photo4.jpg" alt="사진4" class="photo_img">
+                                    <h4 class="photo_tit">사진제목4</h4>
+                                    <p class="photo_com">2021-12-23</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관과사업소</a></li>
+                <li><a href="">면/동</a></li>
+                <li><a href="">시/군청</a></li>
+                <li><a href="">패밀리사이트</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                <p class="copy">Copyright ⓒ 2019 GEOJE CITY. All Rights Reserved.</p>
+            </div>
+            <div class="wa"><img src="./source/wacc-logo.png" alt="WA인증로고"></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

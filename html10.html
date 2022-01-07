@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 속성1</title>
+    <link rel="stylesheet" href="">
+    <style>
+    /*
+    선택자 { CSS속성1:값; CSS속성2:값; }
+
+    I. 배경관련속성
+    1. 배경색 - background-color:컬러명 | RGB_HEX코드 6자리 | RGB_HEX코드 3자리 | rgb() | rgba() | hsl() | hsla() 
+    ex) red | #ff0000 | #f00 | rgb(255,0,0) | rgba(255,0,0,1) | hsl(0,100%,50%) | 
+    hsla(0,100%,50%,1)
+
+    2. 배경이미지 - background-image:url("파일위치1"), url("파일위치2"),....
+    3. 배경위치 - background-position:left|center|right|px단위숫자|%단위숫자  top|center|bottom|px단위숫자|%단위숫자  => background-position:가로위치  세로위치
+    4. 배경크기-background-size:auto|px단위숫자|%단위숫자|cover|contain
+    auto|px단위숫자|%단위숫자  auto|px단위숫자|%단위숫자
+    가로크기    세로크기
+    5. 배경반복 - background-repeat:no-repeat|repeat-x|repeat-y|repeat
+    6. 배경합성 - background-blend-mode:normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity
+    7. 배경 위치 기준 - background-origin:padding-box|border-box|content-box
+    8. 배경 위치 고정/유동 - background-attachment:scroll|fixed
+
+    => 배경이미지가 두개인 경우 background-position:center center, top left
+    background-size:auto, 100% 100%
+    background 통합속성
+    background:배경색 배경이미지 포지션/크기 배경반복 배경위치기준 배경위치고정
+
+    통합속성과 세부속성을 같이 사용할 때
+    background-color:red; background:url("jeni1.png");  (X)
+    background:url("jeni1.png"); background-color:red;  (O)
+    ※ 통합속성을 먼저 설정하고, 세부속성을 설정해야 한다.
+
+    II. 글자와 문단에 대한 속성
+    *1. 글자색 - color : 컬러명 | RGB_HEX코드 6자리 | RGB_HEX코드 3자리 | rgb() | rgba() | hsl() | hsla() 
+    *2. 글꼴 - font-family:"폰트명1"[, "대체폰트명2", "대체폰트명3"]
+        ex) font-family:"나눔고딕", "NanumGotic", sans-serif
+        sans-serif와 같이 브라우저에서 기본으로 제공해주는 폰트 -> 기본 폰트
+        sans-serif, serif, cursive, monospace, fantasy
+    *3. 글자크기 - font-size : pt단위숫자|px단위숫자|%단위숫자|em단위숫자|rem단위숫자|mm단위숫자|inch단위숫자....
+        %단위는 현재 영역의 크기에 비례한 크기  100px => 300%
+        em단위는 태그마다 다른 기본 글자 크기의 배수 p요소의 경우 14px 기본크기 => 3em
+        100%=1em / 실제 반영은 서로 다른 크기가 됨
+    *4. 글자 스타일 - font-style : normal | italic | oblique
+    *5. 글자 두께 - font-weight : normal(400) | lighter(200) | bolder(500,600) | bold(700) | 100~900(100단위씩) => 폰트마다 지원하는 글자 두께가 다르므로 적용이 안되거나 원하는대로 되지 않을 수 있음   
+    6. 기타 폰트 관련 속성 : font-kernning(자간1), font-stretch(장평), font-variant(문자크기동일)
+    *7. 텍스트 정렬 - text-align : left | right | center | justify | initial | inherit
+    *8. 줄 속성 - text-decoration : none | underline | overline | line-through
+    9. 첫 번째줄 들여쓰기 - text-indent :  px단위숫자
+            양수는 들여쓰기, 음수는 내어쓰기
+    *10. 글자 흘러 넘침 - text-overflow : clip | ellipsis | 문자열
+    *11. 글줄(문단)에 대한 처리 - white-space : normal | nowrap | pre
+    12. 자간 - letter-spacing : px단위숫자 | em단위숫자
+    13. 어간 - word-spacing : px단위숫자
+    14. 한 줄 끝 처리 - line-break : normal | break-all | keep-all | break-word
+    15. 단어 끝 처리 - word-break : normal | break-all | keep-all | break-word
+    16. 기타 텍스트 속성 - hyphens(영문단어를 하이픈으로 연결처리), text-transform(영문대소문자변환)
+    17. 글자 그림자 - text-shadow:가로그림자크기 세로그림자크기 블러영역크기 그림자색
+
+    */
+</style>
+<style>
+    body { background-color:red; background-image:url("./img/jen1.png"), url("./img/hawaii.jpeg"); background-size: 300px auto, auto; background-position:center center;
+background-repeat:no-repeat; background-attachment:fixed, scroll; background:url("./img/jen1.png"); }
+    .par1 { width: 150px; height: 150px; color:#333; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="wrap" style="width:100%; height:1500px">
+        <p class="par1">우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국  우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국 우리 나라 대한 민국</p>
+    </div>
+</body>
+</html>

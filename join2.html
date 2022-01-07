@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거제 관광문화</title>
+    <!-- 파비콘 설정 -->
+    <!-- <link rel="shortcut icon" href="./source/favicon.ico"> -->
+    <link rel="shortcut icon" href="./source/geoje.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="거제 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="거제 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.jeoje.go.kr">
+    <meta property="og:description" content="거제 관광문화, 거제9경, 거제9품, 거제9미">
+    <meta property="og:image" content="./source/site_thumb.jpg" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script src="slick/slick.js"></script>
+    <style>
+    .vs { clear:both; width: 100%; height: 460px; 
+    background-image:url("./source/form_vs.jpg"); background-position:center center; 
+background-repeat: no-repeat;  background-size:100% auto; }
+    .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top:0px; }
+    .sub_tit { height: 144px; line-height: 144px; font-size:22px; background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
+    .bread_box { height: 119px; background-color: #fff; width: 980px; float:right; padding-left: 30px; padding-top: 24px; border-bottom:1px solid #999; 
+    position:relative; }
+    .cate_tit { color:#999; font-size:24px; }
+    .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+    .bread a, .bread span { color:#999; }
+    .bread span.cur { color:#222; font-weight:600;}
+    .sub_tit_ico_box { position:absolute; right:30px; bottom:18px; }
+    .sub_tit_ico_box li { float:left; margin-left:10px; }
+    .sub_tit_ico_box li a { display:block; color:#fff; }
+    .sub_tit_ico_box li a.ico { width: 34px; height: 34px; background-position:center center; background-repeat: no-repeat; border-radius:18px; border:1px solid #ccc; }
+    .sub_tit_ico_box li a.ico.item1 { background-image: url("./source/ico_sns.gif"); }
+    .sub_tit_ico_box li a.ico.item2 { background-image: url("./source/ico_print.gif"); }
+    .sub_tit_ico_box li a.btn { border-radius:18px; padding: 6px 12px; width:auto; background-color: #999; }
+
+    .leftbar { width:190px; float:left; min-height:80vh; background-color: #f0f0f0; }
+    .lnb { clear:both; }
+    .lnb li { clear:both; margin: 5px 6px; border:1px solid #aaa; line-height: 52px;  }
+    .lnb li a { color:#222; font-size:14px; padding-left:1em; }
+    .lnb li.act a { color:#0e3257; font-size:18px; font-weight:bold; }
+    .page_box { width:980px; float:right; padding-left: 30px; }
+
+    .page { padding-top:40px; overflow:visible; height:auto; min-height:100vh; }
+    .page_wrap {width: 960px; }
+    .page_tit { padding-bottom: 36px; color:#666; text-align: center; font-size:40px; }
+    .sub_pic img { display:block; max-width:940px; height:auto;   }
+    .pic_lst { clear: both; }
+    .pic_lst li { float:left; margin-right: 15px; margin-bottom: 15px; }
+    .pic_lst li img { max-width:460px; }
+    .sub_pic_tit { clear:both; font-size:20px; line-height: 1.6; }
+    .sub_pic_com { clear:both; font-size:14px; line-height: 1.6; padding-bottom: 24px; }
+    .sub_full_tit { clear:both; color:#2e70b4; line-height: 3; font-size:32px; text-align: center; }
+    .sub_con img { display:block; max-width:940px; }
+    .sub_cate_com { clear:both; padding: 14px; font-style: 12px; color:#666; line-height:1.8; 
+    width: 940px; font-weight:300; }
+    .map_area { clear:both; position:relative;     overflow: hidden;
+    width: 940px; }
+    .map_tit, .sub_cate_tit { clear:both; padding-left: 32px; line-height: 2.4; font-size:20px; 
+    background-repeat: no-repeat; background-position:left center; 
+    background-image: url("./source/bull_h5.gif"); color:#134980; }
+
+    #page2, #page3 { padding-top:130px; margin-top: 40px; border-top:5px solid deepskyblue; }
+    .onepage { clear:both; width: 100%; padding-top: 50px; padding-bottom: 50px; }
+    .onepage img { display:block; width: 100%; }
+    .page { display:none; }
+    .page:target { display:block; }
+
+    .form { clear:both; width: 100%; }
+    .table { display:table; border-top:5px solid #ccc; } /* table */
+    .table_body { display:table-row-group; } /* tbody */
+    .reg_row { display:table-row; }  /* tr */
+    .reg_lb { display:table-cell; padding: 10px; width: 160px; }  /* th */
+    .reg_input { display:table-cell; padding: 10px; }  /* td */
+    .reg-control { display:block; width:600px; height: 42px; line-height: 42px; 
+    padding-left: 14px; font-size:18px; }
+    .btn { display:block; line-height:32px; width:auto; padding: 5px 40px; 
+    background-color:deepskyblue; color:#fff; text-align: center; cursor:pointer; }
+    .btn_left { float:left; }
+    .btn_right { float:right; }
+    .btn_mid { float:left; margin-left:24px; margin-right: 24px; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <script>
+    $(document).ready(function(){
+        $(".lnb ul li").click(function(){
+            $(".lnb ul li").removeClass("act");
+            $(this).addClass("act");
+        });
+        $(".sub > li").click(function(){
+            $(".lnb ul li").removeClass("act");
+            var t = $(this).index();
+            $(".lnb ul li").eq(t).addClass("act");
+        });
+    });    
+    </script>
+    <header class="hd fix">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./source/logo.png" alt="로고">
+                <h2 class="logo_tit">관광문화</h2>
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li class="user_name">OOO님</li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                    <li><a href="">로그아웃</a></li>
+                    <li><a href="guide.html">여행 가이드 신청</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="geoje1.html" class="dp1">한눈에 거제</a>
+                        <ul class="sub">
+                            <li><a href="geoje1.html#page1">거제9미9경9품</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page2">체험관광</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page3">캠핑여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page4">추천코스</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje2.html" class="dp1">거제여행</a>
+                        <ul class="sub">
+                            <li><a href="geoje2.html#page1">해수욕장</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page2">섬여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page3">음식</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page4">숙박</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje3.html" class="dp1">즐거운 축제</a>
+                        <ul class="sub">
+                            <li><a href="geoje3.html#page1">해맞이 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page2">꽃 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page3">예술제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page4">해변 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje4.html" class="dp1">역사/문화</a>
+                        <ul class="sub">
+                            <li><a href="geoje4.html#page1">국가지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page2">도지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page3">향토문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page4">거제 인물</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html" class="dp1">커뮤니티</a>
+                        <ul class="sub">
+                            <li><a href="community.html">묻고 답하기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="notice.html">공지사항</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="gallery.html">포토 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="impress.html">이용 후기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="certifyingshot.html">인증샷 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content fix">
+        <figure class="vs" id="vs" style="border-bottom:3px solid rgb(112, 112, 112)">
+            <!-- 배경 이미지로 채움 -->
+        </figure>
+        <div class="content_wrap">
+            <div class="sub_box">
+                <h2 class="sub_tit">회원가입</h2>
+                <div class="bread_box">
+                    <h3 class="cate_tit">회원가입</h3>
+                    <p class="bread"><a href="" class="home">홈</a> &gt; <a href="">회원</a> &gt; <span class="cur">회원가입</span></p>
+                </div>
+            </div>
+            <aside class="leftbar">
+                <nav class="lnb">
+                    <ul>
+                        <li class="act"><a href="">회원가입</a></li>
+                        <li><a href="#page2">회원약관</a></li>
+                        <li><a href="#page3">회원혜택</a></li>
+                        <li><a href="login.html">로그인</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="page_box">
+                <section class="onepage">
+                    <div class="" style="height:20px"></div>
+                    <h2 class="page_tit">회원가입</h2>
+                    <div class="page_wrap">
+                        <div class="login_frm_box">
+                            <form method="post" action="/member/joinPro.do" class="form">
+                                <table class="table">
+                                    <tbody class="table_body"">
+                                        <tr class="reg_row">
+                                            <th class="reg_lb"><label for="userid" class="reg-label">*아이디</label></th>
+                                            <td class="reg_input">
+                                               <input type="text" id="userid" name="userid" class="reg-control" maxlength="13" required />
+                                           </td>
+                                       </tr>
+                                       <tr class="reg_row">
+                                           <th class="reg_lb"><label for="passwd" class="reg-label">*비밀번호</label></th>
+                                           <td class="reg_input">
+                                               <input type="password" id="passwd" name="passwd" class="reg-control" maxlength="20" required />
+                                               <!-- <input type="hidden" name="passwd" value=""> -->
+                                           </td>
+                                       </tr>
+                                       <tr class="reg_row">
+                                           <th class="reg_lb"><label for="userPwChk" class="reg-label">*비밀번호 확인 </label></th>
+                                           <td class="reg_input">
+                                               ​<input type="password" id="userPwChk" name="passwds2" class="reg-control" maxlength="20" required />
+                                           </td>
+                                       </tr>
+                                       <tr class="reg_row">
+                                           <th class="reg_lb"><label for="name" class="reg-label">*이름</label></th>
+                                           <td class="reg_input">
+                                                <input type="text" id="name" name="name" class="reg-control" maxlength="13" required />
+                                            </td>
+                                        </tr>
+                                        <tr class="reg_row">
+                                            <th class="reg_lb"><label for="email" class="reg-label">*이메일</label></th>
+                                            <td class="reg_input">
+                                                <input type="text" id="email" name="email" class="reg-control" maxlength="50" />
+                                            </td>
+                                        </tr>
+                                        <tr class="reg_row">
+                                            <th class="reg_lb"><label for="phone" class="reg-label">*전화번호, '-' 입력 제외 </label></th>
+                                            <td class="reg_input">
+                                                <input type="text" id="phone" name="phone" class="reg-control" maxlength="15" />
+                                            </td>
+                                        </tr>
+                                        <tr class="reg_row">
+                                            <th class="reg_lb"><label class="reg-label" id="birth">*생년월일</label></th>
+                                            <td class="reg_input">
+                                                <input type="text" id="birth" name="birth" class="reg-control" maxlength="8" />
+                                            </td>
+                                        </tr>
+                                        <tr class="reg_row">
+                                            <td class="reg_btn_group" colspan="2">
+                                                <input type="submit" class="btn btn_left" id="reg_form_btn" value="회원가입" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="reset" class="btn btn_right" id="reg_form_btn2" value="취소" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                    </div>
+                </section>
+                <section class="page" id="page2">
+                    <h2 class="page_tit">회원약관</h2>
+                    <div class="page_wrap">
+
+                    </div>
+                </section>
+                <section class="page" id="page3">
+                    <h2 class="page_tit">회원혜택</h2>
+                    <div class="page_wrap">
+
+                    </div>
+                </section>
+            </div>
+        </div>    
+    </div>
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관과사업소</a></li>
+                <li><a href="">면/동</a></li>
+                <li><a href="">시/군청</a></li>
+                <li><a href="">패밀리사이트</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                <p class="copy">Copyright ⓒ 2019 GEOJE CITY. All Rights Reserved.</p>
+            </div>
+            <div class="wa"><img src="./source/wacc-logo.png" alt="WA인증로고"></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

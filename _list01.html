@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 만들기</title>
+    <style>
+    /* 초기화 및 공통 스타일 */
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    
+    .wrap { clear:both; width: 100%; border-top:5px solid #ccc; }
+    .title { text-align: center; line-height: 3; padding-top: 40px; }
+    </style>
+    <style>
+    /* 텍스트 리스트 스타일 */
+    .table_wrap { width: 960px; margin:24px auto; }
+    .table { display:table; width: 100%; border-collapse: collapse; }
+    .table tbody { display:table-row-group;}
+    .table tr { display:table-row; }
+    .table td, .table th { display:table-cell; line-height: 38px; border-left:1px solid #333; border-top:1px solid #333; }
+    .table th { background-color:gold; }
+    .table .ca1 { width: 89px; text-align: center; }
+    .table .ca2 { width: 679px; padding-left:20px; }
+    .table .ca2 a { display:block; padding-right: 10px; text-overflow:ellipsis; overflow:hidden; white-space: nowrap; color:#333; width: 669px; }
+    .table .ca2 a:hover { text-decoration:underline; }
+    .table .ca3 { text-align: center; border-right:1px solid #333; }
+    .table tr:last-child td { border-bottom:1px solid; }
+    .table tr:nth-child(2n) td { background-color: rgb(212, 245, 255);}
+    </style>
+    <style>
+    /* 아이콘 리스트 스타일 */
+    .lst1 { width: 460px; margin: 40px auto; }
+    .lst1:after { content:""; display:block; width: 100%; clear:both; }
+    .lst1 li { width: 90px; float:left; margin-right: 33px; }
+    .lst1 li:last-child { margin-right: 0; }
+    .lst1 li a { display:block; }
+    .lst1 li div { width: 90px; height: 90px; overflow:hidden; border-radius:46px; }
+    .lst1 li .ico { text-align:center; }
+    .lst1 li p.ico { line-height: 36px;  color:#333; }
+    </style>
+    <style>
+    .lst2 { width: 970px; margin: 20px auto; }
+    .lst2 li { float:left; width: 220px; margin-right: 30px; margin-bottom: 30px; 
+    position:relative; height: 310px; overflow:hidden;  }
+    .lst2 li:nth-child(4n) { margin-right: 0; } 
+    .thumb_tit_box { position:absolute; width: 220px; height: 60px; 
+    background-color:rgba(255,255,255,0.65); bottom:0px; left:0; display:none; }
+    .lst2 li:hover .thumb_tit_box { display:block; }
+    .thumb_wrap { width: 220px; height: 310px; overflow:hidden; }
+    .thumb_wrap img { display:block; width:auto; height: 310px; min-width:220px; }
+    .thumb_tit_box > * { line-height: 1.8; padding-left: 14px; 
+    padding-right: 14px; text-overflow: ellipsis; overflow:hidden; white-space:nowrap;}
+    .thumb_tit { font-size:16px; color:#333; }
+    .thumb_com { font-size:14px; color:#777; }
+    </style>
+
+    <style>
+    .lst3 { clear:both; width: 960px; margin: 10px auto; }
+    .lst3 li { float:left; width: 300px; margin-right: 30px; margin-bottom: 30px; height: 400px; border-radius:6px; overflow:hidden; background-color: #eee; }
+    .lst3 li:nth-child(3n) { margin-right: 0; }
+    .lst3 li a { display:block; height: 398px; border:1px solid #000; 
+    border-radius:6px; }
+    .card_wrap { width: 298px; height: 198px; overflow:hidden; }
+    .card_wrap img { max-width:298px; height:auto; }
+    .card_tit_box { padding-left:14px; padding-top: 14px; }
+    .card_tit { color:#222; font-size: 16px; line-height: 1.8; }
+    .card_com { color:#666; font-size: 14px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h2 class="title">텍스트 리스트</h2>
+    <div class="table_wrap">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="ca1">번호</th>
+                    <th class="ca2">제목</th>
+                    <th class="ca3">작성자</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ca1">1</td>
+                    <td class="ca2"><a href="">제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1 제목입니다1</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">2</td>
+                    <td class="ca2"><a href="">제목입니다2 제목입니다2 제목입니다2 제목입니다2 제목입니다2 제목입니다2 제목입니다2 제목입니다2</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">3</td>
+                    <td class="ca2"><a href="">제목입니다3 제목입니다3 제목입니다3 제목입니다3 제목입니다3 제목입니다3 제목입니다3 제목입니다3</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">4</td>
+                    <td class="ca2"><a href="">제목입니다4 제목입니다4 제목입니다4 제목입니다4 제목입니다4 제목입니다4 제목입니다4</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">5</td>
+                    <td class="ca2"><a href="">제목입니다5 제목입니다5 제목입니다5 제목입니다5 제목입니다5 제목입니다5 제목입니다5 제목입니다5</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">6</td>
+                    <td class="ca2"><a href="">제목입니다6 제목입니다6 제목입니다6 제목입니다6 제목입니다6 제목입니다6 제목입니다6 </a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">7</td>
+                    <td class="ca2"><a href="">제목입니다7</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">8</td>
+                    <td class="ca2"><a href="">제목입니다8</a></td>
+                    <td class="ca3">작성자</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="wrap">
+    <h2 class="title">아이콘 리스트</h2>
+    <ul class="lst1">
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘1</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘2</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘3</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘4</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="wrap">
+    <h2 class="title">썸네일 리스트</h2>
+    <ul class="lst2">
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/220x310/333" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1 제목1</h3>
+                    <p class="thumb_com">설명1 설명1 설명1 설명1 설명1 설명1 설명1 설명1 설명1 설명1</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/310x310/3c8" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목2</h3>
+                    <p class="thumb_com">설명2</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/270x310/28c" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목3</h3>
+                    <p class="thumb_com">설명3</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/180x290/2c8" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목4</h3>
+                    <p class="thumb_com">설명4</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/220x310/333" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목5</h3>
+                    <p class="thumb_com">설명5</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/220x310/333" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목6</h3>
+                    <p class="thumb_com">설명6</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/220x310/333" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목7</h3>
+                    <p class="thumb_com">설명7</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="thumb_wrap"><img src="http://placehold.it/220x310/333" alt=""></div>
+                <div class="thumb_tit_box">
+                    <h3 class="thumb_tit">제목8</h3>
+                    <p class="thumb_com">설명8</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="wrap">
+    <h2 class="title">카드형 리스트</h2>
+    <ul class="lst3">
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목1</h3>
+                    <p class="card_com">설명1</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목2</h3>
+                    <p class="card_com">설명2</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목3</h3>
+                    <p class="card_com">설명3</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목4</h3>
+                    <p class="card_com">설명4</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목5</h3>
+                    <p class="card_com">설명5</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목6</h3>
+                    <p class="card_com">설명6</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목7</h3>
+                    <p class="card_com">설명7</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="card_wrap"><img src="http://placehold.it/300x200/333" alt=""></div>
+                <div class="card_tit_box">
+                    <h3 class="card_tit">제목8</h3>
+                    <p class="card_com">설명8</p>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

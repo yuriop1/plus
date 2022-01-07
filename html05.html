@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 관련 요소</title>
+</head>
+<body>
+    <div class="wrap">
+        <h2>이미지 요소</h2>
+        <img src="noimg.jpg" alt="가상 이미지">
+        <img src="http://placehold.it/800x200/c28" alt="임시 이미지">
+        <img src="./img/abc.jpg" alt="블랙핑크 제니" title="내 옛 여자친구 제니">
+        <p>*src:이미지 소스의 경로 및 파일명</p>
+        <p>*alt:이미지 소스의 경로 및 파일명이 맞지 않거나 표시할 수 없는 경우의 대체 텍스트</p>
+        <p>img 요소는 크기지정이 가능한 인라인 요소</p>
+    </div>
+    <div class="wrap">
+        <h2>오디오 요소</h2>
+        <audio autoplay muted>
+            <source type="audio/mp3" src="blackpink1.mp3" />
+            <source type="audio/ogg" src="blackpink1.ogg" />
+            <source type="audio/wav" src="blackpink1.wav" />
+        </audio>
+        <p>*src:오디오 소스의 경로 및 파일명</p>
+        <p>브라우저에서 실행 가능한 오디오 형식 : mp3, ogg, wav</p>
+        <p>autoplay : 자동실행</p>
+        <p>loop : 반복실행</p>
+        <p>muted : 묵음</p>
+        <p>controls : 제어패널 보이기</p>
+    </div>
+    <div class="wrap">
+        <h2>비디오 요소</h2>
+        <video poster="blackpink1.jpg" autoplay muted loop controls>
+            <source type="video/mp4" src="blackpink1.mp4">
+            <source type="video/ogg" src="blackpink1.ogv">
+            <source type="video/webm" src="blackpink1.webm">
+        </video>
+        <p>브라우저에서 실행 가능한 비디오 형식 : mp4, ogv, webm</p>
+        <p>*src:비디오 소스의 경로 및 파일명</p>
+        <p>autoplay : 자동실행</p>
+        <p>loop : 반복실행</p>
+        <p>muted : 묵음</p>
+        <p>poster : 대기화면 이미지</p>
+        <p>controls : 제어패널 보이기</p>
+    </div>
+    <div class="wrap">
+        <h2>인프레임 요소</h2>
+        <iframe src="html04.html" frameborder="0" width="1000" height="500"></iframe>
+        <p>*src:인프레임 문서의 경로 및 파일명</p>
+    </div>
+    <div class="wrap">
+        <h2>유튜브와 같은 인프레임 요소</h2>
+        <iframe width="700" height="394" src="https://www.youtube.com/embed/Amq-qlqbjYA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="wrap">
+        옛날 방식인 embed, object 도 사용이 가능하나 웹 자원의 절약을 위해 잘 활용하지 않는다.
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body, html { width: 100px; overflow: hidden; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+        .wrap { clear:both; width: 100%; }
+        .page { clear:both; width: 100vw; height: 100vh;
+                background-position: center center; background-size: cover; background-repeat: no-repeat; }
+        #page1 { background-image: url("./img/main_img1.png"); }   
+        #page2 { background-image: url("./img/main_img2.png"); }
+        #page3 { background-image: url("./img/main_img3.png"); }
+        #page4 { background-image: url("./img/main_img4.png"); }     
+        .page:nth-child(2n) { background-attachment: fixed; }
+        .page_wrap { width:1000px; margin: 0 auto; }
+        .page_tit { color: #fff; padding-top: 2em; }
+
+        .video_wrap {  }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <section class="page" id="page1">
+            <div class="video_wrap">
+               <video loop="loop" muted="muted" autoplay class="vdo" id="vdo1">
+                    <source src="./mv/Shot on Nikon Z9｜ 8K HDR.mp4" type="video/mp4">
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit">페이지2</h2>
+                <artcle class="page_con">
+
+                </artcle>
+            </div>
+        </section>
+        <section class="page" id="page3">
+            <div class="page_wrap">
+                <h2 class="page_tit">페이지3</h2>
+                <artcle class="page_con">
+
+                </artcle>
+            </div>
+        </section>
+        <section class="page" id="page4">
+            <div class="page_wrap">
+                <h2 class="page_tit">페이지4</h2>
+                <artcle class="page_con">
+
+                </artcle>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

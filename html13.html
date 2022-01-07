@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=devixe-width, initial-scale=1.0">
+    <title>기타 CSS 속성1 - 리트스 스타일</title>
+    <style>
+         ul { list-style: none; }
+        .item1 { list-style: disc; }
+        .item2 { list-style: circle; }
+        .item3 { list-style: square; }
+        .item4 { list-style: symbols(cyclic "★" "*" "@") } /*내가 지정한걸로 순환되게*/
+        .item5 { list-style: upper-alpha; }
+        .item6 { list-style: lower-alpha; }
+        .item7 { list-style: upper-latin; }
+        .item8 { list-style: lower-latin; }
+        .item9 { list-style: upper-roman; }
+        .item10 { list-style: lower-roman; }
+        .item11 { list-style: upper-greek; }
+        .item12 { list-style: lower-greek; }
+        .item13 { list-style: decimal; } /* 십진수 숫자로 나오게 */
+        .item14 { list-style: decimal-leading-zero; } /* 숫자 앞에 0 붙이기 */
+        .item15 { list-style: georgian; }
+        .item16 { list-style: hebrew; } /* 히브리언어 */
+        .item17 { list-style: hiragana; }
+        .item18 { list-style: katakana; }
+        .item19 { list-style: hiragana-iroha; }
+        .item20 { list-style: katakana-iroha; }
+        .item21 { list-style: url("./img/check.png"); }
+        .item22 { list-style: url("./img/number1.png"); }
+        .item23 { list-style: url("./img/bat.png"); }
+        .item24 { list-style: url("./img/heart.png"); }
+      </style>
+
+</head>
+<body>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - disc</h3>
+        <ul class="item1">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - circle</h3>
+        <ul class="item2">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 -square</h3>
+        <ul class="item3">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 -symblos</h3>
+        <ul class="item4">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - upper-alhpa</h3>
+        <ul class="item5">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - lower-alpha</h3>
+        <ul class="item6">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - upper-latin</h3>
+        <ul class="item7">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - lower-latin </h3>
+        <ul class="item8">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - upper-roman</h3>
+        <ul class="item9">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - lower-roman</h3>
+        <ul class="item10">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - upper-greek</h3>
+        <ul class="item11">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - lower-greek</h3>
+        <ul class="item12">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - decimal</h3>
+        <ul class="item13">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - decimal-leading-zero</h3>
+        <ul class="item14">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - georgian</h3>
+        <ul class="item15">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - hebrew</h3>
+        <ul class="item16">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - hiragana</h3>
+        <ul class="item17">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - katakana</h3>
+        <ul class="item18">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - hiragana-iroha</h3>
+        <ul class="item19">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - katakana-iroha</h3>
+        <ul class="item20">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - url("./img/check.png")</h3>
+        <ul class="item21">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - url("./img/number1.png")</h3>
+        <ul class="item22">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - url("./img/bat.png")</h3>
+        <ul class="item23">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+    <din class="wrap">
+        <h3 class="tit">목록 모양 - "./img/heart.png"</h3>
+        <ul class="item24">
+            <li><span>목록내용1</span></li>
+            <li><span>목록내용2</span></li>
+            <li><span>목록내용3</span></li>
+            <li><span>목록내용4</span></li>
+        </ul>
+    </din>
+</body>
+</html>

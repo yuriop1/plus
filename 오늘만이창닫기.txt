@@ -1,0 +1,134 @@
+<!-- head 태그 닫기 전에 스타일 부분 수정 -->
+<style>
+    /* .pop_wrap { width:100vw; height:100vh; 
+    background:rgba(0,0,0,0.8); position:fixed; z-index: 99999;
+    left: 0; top: 0; display:none; }  */
+    .pop_wrap { width:100vw; height:100vh; 
+    background:rgba(0,0,0,0.8); position:fixed; z-index: 99999;
+    left: 0; top: 0;  } 
+    /* #ck_item1:checked ~ .pop_wrap { display:block; }  */
+    #ck_item1 { display:none; }
+    .pop { clear:both; width: 600px; height: 460px; 
+    margin:100px auto; position:relative; }
+    .pop_tit_box { clear:both; height: 42px; 
+    background-color: deepskyblue; }
+    .pop_tit { color:#fff; text-indent:30px; 
+    font-size:20px; line-height: 42px; }
+    .close_btn { display:block; width: 40px; height: 40px; line-height: 40px; 
+    text-align:center; color:#fff; position:absolute; right:0; top:0; 
+    border:1px solid #f1f1f1; cursor:pointer; }
+    .pop_con_box { clear:both; background-color:#fff; 
+    padding-top:20px; padding-bottom: 20px; }
+    .pop_img { display:block; margin:30px auto; }
+    .pop_com { width: 500px; padding: 20px 0px; margin: 0 auto; }
+    .inner_btn { display:block; width:90px; margin:10px auto; 
+    background-color: #333; color:#fff; text-align:center; 
+line-height: 36px; cursor:pointer; }
+</style>
+
+<!-- 팝업창 태그 부분 : body 태그 닫기 전에 넣기 -->
+    <div class="pop_wrap" id="popup">
+        <section class="pop">
+            <div class="pop_tit_box">
+                <h3 class="pop_tit">2021년 크리스마스 이벤트</h3>
+                <!-- <label for="ck_item1" class="close_btn">X</label> -->
+                <button type="button" onclick="PopupHide();" class="close_btn">X</button>
+            </div>
+            <div class="pop_con_box">
+                <img src="http://placehold.it/500x240/333" alt="팝업이미지" class="pop_img">
+                <p class="pop_com">여기는 팝업 내용입니다.</p>
+                <!-- <label for="ck_item1" class="inner_btn">닫기</label> -->
+                <button type="button" onclick="PopupHide();" class="inner_btn">닫기</button>
+                <a href="#" onclick="todaycloseWin()">오늘하루동안 열지않기</a>
+            </div>
+        </section>
+    </div>
+
+<!-- 팝업창 태그 하단 부에 스크립트 부분 넣기 -->
+    <script>
+        function setCookie(name, value, expirehours) {
+            var todayDate = new Date();
+            todayDate.setHours(todayDate.getHours() + expirehours);
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+        }
+    
+        function todaycloseWin() {
+            setCookie("ncookie", "done", 24);
+            document.getElementById('popup').style.display = "none";
+            PopupBgDisplay();
+        }
+    
+        $(document).ready(function () {
+            function textSplit(target) {
+                var input = "";
+                var txt = "";
+                var text = $(target).text();
+                for (i = 0; i <= text.length - 1; i++) {
+                    if (text.substr(i, 1) == " ") {
+                        input = " "
+                        txt += "<span>" + input + "</span>";
+                    } else if (text.substr(i, 1) == "|") {
+                        input = "<div></div>";
+                        txt += input;
+                    } else if (text.substr(i, 1) == "/" && opts.ignored.indexOf("/") == -1) {
+                        input = "<br>";
+                        txt += input;
+                    } else {
+                        input = text.substr(i, 1);
+                        txt += "<span>" + input + "</span>";
+                    }
+                }
+                $(target).html(txt);
+            }
+            textSplit('.textSplit');
+            $('.textSplit span').each(function (e) {
+                $(this)
+                    .delay(getRandomIntInclusive(500, 2200))
+                    .animate({
+                        'opacity': '1'
+                    }, 1500)
+            });
+            textSplit('.textSplit2');
+            $('.textSplit2 span').each(function (e) {
+                $(this)
+                    .delay(getRandomIntInclusive(500, 2200))
+                    .animate({
+                        'opacity': '1'
+                    }, 1500)
+            });
+            textSplit('.textSplit3');
+            $('.textSplit3 span').each(function (e) {
+                $(this)
+                    .delay(getRandomIntInclusive(500, 2200))
+                    .animate({
+                        'opacity': '1'
+                    }, 1500)
+            });
+    
+            function getRandomIntInclusive(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        });
+    
+        cookiedata = document.cookie;
+        if (cookiedata.indexOf("ncookie=done") < 0) {
+            document.getElementById('popup').style.visibility = "visible";
+                $("body").css( "overflow", "hidden" );
+        } else {
+            document.getElementById('popup').style.display = "none";
+            $(".popupbg").hide();
+            $("body").css( "overflow", "auto" );
+        }
+    
+        function PopupHide() { //팝업창 지우기
+            $('#popup').hide();
+            PopupBgDisplay();
+        }
+    
+        function PopupBgDisplay() {
+            if ($("#popup").css("display") == "none") {
+                $(".popupbg").hide();
+                $("body").css( "overflow", "auto" );
+            }
+        }
+    </script>

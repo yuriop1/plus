@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타포 데이터 -->
+
+    <!-- 파비콘 설정 -->
+
+    <!-- 오픈 그래프 -->
+
+    <!-- 필요한 구성요소 및 플러그인 가져오기 -->
+
+    <title>서브 페이지</title>
+    <!--여기부터 -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script> 
+    //좌표 값을 바꿔서 입력 37.66002126408024, 126.77100244884178
+    function initialize() {
+    var myLatlng = new google.maps.LatLng(37.66002126408024, 126.77100244884178);
+    var mapOptions = {
+        zoom: 17,           //지도 확대 배율
+        center: myLatlng
+    }
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: '더조은컴퓨터학원'	  //레이블을 바꿔서 입력
+    });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <!-- 여기까지를 head태그 닫기 전에 복사해서 붙여넣기 -->
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .content { clear:both; width: 100%; }
+    .breadcrumb { clear:both; width: 1000px; height: 80px; background-color:#fff; 
+    margin: 0 auto; }
+    .tit { float:left; font-size:24px; line-height:80px; }
+    .bread { float:right; line-height: 80px;  }    
+    .bread a, .bread span, .bread select, .bread .loc_area { display:block; line-height: 80px; float:left; 
+    margin-left:10px; font-size:14px; }
+    .bread a { color:gold; }
+    .bread span:last-child { color:#333; }
+
+    .con { clear:both; width: 100%; border-top:2px solid #f1f1f1; }
+    .sidebar { width: 200px; min-height:100vh; float:left;  }
+    .lnb { clear:both; }
+    .lnb li { line-height:50px; background-color: #333; }
+    .lnb li a { padding-left: 30px; color:#fff; font-size:14px; }
+    .lnb li a.cur { color:gold; font-size:16px; font-weight:bold; }
+    .con_data { float:right; width:calc(100% - 202px); border-left:2px solid #f1f1f1; }
+    .vs { clear:both; width:900px; margin: 0 auto; }
+    .vs img { display:block; width: 100%; height:auto; }
+    .map_area { width: 600px; height: 400px; clear:both; margin:20px auto; position:relative; }    
+    .ft { clear:both; height: 120px; background-color: #333; }
+    .ft_wrap { width: 1000px; margin: 0 auto; padding-top:20px; padding-bottom:20px; color:#fff; }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body onload="initialize()"><!-- body 태그에 onload이벤트 등록 -->
+    <div class="wrap">
+        <header class="hd">
+            <div class="hd_wrap">
+                <nav class="tnb">
+                    <ul class="left">
+                        <li><a href="">왼쪽1</a></li>
+                        <li><a href="">왼쪽2</a></li>
+                        <li><a href="">왼쪽3</a></li>
+                    </ul>
+                    <a href="" class="logo">
+                        <img src="./img/logo.jpg" alt="앰블럼이미지">
+                    </a>
+                    <ul class="right">
+                        <li><a href="">오른1</a></li>
+                        <li><a href="">오른2</a></li>
+                        <li><a href="">오른3</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hd_wrap">
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="" class="dp1">메인메뉴1</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴11</a></li>
+                                <li><a href="">서브메뉴12</a></li>
+                                <li><a href="">서브메뉴13</a></li>
+                                <li><a href="">서브메뉴14</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">메인메뉴2</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴21</a></li>
+                                <li><a href="">서브메뉴22</a></li>
+                                <li><a href="">서브메뉴23</a></li>
+                                <li><a href="">서브메뉴24</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">메인메뉴3</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴31</a></li>
+                                <li><a href="">서브메뉴32</a></li>
+                                <li><a href="">서브메뉴33</a></li>
+                                <li><a href="">서브메뉴34</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">메인메뉴4</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴41</a></li>
+                                <li><a href="">서브메뉴42</a></li>
+                                <li><a href="">서브메뉴43</a></li>
+                                <li><a href="">서브메뉴44</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">메인메뉴5</a>
+                            <ul class="sub">
+                                <li><a href="">서브메뉴51</a></li>
+                                <li><a href="">서브메뉴52</a></li>
+                                <li><a href="">서브메뉴53</a></li>
+                                <li><a href="">서브메뉴54</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content">
+            <div class="breadcrumb">
+                <h2 class="tit">오시는 길</h2>
+                <div class="bread">
+                    <a href="">회사소개</a> <span>&gt;</span> 
+                    <!-- <span>오시는 길</span> -->
+                    <!-- <select name="loc" id="loc">
+                        <option value="sub02.html">회사연혁</option>
+                        <option value="sub03.html">인사말</option>
+                        <option value="sub04.html">회사조직</option>
+                        <option value="" selected>오시는길</option>
+                    </select> -->
+                    <div class="loc_area">
+                        <input list="locurl" name="loc" id="loc">
+                        <datalist id="locurl">
+                            <option value="">오시는길</option>
+                            <option value="sub02.html">회사연혁</option>
+                            <option value="sub03.html">인사말</option>
+                            <option value="sub04.html">회사조직</option>
+                        </datalist>
+                    </div>
+                </div>
+                <script>
+                // document.getElementById("loc").addEventListener("change", function(){
+                //     if(this.value != ""){
+                //         location.href=this.value;
+                //     }
+                // });    
+                </script>
+                <script>
+                $(function(){
+                    $("#loc").change(function(){
+                        if(this.value != ""){
+                            location.href=this.value;
+                        }
+                    });
+                });
+                </script>  
+            </div>
+            <section class="con">
+                <aside class="sidebar">
+                    <nav class="lnb">
+                        <ul>
+                            <li><a href="" class="cur">오시는 길</a></li>
+                            <li><a href="sub02.html">회사연혁</a></li>
+                            <li><a href="sub03.html">인사말</a></li>
+                            <li><a href="sub04.html">회사조직</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <div class="con_data">
+                    <figure class="vs">
+                        <img src="http://placehold.it/1000x240/333" alt="" class="vs_img">
+                    </figure>
+                    <div class="map_area">
+                        <!-- API 지도 삽입 -->
+                        <div id="map_canvas" style="width:600px; height:400px"></div>
+                    </div>    
+            </section>    
+        </div>
+        <footer class="ft">
+            <div class="ft_wrap">여기에 푸터의 내용을 넣습니다.</div>
+        </footer>
+    </div>
+</body>
+</html>
