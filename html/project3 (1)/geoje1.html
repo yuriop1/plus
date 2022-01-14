@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>거제 관광문화</title>
+    <!-- 파비콘 설정 -->
+    <!-- <link rel="shortcut icon" href="./source/favicon.ico"> -->
+    <link rel="shortcut icon" href="./source/geoje.ico">
+    <!-- 메타포 설정 -->
+    <meta name="title" content="거제 관광문화 홈페이지">
+    <meta name="keywords" content="거제관광문화, 거제시청 관광문화, 거제시 여행정보">
+    <meta name="description" content="거제관광문화 홈페이지">
+    <!-- 오픈그래프 설정 -->
+    <meta property="og:title" content="거제 관광문화 홈페이지">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://tour.jeoje.go.kr">
+    <meta property="og:description" content="거제 관광문화, 거제9경, 거제9품, 거제9미">
+    <meta property="og:image" content="./source/site_thumb.jpg" />
+    <!-- 폰트 로딩 -->
+    <link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="fonts.css">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결 -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <script src="slick/slick.js"></script>
+    <style>
+    .vs { clear:both; width: 100%; height: 460px; 
+    background-image:url("./source/sub_bg.gif"); background-position:center center; 
+background-repeat: no-repeat; }
+    .content_wrap { clear:both; width: 1200px; margin: 0 auto; margin-top: -150px; }
+    .sub_tit { height: 144px; line-height: 144px; font-size:22px; background-color: #2e70b4; text-align:center; width: 190px; float:left; color:#fff; }
+    .bread_box { height: 119px; background-color: #fff; width: 980px; float:right; padding-left: 30px; padding-top: 24px; border-bottom:1px solid #999; 
+    position:relative; }
+    .cate_tit { color:#999; font-size:24px; }
+    .bread { padding-top:24px; line-height: 1.6; font-size: 16px; }
+    .bread a, .bread span { color:#999; }
+    .bread span.cur { color:#222; font-weight:600;}
+    .sub_tit_ico_box { position:absolute; right:30px; bottom:18px; }
+    .sub_tit_ico_box li { float:left; margin-left:10px; }
+    .sub_tit_ico_box li a { display:block; color:#fff; }
+    .sub_tit_ico_box li a.ico { width: 34px; height: 34px; background-position:center center; background-repeat: no-repeat; border-radius:18px; border:1px solid #ccc; }
+    .sub_tit_ico_box li a.ico.item1 { background-image: url("./source/ico_sns.gif"); }
+    .sub_tit_ico_box li a.ico.item2 { background-image: url("./source/ico_print.gif"); }
+    .sub_tit_ico_box li a.btn { border-radius:18px; padding: 6px 12px; width:auto; background-color: #999; }
+
+    .leftbar { width:190px; float:left; min-height: 100vh; background-color: #f0f0f0; }
+    .lnb { clear:both; }
+    .lnb li { clear:both; margin: 5px 6px; border:1px solid #aaa; line-height: 52px;  }
+    .lnb li a { color:#222; font-size:14px; padding-left:1em; }
+    .lnb li.act a { color:#0e3257; font-size:18px; font-weight:bold; }
+    .page_box { width:980px; float:right; padding-left: 30px; }
+
+    .page { padding-top:40px; overflow:visible; height:auto; min-height:100vh; }
+    .page_wrap {width: 960px; }
+    .page_tit { padding-bottom: 36px; color:#666; }
+    .sub_pic img { display:block; max-width:940px; height:auto;   }
+    .pic_lst { clear: both; }
+    .pic_lst li { float:left; margin-right: 15px; margin-bottom: 15px; }
+    .pic_lst li img { max-width:460px; }
+    .sub_pic_tit { clear:both; font-size:20px; line-height: 1.6; }
+    .sub_pic_com { clear:both; font-size:14px; line-height: 1.6; padding-bottom: 24px; }
+    .sub_full_tit { clear:both; color:#2e70b4; line-height: 3; font-size:32px; text-align: center; }
+    .sub_con img { display:block; max-width:940px; }
+    .sub_cate_com { clear:both; padding: 14px; font-style: 12px; color:#666; line-height:1.8; 
+    width: 940px; font-weight:300; }
+    .map_area { clear:both; position:relative;     overflow: hidden;
+    width: 940px; }
+    .map_tit, .sub_cate_tit { clear:both; padding-left: 32px; line-height: 2.4; font-size:20px; 
+    background-repeat: no-repeat; background-position:left center; 
+    background-image: url("./source/bull_h5.gif"); color:#134980; }
+
+    #page2, #page3 { padding-top:130px; margin-top: 40px; border-top:5px solid deepskyblue; }
+    .onepage { clear:both; width: 100%; padding-top: 50px; padding-bottom: 50px; }
+    .onepage img { display:block; width: 100%; }
+    .page { display:none; }
+    .page:target { display:block; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <script>
+    $(document).ready(function(){
+        $(".lnb ul li").click(function(){
+            $(".lnb ul li").removeClass("act");
+            $(this).addClass("act");
+        });
+        $(".sub > li").click(function(){
+            $(".lnb ul li").removeClass("act");
+            var t = $(this).index();
+            $(".lnb ul li").eq(t).addClass("act");
+        });
+    });    
+    </script>
+    <header class="hd fix">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./source/logo.png" alt="로고">
+                <h2 class="logo_tit">관광문화</h2>
+            </a>
+            <nav class="tnb">
+                <ul>
+                    <li><a href="join.html">회원가입</a></li>
+                    <li><a href="login.html">로그인</a></li>
+                    <li class="user_name">OOO님</li>
+                    <li><a href="mypage.html">마이페이지</a></li>
+                    <li><a href="">로그아웃</a></li>
+                    <li><a href="guide.html">여행 가이드 신청</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="geoje1.html" class="dp1">한눈에 거제</a>
+                        <ul class="sub">
+                            <li><a href="geoje1.html#page1">거제9미9경9품</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page2">체험관광</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page3">캠핑여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>
+                            </li>
+                            <li><a href="geoje1.html#page4">추천코스</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>                                
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje2.html" class="dp1">거제여행</a>
+                        <ul class="sub">
+                            <li><a href="geoje2.html#page1">해수욕장</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page2">섬여행</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page3">음식</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje2.html#page4">숙박</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje3.html" class="dp1">즐거운 축제</a>
+                        <ul class="sub">
+                            <li><a href="geoje3.html#page1">해맞이 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page2">꽃 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page3">예술제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje3.html#page4">해변 축제</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="geoje4.html" class="dp1">역사/문화</a>
+                        <ul class="sub">
+                            <li><a href="geoje4.html#page1">국가지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page2">도지정문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page3">향토문화재</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                            <li><a href="geoje4.html#page4">거제 인물</a>
+                                <!-- 하위메뉴 -->
+                                <dl class="detail"><dt></dt>
+                                    <dd><a href="">상세메뉴1</a></dd>
+                                    <dd><a href="">상세메뉴2</a></dd>
+                                    <dd><a href="">상세메뉴3</a></dd>
+                                    <dd><a href="">상세메뉴4</a></dd>
+                                </dl>  
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html" class="dp1">커뮤니티</a>
+                        <ul class="sub">
+                            <li><a href="community.html">묻고 답하기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="notice.html">공지사항</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="gallery.html">포토 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="impress.html">이용 후기</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                            <li><a href="certifyingshot.html">인증샷 갤러리</a>
+                                <!-- 하위내용 -->
+                                <div class="detail_con">
+
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content fix">
+        <figure class="vs" id="vs">
+            <!-- 배경 이미지로 채움 -->
+        </figure>
+        <div class="content_wrap">
+            <div class="sub_box">
+                <h2 class="sub_tit">한눈에 거제</h2>
+                <div class="bread_box">
+                    <h3 class="cate_tit">거제여행</h3>
+                    <p class="bread"><a href="" class="home">홈</a> &gt; <a href="">한눈에 거제</a> &gt; <span class="cur">거제9미9경9품</span></p>
+                    <ul class="sub_tit_ico_box">
+                        <li><a href="" class="ico item1"></a></li>
+                        <li><a href="" class="ico item2"></a></li>
+                        <li><a href="" class="btn">정보수정요청</a></li>
+                    </ul>
+                </div>
+            </div>
+            <aside class="leftbar">
+                <nav class="lnb">
+                    <ul>
+                        <li class="act"><a href="#page1">거제9미9경9품</a></li>
+                        <li><a href="#page2">체험관광</a></li>
+                        <li><a href="#page3">캠핑여행</a></li>
+                        <li><a href="#page4">추천코스</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="page_box">
+                <section class="onepage">
+                    <h2 class=""></h2>
+                    <img src="./source/vs1.jpg" alt="거제여행"><br>
+                    <img src="./source/vs2.jpg" alt="거제여행">
+                </section>
+                <section class="page" id="page1">
+                    <h2 class="page_tit">거제 9경 9미 9품</h2>
+                    <div class="page_wrap">
+                        <figure class="sub_pic">
+                            <img src="./source/sub1_img_gt1.jpg" alt="외도보타니아 전경">
+                            <h3 class="sub_pic_tit">외도보타니아</h3>
+                            <p class="sub_pic_com">정녕 여기가 대한민국이란 말인가? 지중해를 옮겨와, 어디서 찍든 화보급!</p>
+                        </figure>
+                        <h3 class="sub_full_tit">외도 보타니아(밖섬, 조라도)</h3>
+                        <article class="sub_con">
+                            <h3 class="sub_cate_tit">위치 : 거제시 일운면 외도길 17</h3>
+                            <img src="./source/sub1_img_gt2.jpg" alt="하늘에서 본 보타니아">
+                            <p class="sub_cate_com">
+                                거제도와 4㎞ 정도 떨어져 있는 외도는 지리적 여건에도 불구하고 물이 풍부하고 기후가 온난하며, 강우량이 많아서 여러 가지 난대 및 열대성 식물이 자라고 있으며, 맑고 푸른 바다에 둘러싸여 거제해금강, 홍도, 대마도 등을 관망할 수 있다.
+                                <br>
+                                1969년부터 소유자 (고)이창호, 최호숙 부부가 145,002㎡의 부지에 희귀 아열대 식물 740여 종과 리스하우스 등 7동의 편의시설을 설치하였으며, 1년 내내 꽃이 지지 않는 곳으로, 지중해의 어느 한 해변을 옮겨 놓은 듯 이국적인 모습의 건물과 조경으로 가꾸어져 있다.
+                                <br>
+                                한려해상국립공원 내 위치한 외도는 동도와 서도로 나뉘어져 있고, 수심이 30~50m, 해발 84m로, 서도에 식물원과 편의시설이 조성되어 있으며, 동도는 자연 상태 그대로 보존되고 있다.
+                                <br>
+                                2002년 3월 KBS 드라마 ‘겨울연가’ 마지막회 촬영지로 알려지면서 국내외 관광객들이 많이 찾는다.
+                                <br>
+                                1995년 4월 25일 ‘외도자연농원’이란 이름으로 개원한 지 2년 만에 연간 백만 명 이상의 관광객이 찾는 관광명소로 자리매김했고, 최근에는 한국관광공사, 네티즌에 의해 한국 최고의 관광지로 선정되기도 했다.
+                            </p>
+                        </article>
+                        <!-- 1. 지도 표시할 영역 확보 -->
+                        <div class="map_area">
+                            <h4 class="map_tit">위치 : 거제시 일운면 외도길 17</h4>
+                            <div id="daumRoughmapContainer1555398604259" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100% !important;"></div>
+                        </div>
+                        <!-- <script src="https://t1.daumcdn.net/kakaomapweb/place/jscss/roughmap/c6dc0bd8/roughmapLander.js"></script> -->
+                        <!-- 2. 지도 API 연결-->
+                        <script class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                        <!-- 3. 실행 스크립트 -->
+                        <script>
+                            new daum.roughmap.Lander({
+                                "timestamp" : "1555398604259",
+                                "key" : "t5by",
+                                "mapWidth" : "",
+                                "mapHeight" : "360"
+                            }).render();
+                        </script>
+                    </div>
+                </section>
+                <section class="page" id="page2">
+                    <h2 class="page_tit">체험관광</h2>
+                    <div class="page_wrap">
+                        <figure class="sub_pic">
+                            <img src="./source/sub1_2_1.jpg" alt="요트투어">
+                            <h3 class="sub_pic_tit">요트투어</h3>
+                            <p class="sub_pic_com">대명 리조트 | 거제 | 마리나베이 | 요트투어</p>
+                        </figure>
+                        <h3 class="sub_full_tit">소노캄 거제 요트 투어</h3>
+                        <article class="sub_con">
+                            <h3 class="sub_cate_tit">위치 : 경남 거제시 일운면 거제대로 2660(일운면 소동리 115) 소노캄 거제</h3>
+                            <img src="./source/sub1_2_2.jpg" alt="요트사진1" style="float:left;">
+                            <img src="./source/sub1_2_3.jpg" alt="요트사진2" style="float:right">
+                            <p class="sub_cate_com" style="clear:both;">
+                                소노캄 거제는 전체 객실이 한려해상국립공원을 바라보는 오션뷰(Ocean View), 동시수용 3.500명의 대단위 워터파크 오션베이(Ocean Bay), 700석 규모의 대연회장과 각종 부대시설을 갖추고 있습니다. 국제적인 마리나 시설을 추가하여 해양관광도시 거제의 명실상부한 최고의 해양리조트로 자리 매김 할 예정입니다.
+                            </p>
+                        </article>
+                </section>
+                <section class="page" id="page3">
+                    <h2 class="page_tit">캠핑 여행</h2>
+                    <div class="page_wrap">
+                        <figure class="sub_pic">
+                            <ul class="pic_lst">
+                                <li><img src="./source/sub1_3_1.jpg" alt="학동자동차야영장"></li>
+                                <li><img src="./source/sub1_3_2.jpg" alt="학동자동차야영장"></li>
+                                <li><img src="./source/sub1_3_3.jpg" alt="학동자동차야영장"></li>
+                                <li><img src="./source/sub1_3_4.jpg" alt="야영장조리시설"></li>
+                            </ul>
+                            <h3 class="sub_pic_tit">학동자동차야영장</h3>
+                            <p class="sub_pic_com">흑진주 같은 몽돌이 '자글자글' 아름다운 소리를 내는 학동 해변 옆에 자리한 학동자동차야영장은  카라반, 샤워장, 식기세척실, 야외공연장 등 안전하고 쾌적한 시설을 갖추고 있습니다. 총 99동 규모(6인용 카라반 4개소, 카라반 겸용 영지 11개소, 자동차 야영 영지 84개소)로 연중무휴 운영되는 한려해상국립공원 학동자동차야영장에서 편안하고 즐거운 추억 남기세요.</p>
+                        </figure>
+                        <article class="sub_con">
+                            <h3 class="sub_cate_tit">위치 : 경상남도 거제시 동부면 학동리 276-5</h3>
+                            <img src="./source/sub1_3_5.jpg" alt="위치">
+                            <p class="sub_cate_com" style="clear:both;">
+                                위치: 경상남도 거제시 거제대로 981<br>
+                                면적: 28,170㎡<br>
+                                오토캠핑장 : 97동<br>
+                                규모: 자동차 야영 영지 84동, 카라반 겸용 영지 11동, <br>카라반 4대<br>
+                                부대시설: 샤워장 2개소, 화장실 2개소, 식기세척실 3개소, 다목적 운동장, 야외무대<br>
+                                이용시간: 15:00~익일 12:00<br>
+                                이용요금(성수기 : 5.1. ~ 11.30. 비수기: 12.1. ~ 4.30.)<br>
+                            </p>
+                        </article>
+                </section>
+                <section class="page" id="page4">
+                    <div class="page_wrap">
+                        <h2 class="page_tit">추천 코스</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit">당일 코스</h3>
+                                <ul class="course_lst">
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                </ul>
+                            </figure>
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit">2일 코스</h3>
+                                <ul class="course_lst">
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                    <li>
+                                        <img src="" alt="">
+                                        <h6 class="course_tit">거제대교</h6>
+                                    </li>
+                                </ul>
+                            </figure>
+                            <article class="sub_con">
+                                <h3 class="sub_cate_tit">위치 : 경상남도 거제시 동부면 학동리 276-5</h3>
+                                <img src="./source/sub1_3_5.jpg" alt="위치">
+                                <p class="sub_cate_com" style="clear:both;">
+                                    위치: 경상남도 거제시 거제대로 981<br>
+                                    면적: 28,170㎡<br>
+                                    오토캠핑장 : 97동<br>
+                                    규모: 자동차 야영 영지 84동, 카라반 겸용 영지 11동, <br>카라반 4대<br>
+                                    부대시설: 샤워장 2개소, 화장실 2개소, 식기세척실 3개소, 다목적 운동장, 야외무대<br>
+                                    이용시간: 15:00~익일 12:00<br>
+                                    이용요금(성수기 : 5.1. ~ 11.30. 비수기: 12.1. ~ 4.30.)<br>
+                                </p>
+                            </article>
+                    </div>
+                </section>
+            </div>
+        </div>    
+    </div>
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">관과사업소</a></li>
+                <li><a href="">면/동</a></li>
+                <li><a href="">시/군청</a></li>
+                <li><a href="">패밀리사이트</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <nav class="linkbar">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이메일무단수집거부</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">홈페이지 의견접수</a></li>
+                    <li><a href="">뷰어다운로드</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p class="addr">(53257) 거제시 계룡로 125 (고현동) / 대표전화 : 055)639-3000</p>
+                <p class="copy">Copyright ⓒ 2019 GEOJE CITY. All Rights Reserved.</p>
+            </div>
+            <div class="wa"><img src="./source/wacc-logo.png" alt="WA인증로고"></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

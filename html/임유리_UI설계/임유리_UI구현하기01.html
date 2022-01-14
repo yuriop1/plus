@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여수관광문화</title>
+    <!-- 파비콘-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/popcon.png">
+    <!-- 메타포-->
+    <meta name="title" content="여수 관광문화 홈페이지">
+    <meta name="description" content="전라남도 여수시 관광안내, 관광명소, 문화유적, 축제문화행사, 숙박 등 정보 제공">
+    <meta name="keywords" content="여수관광안내, 돌산갓김치, 게장백반, 서대회, 여수한정식, 갯장어회, 갯장어 샤브샤브, 굴구이, 
+    장어구이, 갈치조림, 새조개샤브샤브, 전어회, 전어구이,오동도, 거문도,백도,향일암, 금오도비렁길, 비렁길, 여수세계박람회장, 진남관, 
+    충무공, 이순신, 여수밤바다, 산단야경, 영취산, 영취산진달래, 진달래, 해상케이블카, 이순신대교, 거북선, 거북선축제, 국제청소년축제, 
+    국제범선축제, 여자만, 여자만갯벌, 진달래체험, 갯벌노을체험, 향일암일출">
+    <!-- 오픈그래프-->
+    <meta property="og:url" content="http://www.yeosu.go.kr/tour/tour">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:site_name" content="여수관광문화">
+    <meta property="og:article:author" content="https://www.facebook.com/goystour">
+    <meta property="og:article:publisher" content="https://www.facebook.com/goystour">
+    <meta property="og:article:thumbnailUrl" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:article:author" content="생명의 푸르름 가득한, 여수관광문화">
+    <meta property="og:article:author:url" content="http://www.yeosu.go.kr/tour/">
+    <!-- 폰트로딩-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung:400" rel="stylesheet">
+    <!-- 필수 API 로딩 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 외부 스타일 연결-->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
+
+   <style>
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+
+    /*font-family: 'Black Han Sans', sans-serif;*/
+    /*font-family: 'Song Myung', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+    </style>
+    <style>
+    #item1 { background-image: url("./img/event1.jpg");}
+    #item2 { background-image: url("./img/event2.jpg");}
+    #item3 { background-image: url("./img/event3.jsg");}
+    #item4 { background-image: url("./img/event4.jpg");}
+    #item5 { background-image: url("./img/ar1.jpg");}
+
+    .content { clear:both; width: 100%; min-height:2000px; }   
+    .vs { clear:both; width: 100%; position: relative; overflow-x:hidden; } 
+    .vs .img_box { width: 400%; transition-duration:0.8s;}
+    .vs .img_box li { width: 25%; float:left; position:relative; } 
+    .vs .img_box li a { display: block; position: relative; } 
+    .vs .img_box li .vs_img { display:block; width: 100%; height:760px; margin: 0 auto; }
+    .vs .img_box .tit_box { position:absolute; top: 28px; left: 0; z-index:10; 
+    padding: 60px 280px; color: #fff; text-align: center; }
+    .vs .img_box .vs_tit { font-size: 100px; font-family: 'Song Myung';
+    font-weight: 200; text-shadow: 2px 2px 2px #333; }
+    .vs .img_box .vs_com {font-size: 18px; text-shadow: -1px -1px 2px rgb(44, 44, 44);  }
+   .donbag {display: block; clear: both; position: absolute; width: 300px; top: 600px; left: 50%; margin-left: 50px; margin-left: -160px; z-index: 100;} 
+
+    #page1 { padding-top: 100px; position:relative; background-color: rgb(248, 186, 186); height: 800px; background-image: url(/img/dong_pn.png); }
+    .pg_tit1 { font-family: 'Song Myung'; font-size: 50px; padding-bottom: 15px;  }
+
+    #page2 { clear: both; width: 100%; height: 50vh; padding-top: 30px; background-color: rgb(127, 196, 136); background-image: url(img/back_1.png); }
+    .more { display:block; background-image: url(./img/yuu.png); text-indent:-10000px; width: 300px; 
+        background-repeat: no-repeat; background-position:center center; float: right; z-index:10; padding-top: 30px;}
+    .youtube { clear: both;  width: 100%; padding-bottom: 50px; }
+    .youtube2 { clear: both; float: left;}
+    .youtube li { float: left; }
+    .youtube li .v { width: 350px; height: 300px; padding: 25px;}
+    .youtube2 .t { padding-left: 72px; padding-right: 101px; float: left; font-size: 16px;}
+    .icon_lst li a {clear: both;}
+    .new_tit { font-family: 'Song Myung'; font-size: 50px; }
+    
+    .map { margin: 0 auto; width: 100%; }
+    .map_img {float: left;}
+    .map_com {float: right; background-color: rgb(255,239,115); padding: 20px;  }
+
+    #page3 { background-color: rgb(115,193,225); clear: both; width: 100%; height: 100vh; background-image: url(img/back_2.png);}
+    .pg_tit { font-family: 'Song Myung'; font-size: 50px; margin: 20px auto; padding-left: 500px; padding-top: 30px;}
+    .map_img { display:block; width: 100%; }
+    .new_lst { width: 100%; }
+    .col6 { float: left; }
+    
+    #item8 { background-color: rgb(109 203 223);}
+    #item9 { background-image: url("./img/tree.jpg");}
+    #item10 { background-image: url("./img/sun.jpg");}
+    #item11 { background-color: #fff; }
+
+    .ptit_box { width: 440px; height: 440px; background-color:#05a4a6; color:#fff; 
+    text-align: center; padding-top: 330px; box-sizing: border-box; position:absolute; left: 50%; margin-left: -222px; border-radius:50%; margin-top: -492px;   }
+    .pg_tit3 {  font-family: 'Song Myung'; font-size:55px; font-weight:600; margin-top: 210px; color: black;}
+    .pg_tit4 {  font-family: 'Song Myung'; font-size:24px; font-weight:300; color: rgb(43, 43, 43); }
+    .ra0 { display:none; }
+    #page4 .ptit_box { background-color: #00436f;}
+    #item6 { width: 400%;  transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item6 li { width: 25%; float:left; }
+    .thumb_vs_wrap { position:absolute; right:0; bottom: 0; overflow:hidden; width: 300px; height: 277px; }
+    #item7 { width: 400%; margin-left: 0; transition-delay:0.05s; 
+    transition-duration:0.6s; }
+    #item7 li { width: 25%; float:left; }
+    #item7 li label { display:block; width: 18px; height: 36px; 
+    background-repeat: no-repeat; background-position:center center; position:absolute; bottom:100px; text-indent:-10000px; cursor:pointer; }
+    #item7 li label.lb1 { left:24px; background-image: url("./img/le.png"); }
+    #item7 li label.lb2 { right:24px; background-image: url("./img/ri.png"); }
+    #item7 .tbox { width: 140px; height: 140px; clear:both;overflow:hidden;   margin:20px auto; top: 50px;  border-radius:75px; border:3px solid #fff; }
+    .thumb_vs_wrap #item7 li label { display:none; }
+    .ra { display:none; }
+    #ra5:checked ~ .thumb_vs_wrap #item7 .item1 label { display:block; }
+    #ra6:checked ~ .thumb_vs_wrap #item7 .item2 label { display:block; }
+    #ra7:checked ~ .thumb_vs_wrap #item7 .item3 label { display:block; }
+    #ra8:checked ~ .thumb_vs_wrap #item7 .item4 label { display:block; }
+    #ra5:checked ~ .thumb_vs_wrap #item7 { margin-left: 0; }
+    #ra6:checked ~ .thumb_vs_wrap #item7 { margin-left:-100%; }
+    #ra7:checked ~ .thumb_vs_wrap #item7 { margin-left:-200%; }
+    #ra8:checked ~ .thumb_vs_wrap #item7 { margin-left:-300%; }
+    #ra5:checked ~ #item6 { margin-left: 0; }
+    #ra6:checked ~ #item6 { margin-left:-100%; }
+    #ra7:checked ~ #item6 { margin-left:-200%; }
+    #ra8:checked ~ #item6 { margin-left:-300%; }
+
+    .col_vs_tit_box { position:absolute; top: 0; left: 0; }
+    .col_vs_tit { clear:both; width: 100%;  padding-top: 50px;  }
+    .col_vs_tit span { display:block; font-family: 'TTTogether';  font-weight:400; padding-left:120px; font-size:48px;}
+    .col_vs_tit .row1 { color:#00436f; font-family: 'Song Myung'; font-weight: 600; text-shadow: 0px 0px 3px rgb(255, 255, 255)}
+    .col_vs_tit .row2 { color:#007bbf; font-family: 'Song Myung'; font-weight: 600; text-shadow: 0px 0px 3px rgb(255, 255, 255);}
+    .col_vs_com { padding-left: 120px; padding-top: 5px; font-size: 25px; font-family: 'Song Myung'; font-weight: 500; 
+    text-shadow: 0px 0px 3px rgb(255, 255, 255);}
+    #item8 .col_tit, #item9 .col_tit { line-height: 1.6; } 
+    #item9 .col_com img { border:2px solid #fff; border-radius:100px; margin-left: 48px;}
+    #item8 .col_com img { margin-top: -38px; margin-left: 20px; }
+    #page2 .col_com { clear:both; float:none; width:auto; margin:0px auto; }
+    .col_tit.black_txt { color:#000; line-height: 1.6; padding-top: 12px; }
+    .col_tit.black_txt:after { background-color: #00b2a3; }
+    #item11 { position:relative; }
+    #item11 .link_box { position:absolute; bottom: 0; left: 0; width: 100%; }
+    #item11 .link_box li { display:block; width: 50%; float:left; }
+    #item11 .link_box li a { display:block; line-height: 65px; height: 65px; color:#222; background-color: #00b2a3; 
+        padding-left:64px; font-size:14px; border-top:1px solid #fff; border-left:1px solid #fff; 
+        background-repeat: no-repeat; background-position:18px center; }
+    #item11 .link_box li:nth-child(2n+1) a { border-left:0px; }
+    #item11 .link_box li.item1 a { background-image: url("./source/pg2_icon1.png"); }
+    #item11 .link_box li.item2 a { background-image: url("./source/pg2_icon2.png"); }
+    #item11 .link_box li.item3 a { background-image: url("./source/pg2_icon3.png"); }
+    #item11 .link_box li.item4 a { background-image: url("./source/pg2_icon4.png"); }
+
+
+    #page3 .ptit_box { background-color: #007bbf;}
+     .col_tit { color:#fff; text-align: center; line-height:3; width: 100%; clear:both; margin-top: 28px; }
+    .col_tit:after { content:""; display:block; width: 40px; height: 2px; 
+    background-color: #fff; clear:both; margin:0px auto; margin-bottom: 20px; }
+    .col_com { color:#fff; padding: 20px 60px; font-size:20px; text-align: center;}
+    
+    #page4 .col_link { display:block;  clear:both; float:none; width: 38px; height: 38px; 
+    margin: 10px auto; background-image: url("./source/family-arrow.png");
+    border-radius:21px; border:2px solid #fff;  text-indent:-10000px;
+    background-repeat: no-repeat; background-position:center center; 
+    transform: rotate(90deg); }
+
+   .page4top{ margin-top: 200px; }
+    </style>
+</head>    
+<body>
+<div class="wrap">
+    <header class="hd fix">
+        <div class="hd_wrap">
+            <a href="임유리_UI구현하기01.html" class="logo">
+                <img src="/img/logo.png" alt="로고">
+            </a>
+            <nav class="tnb">
+                <ul>        
+                    <li><a href="sub5_1_add.html">글쓰기</a></li>
+                    <li><a href="임유리_UI구현하기03.html">회원가입</a></li>    
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="https://www.badatime.com/41.html?idx=41">물때표</a></li>
+                </ul>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li>
+                        <a href="임유리_UI구현하기02.html" class="dp1">관광명소</a>
+                        <ul class="sub">
+                            <li><a href="임유리_UI구현하기02.html">오동도</a></li>
+                            <li><a href="sub1_2.html">진남관</a></li>
+                            <li><a href="sub1_3.html">거문도백도</a></li>
+                            <li><a href="sub1_4.html">여수해상케이블카</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">문화/축제</a>
+                        <ul class="sub">
+                            <li><a href="">낭만버스킹</a></li>
+                            <li><a href="">여수거북선축제</a></li>
+                            <li><a href="">여수불꽃축제</a></li>
+                            <li><a href="">향일 일출제</a></li>                           
+                        </ul>
+                    </li>
+                    <li> 
+                        <a href="" class="dp1">여수대표음식</a>
+                        <ul class="sub">
+                            <li><a href="">돌산갓김치</a></li>
+                            <li><a href="">게장백반</a></li>
+                            <li><a href="">여수한정식</a></li>
+                            <li><a href="">굴구이</a></li>                              
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dp1">여행/체험</a>
+                        <ul class="sub">
+                            <li><a href="">자전거코스</a></li>
+                            <li><a href="">걷기여행</a></li>                            
+                            <li><a href="">이순신코스</a></li>
+                            <li><a href="">여수낭만버스</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="임유리_UI구현하기04.html" class="dp1">관광안내</a>
+                        <ul class="sub">
+                            <li><a href="임유리_UI구현하기04.html">관광소식</a></li>
+                            <li><a href="">관광웹툰</a></li>
+                            <li><a href="">관광캐릭터</a></li>
+                            <li><a href="">여수여행사</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav> 
+        </div>    
+    </header>
+    <div class="content fix">
+        <figure class="vs">
+            <input type="radio" name="ra" class="ra" id="ra1" checked>
+            <input type="radio" name="ra" class="ra" id="ra2">
+            <input type="radio" name="ra" class="ra" id="ra3">
+            <input type="radio" name="ra" class="ra" id="ra4">
+            <ul class="img_box">  
+                <li>                      
+                    <img src="./img/main_1.jpg" alt="" class="vs_img">
+                    <div class="tit_box">
+                        <h2 class="vs_tit">여수해상케이블카</h2>
+                        <p class="vs_com">전남 여수시 돌산읍 돌산로 3600-1</p>
+                    </div>             
+                </li>
+                <li>
+                    <img src="./img/main_2.jpg"  alt="오동도" class="vs_img">
+                    <div class="tit_box">
+                        <h2 class="vs_tit">오동도</h2>
+                        <p class="vs_com">전남 여수시 수정동 산1-11</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/main_3.jpg" alt="" class="vs_img">
+                    <div class="tit_box">
+                        <h2 class="vs_tit">여자만갯벌노을행사</h2>
+                        <p class="vs_com">전라남도 여수시 종화동 458-7</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/main_4.jpg" alt="" class="vs_img">
+                    <div class="tit_box">
+                        <h2 class="vs_tit">여수밤바다</h2>
+                        <p class="vs_com">전라남도 여수시 종화동 458-7</p>
+                    </div>
+                </li>
+            </ul>
+        </figure>
+        <script src="./ban.js"></script>
+        <img src="/img/fl1.png" alt="" class="donbag">
+        <section class="page fix" id="page1">
+            <div class="page_wrap">
+                <h4 class="pg_tit1">팝업알리미</h4>
+                <ul class="grid">
+                    <li class="col6">
+                        <div class="col6 col_item col277" id="item1"></div>                         
+                        <div class="col6 col_item col277" id="item2"></div>
+                        <div class="col6 col_item col277" id="item3"></div>
+                        <div class="col6 col_item col277" id="item4"></div>
+                    </li>
+                    <li class="col6">
+                        <div class="half_box col_item col554" id="item5"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section  class="page" id="page2">
+            <div class="page_wrap">
+            <a href="https://www.youtube.com/channel/UCsps_8Jb_DAC1pEE49uTbUA" class="more">유튜브 바로가기</a>
+            <h3 class="new_tit">여수관광 홍보동영상</h3>
+                <ul class="youtube">
+                    <li class="video1">
+                        <img src="/img/you1.jpg" alt="" class="v">
+                    </li>
+                    
+                    <li class="video2">
+                        <img src="/img/you2.jpg" alt="" class="v">
+                    </li>
+                    
+                    <li class="video3">
+                        <img src="/img/you3.jpg" alt="" class="v">
+                    </li>
+                </ul>
+                <ul class="youtube2">
+                    <li class="t">
+                        <a href="https://www.youtube.com/watch?v=rJV9Rzxo4BI">2021여수관광 웹드라마 윤슬 통합본</a>
+                    </li>
+                    <li class="t">
+                        <a href="https://www.youtube.com/watch?v=IH7AjBkKjUc&list=PLlSZFS5p9vlIEgR2w51Y2VyOuO_AGZcWv&index=1">
+                        2021여수관광 웹드라마 윤슬 1화</a>
+                    </li>
+                    <li class="t">
+                        <a href="https://www.youtube.com/watch?v=_i-CSOhxS0o">2021여수관광 웹드라마 윤슬 4화</a>
+                    </li>
+                </ul>    
+            </div>
+        </section>
+
+        <section  class="page" id="page3">                   
+            <div class="page_wrap">
+                <h2 class="pg_tit">여수 10경</h2> 
+                <div class="new_lst">
+                    <div class="col6">
+                        <div class="map">
+                           <img src="/img/map.png" alt="여수관광지도" class="map_img" >                                
+                        </div>    
+                    </div>
+                    <div class="col6">
+                        <p class="map_com">1경. 오동도<br>
+                            한폭의 그림처럼 어우러진 자연, 섬 자체가 하나의 동백꽃<br><br>
+                            2경. 거문도/백도<br>
+                            희귀조류와 식물들의 천국, 자연그대로를 간직한 섬<br><br>
+                            3경. 향일암<br>
+                            떠오르는 해와 함께 희망을 염원하며 하늘로! 일주문을 지나 만나는 새로운 세상<br><br>
+                            4경. 금오도 비렁길<br>
+                            작은 기암괴석이 신비로운 섬 금오도와 자연과 어우러진 다양한 비렁길 코스<br><br>
+                            5경. 여수세계박람회장<br>
+                            끝 없이 펼쳐진 바다와 다양한 공연, 이벤트로 하루종일 신나는 여수세계박람회장<br><br>
+                            6경. 진남관<br>
+                            충무공 이순신이 전라좌수영 본영으로 사용한 조선수군 구국 역사의 상징<br><br>
+                            7경. 여수밤바다<br>
+                            낭만과 황홀함이 넘치는 여수 도심 야경 함께 걷고싶은 여수밤바다<br><br>
+                            8경. 영취산 진달래<br>
+                            전국철쭉제의 으뜸! 온 산을 붉게 물들인 영취산에서 피는 진달래<br><br>
+                            9경. 여수해상케이블카<br>
+                            바다위를 지나 섬과 육지를 연결하는 국내최초의 해상케이블카<br><br>
+                            10경. 여수이순신대교<br>
+                            웅장함과 탁트인 바다전경이 일품, 여수에서 광양을 잇는 세계 최고 높이의 현수교<br><br>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page fix" id="page4" style="background-color: #4c7ed4;">
+            <div class="ptit_box">
+                <h2 class="pg_tit3">여수의 테마여행</h2>
+                <h4 class="pg_tit4">축제.행사 및 다양한 정보</h4>
+            </div>
+            <div class="page_wrap">
+                <div class="page4top">
+                    <ul class="grid">
+                        <li class="col6 col554">
+                            <div class="half_box col_item col554" style="position:relative;">
+                                <input type="radio" class="ra0" name="ra0" id="ra5" checked>
+                                <input type="radio" class="ra0" name="ra0" id="ra6">
+                                <input type="radio" class="ra0" name="ra0" id="ra7">
+                                <input type="radio" class="ra0" name="ra0" id="ra8">
+                                <ul class="pic_ban col554" id="item6">
+                                    <li class="item1">
+                                        <img src="./img/main_s1.jpg" width="600px" height="554px" alt="이색체험">
+                                    </li>
+                                    <li class="item2">
+                                        <img src="./img/main_s2.jpg" alt="농어촌체험" width="600px" height="554px">
+                                    </li>
+                                    <li class="item3">
+                                        <img src="./img/main_s3.jpg" alt="관람시설" width="600px" height="554px">
+                                    </li>
+                                    <li class="item4">
+                                        <img src="./img/main_s4.jpg" alt="요트투어" width="600px" height="554px">
+                                    </li>
+                                </ul>   
+
+                                <div class="thumb_vs_wrap">
+                                    <ul class="thumb_ban col6 col277 col_item" id="item7" style="background-color: #2e99e4">
+                                        <li class="item1">
+                                            <h3 class="col_tit">이색체험</h3>
+                                            <label for="ra8" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/main_s5.jpg" alt="이색체험"></div>
+                                            <label for="ra6" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item2">
+                                            <h3 class="col_tit">농어촌체험</h3>
+                                            <label for="ra5" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/main_s6.jpg" alt="농어촌체험"></div>
+                                            <label for="ra7" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item3">
+                                            <h3 class="col_tit">관람시설</h3>
+                                            <label for="ra6" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/main_s7.jpg" alt="관람시설"></div>
+                                            <label for="ra8" class="lb2">다음</label>
+                                        </li>
+                                        <li class="item4">
+                                            <h3 class="col_tit">요트투어</h3>
+                                            <label for="ra7" class="lb1">이전</label>
+                                            <div class="tbox"><img src="./img/main_s8.jpg" alt="요트투어"></div>
+                                            <label for="ra5" class="lb2">다음</label>
+                                        </li>
+                                    </ul>
+                                </div> 
+
+                                <div class="col_vs_tit_box">
+                                    <h2 class="col_vs_tit">
+                                        <span class="row1">함께걷는</span>
+                                        <span class="row2">여수바다</span>
+                                    </h2>
+                                    <p class="col_vs_com">내 생애 가장 젊은 날 나는 여수로 간다!<br>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="col6 col554">
+                            <div class="col6 col277 col_item" id="item8">
+                                <h3 class="col_tit">Great<br><span class="gold">거제캠페인</span></h3>
+                                <p class="col_com">
+                                    <img src="./img/fl2.png" alt="캠페인로고" width="130px" height="180px"> 
+                                </p>
+                            </div>
+                            <div class="col6 col277 col_item" id="item9">
+                                <h3 class="col_tit">실감나는<br>거제360도VR영상</h3>
+                                <p class="col_com">
+                                    <img src="./img/btn_movie_play.png" alt="VR버튼">
+                                </p>
+                            </div>
+                            <div class="col6 col277 col_item" id="item10">
+                                <h3 class="col_tit">여수의 축제</h3>
+                                <p class="col_com">나랑 같이<br>여수 축제 보러갈래?</p>
+                                <a href="" class="col_link">더보기</a>
+                            </div>
+                            <div class="col6 col277 col_item" id="item11">
+                                <h3 class="col_tit black_txt">눈과 귀와 혀가 즐거운<br>알찬 여수여행</h3>
+                                <ul class="link_box">
+                                    <li class="item1 col6"><a href="">음식</a></li>
+                                    <li class="item2 col6"><a href="">숙박</a></li>
+                                    <li class="item3 col6"><a href="">체험관광</a></li>
+                                    <li class="item4 col6"><a href="">캠핑여행</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">사진갤러리</a></li>
+                <li><a href="">업소등록</a></li>
+                <li><a href="">로그인</a></li>
+                <li><a href="">여수시청</a></li>
+            </ul>
+        </nav>
+        <div class="ft_wrap">
+            <div class="copyright">
+                <p class="addr"><br>[59675] 전남 여수시 시청로 1 (학동)시청콜센터 : 1899-2012 / 관광통역안내 : 1330 / E-mail:ksu2020@korea.kr</p>
+                <p class="copy">COPYRIGHT(C) 2015 BY YEOSUCITY. ALL RIGHT RESERVED.</p>
+            </div>
+            <div class="wa"><img src="img/ft_logo.png" alt="여수로고"></div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

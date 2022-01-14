@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여수관광문화</title>
+    <!-- 파비콘-->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/popcon.png">
+    <!-- 메타포-->
+    <meta name="title" content="여수 관광문화 홈페이지">
+    <meta name="description" content="전라남도 여수시 관광안내, 관광명소, 문화유적, 축제문화행사, 숙박 등 정보 제공">
+    <meta name="keywords" content="여수관광안내, 돌산갓김치, 게장백반, 서대회, 여수한정식, 갯장어회, 갯장어 샤브샤브, 굴구이, 장어구이, 갈치조림, 새조개샤브샤브, 전어회, 전어구이,오동도, 거문도,백도,향일암, 금오도비렁길, 비렁길, 여수세계박람회장, 진남관, 충무공, 이순신, 여수밤바다, 산단야경, 영취산, 영취산진달래, 진달래, 해상케이블카, 이순신대교, 거북선, 거북선축제, 국제청소년축제, 국제범선축제, 여자만, 여자만갯벌, 진달래체험,갯벌노을체험,향일암일출">
+    <!-- 오픈그래프-->
+    <meta property="og:url" content="http://www.yeosu.go.kr/tour/tour">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:site_name" content="여수관광문화">
+    <meta property="og:article:author" content="https://www.facebook.com/goystour">
+    <meta property="og:article:publisher" content="https://www.facebook.com/goystour">
+    <meta property="og:article:thumbnailUrl" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:article:author" content="생명의 푸르름 가득한, 여수관광문화">
+    <meta property="og:article:author:url" content="http://www.yeosu.go.kr/tour/">
+    <!-- 폰트로딩-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung:400" rel="stylesheet">
+   <!-- 외부 스타일 연결-->
+   <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="grid.css">
+   <link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
+   
+<style> 
+    .vs { clear: both; width: 100%; height: 500px; 
+        background-image: url("/img/join.jpg"); background-position: center center;
+        background-repeat: no-repeat;}
+    .vs_tit { color: #fff; font-family: 'Song Myung'; padding-right: 430px; padding-top: 160px; 
+        float: right; text-align: right; text-shadow: 1px 1px 2px rgb(44, 44, 44); }
+    .vs_tit1 { font-size: 30px;  }
+    .vs_tit2 { font-size: 50px;  }
+    .content_wrap { clear: both; width: 1200px; margin: 0 auto; margin-top: -150px; }
+    .sub_tit { font-family: 'Song Myung'; height: 94px; font-weight: 200; font-size: 35px; background-color: rgb(17, 49, 132); 
+        text-align: center; width: 190px; float: left; color: azure; padding-top: 56px;} 
+    .sub_pic_com { clear:both; font-size:14px; line-height: 1.6; padding-bottom: 24px; width: 970px;}
+    .bread_box { height: 125px; background-color: #fff; width: 980px; float: right; 
+        padding-left: 30px; padding-top: 24px; border-bottom: 1px solid #000; position: relative;}
+    .cate_tit { color: black; font-size: 40px; font-family: 'Song Myung' }
+    .bread { padding-top: 24px; line-height: 1.6; font-style: 16px; }
+    .bread a, .bread span { color: #333; }
+    .bread span.cur { color: rgb(241, 59, 59); font-weight: 600; }
+
+    .leftbar{ width: 189px; float: left; min-height: 100vh; background-color: #ffffff; }
+    .lnb{ clear: both; padding-top: 1px;}
+    .lnb li { clear: both; margin: 5px 6px; border: 1px solid #333; line-height: 52px; width: 172px; }
+    .lnb li a { color: #000; font-style: 14px; padding-left: 1em; }
+    
+    .page_box { width: 980px; float: left; margin-top: 30px;}
+
+    .page { padding-top: 40px; height: auto; min-height: 70vh; width: 100%; }
+    .page_tit { padding-bottom: 36px; color: #000; padding-left: 400px; font-family: 'Song Myung'; font-size: 50px;}
+    .page_tit2 { padding-bottom: 36px; color: #000;  font-family: 'Song Myung'; font-size: 50px;}
+    .sub_pic img { display: block; width: 100%; height: auto; }
+    .sub_pic_tit1 { margin-left: -210px; }
+
+    .page { display:none; }
+    .page:target { display:block; }
+    #page2 { background-color: rgb(224, 224, 224); margin: 30px 0px; }
+    #page3 { background-color: rgb(224, 224, 224); margin: 30px 0px; text-align: center;}
+
+    .dong { display: block; width: 990px; padding: 10px; height: 500px;}
+
+    .form { clear:both; width: 100%; padding-left: 40px;}
+    .table { display:table; border-bottom:1px solid rgb(50, 50, 61); padding-bottom: 50px; } /* table */
+    .table_body { display:table-row-group; } /* tbody */
+    .reg_row { display:table-row; }  /* tr */
+    .reg_lb { display:table-cell; padding: 10px; width: 160px; }  /* th */
+    .reg_input { display:table-cell; padding: 10px; }  /* td */
+    .reg-control { display:block; width:600px; height: 42px; line-height: 42px; padding-left: 14px; font-size:18px; }
+    .btn { display:block; line-height:32px; width:auto; padding: 5px 40px; 
+        background-color:rgb(35, 59, 110); color:#fff; text-align: center; cursor:pointer; }
+    .reg_btn_group { display:table-cell; }
+    .btn_left { float:left; }
+    .btn_right { float:right; }
+    .btn_mid { float:left; margin-left:24px; margin-right: 24px; }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="wrap">
+        <header class="hd fix">
+            <div class="hd_wrap">
+                <a href="임유리_UI구현하기01.html" class="logo">
+                    <img src="/img/logo.png" alt="로고">
+                </a>
+                <nav class="tnb">
+                    <ul>        
+                        <li><a href="sub5_1_add.html">글쓰기</a></li>
+                        <li><a href="임유리_UI구현하기03.html">회원가입</a></li>    
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="https://www.badatime.com/41.html?idx=41">물때표</a></li>
+                    </ul>
+                </nav>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="임유리_UI구현하기02.html" class="dp1">관광명소</a>
+                            <ul class="sub">
+                                <li><a href="임유리_UI구현하기02.html">오동도</a></li>
+                                <li><a href="sub1_2.html">진남관</a></li>
+                                <li><a href="sub1_3.html">거문도백도</a></li>
+                                <li><a href="sub1_4.html">여수해상케이블카</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">문화/축제</a>
+                            <ul class="sub">
+                                <li><a href="">낭만버스킹</a></li>
+                                <li><a href="">여수거북선축제</a></li>
+                                <li><a href="">여수불꽃축제</a></li>
+                                <li><a href="">향일 일출제</a></li>                           
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="" class="dp1">여수대표음식</a>
+                            <ul class="sub">
+                                <li><a href="">돌산갓김치</a></li>
+                                <li><a href="">게장백반</a></li>
+                                <li><a href="">여수한정식</a></li>
+                                <li><a href="">굴구이</a></li>                              
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">여행/체험</a>
+                            <ul class="sub">
+                                <li><a href="">자전거코스</a></li>
+                                <li><a href="">걷기여행</a></li>                            
+                                <li><a href="">이순신코스</a></li>
+                                <li><a href="">여수낭만버스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="임유리_UI구현하기04.html" class="dp1">관광안내</a>
+                            <ul class="sub">
+                                <li><a href="임유리_UI구현하기04.html">관광소식</a></li>
+                                <li><a href="">관광웹툰</a></li>
+                                <li><a href="">관광캐릭터</a></li>
+                                <li><a href="">여수여행사</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> 
+            </div>    
+        </header>
+        <div class="content fix">
+            <figure class="vs" id="vs">
+                <div class="vs_tit">
+                    <span class="vs_tit2"><u>회원가입</u></span>
+                </div>
+            </figure>
+
+            <div class="content_wrap">
+                <div class="sub_box">
+                    <h2 class="sub_tit">회원정보</h2>
+                    <div class="bread_box">
+                        <h3 class="cate_tit">회원가입</h3>
+                        <p class="bread"><a href="index.html" class="home">홈</a> 
+                            &gt; <a href="">회원정보</a>
+                            &gt; <span class="cur">회원가입</span>
+                        </p>
+                    </div>
+                </div>
+                <aside class="leftbar">
+                    <nav class="lnb">
+                        <ul>
+                            <li class="act"><a href="#page1">회원가입</a></li>
+                            <li><a href="#page2">회원약관</a></li>
+                            <li><a href="#page3">이메일무단수집거부</a></li>
+                        </ul>
+                        <script>
+                            $(document).ready(function(){
+                                $(".lnb ul li").click(function(){
+                                    $(".lnb ul li").removeClass("act");
+                                    $(this).addClass("act");
+                                });
+                                $(".sub > li").click(function(){
+                                    $(".lnb ul li").removeClass("act");
+                                    var t = $(this).index();
+                                    $(".lnb ul li").eq(t).addClass("act");
+                                });
+                            });    
+                        </script>
+                    </nav>
+                </aside>
+                <div class="page_box">
+                    <section class="onepage">
+                        <h2 class="page_tit">회원가입</h2>
+                        <div class="page_wrap">
+                            <div class="login_frm_box">
+                                <form method="post" action="/member/joinPro.do" class="form">
+                                    <div class="table">
+                                        <ul class="table_body">
+                                            <li class="reg_row">
+                                                <div class="reg_lb"><label for="userid" class="reg-label">*아이디</label></div>
+                                                <div class="reg_input">
+                                                   <input type="text" id="userid" name="userid" class="reg-control" maxlength="13" required />
+                                                </div>
+                                            </li>
+                                           <li class="reg_row">
+                                               <div class="reg_lb"><label for="passwd" class="reg-label">*비밀번호</label></div>
+                                               <div class="reg_input">
+                                                   <input type="password" id="passwd" name="passwd" class="reg-control" maxlength="20" required />
+                                                   <!-- <input type="hidden" name="passwd" value=""> -->
+                                               </div>
+                                            </li>
+                                           <li class="reg_row">
+                                               <div class="reg_lb"><label for="userPwChk" class="reg-label">*비밀번호 확인 </label></div>
+                                               <div class="reg_input">
+                                                   ​<input type="password" id="userPwChk" name="passwds2" class="reg-control" maxlength="20" required />
+                                               </div>
+                                            </li>
+                                           <li class="reg_row">
+                                               <div class="reg_lb"><label for="name" class="reg-label">*이름</label></div>
+                                               <div class="reg_input">
+                                                    <input type="text" id="name" name="name" class="reg-control" maxlength="13" required />
+                                               </div>
+                                            </li>
+                                            <li class="reg_row">
+                                                <div class="reg_lb"><label for="email" class="reg-label">*이메일</label></div>
+                                                <div class="reg_input">
+                                                    <input type="text" id="email" name="email" class="reg-control" maxlength="50" />
+                                                </div>
+                                            </li>
+                                            <li class="reg_row">
+                                                <div class="reg_lb"><label for="phone" class="reg-label">*전화번호, '-' 입력 제외 </label></div>
+                                                <div class="reg_input">
+                                                    <input type="text" id="phone" name="phone" class="reg-control" maxlength="15" />
+                                                </div>
+                                            </li>
+                                            <li class="reg_row">
+                                                <div class="reg_lb"><label class="reg-label" id="birth">*생년월일</label></div>
+                                                <div class="reg_input">
+                                                    <input type="text" id="birth" name="birth" class="reg-control" maxlength="8" />
+                                                </div>
+                                            </li>
+                                            <li class="reg_row">
+                                                <div class="reg_btn_group" colspan="2">
+                                                    <div class="reg_lb"><input type="submit" class="btn btn_left" id="reg_form_btn" value="회원가입" /></div>
+                                                    <div class="reg_input"><input type="reset" class="btn btn_right" id="reg_form_btn2" value="취소" /></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>    
+                        </div>
+                    </section>
+                    
+                    <section class="page" id="page2">
+                        <h2 class="page_tit">회원약관</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    제1조(개인정보의 처리목적)<br>
+                                    여수시가 취급하는 모든 개인정보는 관련법령에 근거하거나 정보주체의 동의에 의하여 수집 · 보유 및 처리되고 있습니다.
+                                    여수시가 수집 · 보유하고 있는 개인정보파일 목록은 개인정보보호법 제32조(개인정보파일의 등록 및 공개)에 따라 
+                                    행정안전부 개인정보보호 종합지원 포털(http://www.privacy.go.kr)에 공개되어 있습니다.<br><br>
+                                    제2조(개인정보의 처리 및 보유기간)<br>
+                                    개인정보 처리는 정보주체의 동의, 법률 규정 등 일정한 경우에만 개인정보를 수집하며, 개인정보를 수집하는 경우에는 그 목적에 필요한 최소한의 정보를 수집합니다. 
+                                    수집한 개인정보는 수집목적 범위 안에서 이용합니다.
+                                    보유기간은 표준 개인정보 보호지침(행정안전부) 개인정보파일 보유기간 책정 기준표에서 제시한 기준과 「공공기록물 관리에 관한 법률 시행령」
+                                    에 따른 기록관리 기준표를 준수하며 개인정보의 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.<br><br>
+                                    제3조(개인정보의 제3자 제공)<br>
+                                    여수시는 정보주체의 개인정보를 제1조(개인정보의 처리 목적)에서 명시한 범위 내에서만 처리하며, 
+                                    정보주체의 동의, 법률의 특별한 규정 등 개인정보 보호법 제17조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.<br><br>
+                                    제4조(개인정보처리의 위탁)<br>
+                                    여수시는 위탁계약 체결시 개인정보보호법 제26조 (업무위탁에 따른 개인정보의 처리제한)에 따라 
+                                    위탁업무 수행목적 외 개인정보 처리금지, 기술적․관리적 보호조치, 재 위탁제한, 수탁자에 대한 관리․감독, 손해배상 등 책임에 관한 사항을 
+                                    계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.<br><br>
+                                    제5조(정보주체의 권리 · 의무 및 행사방법)<br><br>
+                                    제6조(개인정보 보호책임자)<br>
+                                    여수시는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 
+                                    다음과 같이 개인정보 보호책임자를 지정하고 있습니다.<br><br>
+                                    제7조(개인정보 자동 수집 장치의 설치∙운영 및 거부에 관한 사항)<br>
+                                    여수시 홈페이지 등을 운영하는데 있어 해당 서버가 이용자의 컴퓨터로 소량의 ‘쿠키(cookie)’ 정보가 저장될 수 있으며 
+                                    이에 이용자는 개인정보 자동 수집 장치에 대해 거부할 권리를 행사할 수 있다.<br><br>
+                                    제8조(처리하는 개인정보 항목)<br>
+                                    1. 홈페이지 회원 가입 및 관리<br>
+                                    2.인터넷 서비스 이용 과정에서 아래 개인정보 항목이 자동으로 생성되어 수집될 수 있습니다.<br><br>
+                                    제9조(개인정보의 파기)<br> 여수시는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보파일 파기 사유가 발생한 경우 지체없이 삭제 및 파기하고 있습니다.<br><br>
+                                    제10조(개인정보의 안전성 확보조치)<br> 관리적 조치 : 정기적 직원 교육<br>
+                                    기술적 조치:개인정보처리시스템 등의 접근권한 관리, 접근통제시스템 설치, 고유식별정보 등의 암호화, 보안소프트웨어 설치<br>
+                                    물리적 조치 : 전산실, 자료보관실 등의 접근통제.<br><br>
+                                    제11조(권익침해 구제방법)<br>
+                                    정보주체는 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해센터 등에 분쟁해결이나 상담 등을 신청하실 수 있습니다.<br><br>
+                                    제12조(개인정보 열람청구)<br>
+                                    정보주체는 개인정보보호법 제35조에 따른 개인 정보의 열람 청구를 할 수 있습니다. 여수시는 정보주체의 개인정보 열람청구가 신속하게 처리되도록 노력하겠습니다.<br><br>
+                                    제13조(개인정보 처리방침 변경)<br>
+                                    개인정보 처리방침은 2019. 1. 7일부터 적용 됩니다.<br>                                             
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section class="page" id="page3">
+                        <h2 class="page_tit2">이메일무단수집거부</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">본 웹사이트에 게시된 이메일 주소가 전자우편 수집 프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, <br>
+                                    이를 위반시 정보통신망 이용촉진 및 정보보호 등에 관한 법률에 의해 형사처벌됨을 유념하시기 바랍니다.<br></p>
+                                <h4 class="sub_pic_tit1">근거 : 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조의2(전자우편주소의 무단 수집행위 등 금지)</h4>
+                                <p class="sub_pic_com">
+                                    누구든지 인터넷 홈페이지 운영자 또는 관리자의 사전 동의 없이 인터넷 홈페이지에서 자동으로 전자우편주소를 수집하는 프로그램이나 <br>
+                                    그 밖의 기술적 장치를 이용하여 전자우편주소를 수집하여서는 아니 된다.<br> 누구든지 제1항을 위반하여 수집된 전자우편주소를 판매·유통하여서는 아니 된다.<br>
+                                    누구든지 제1항과 제2항에 따라 수집·판매 및 유통이 금지된 전자우편주소임을 알면서 이를 정보 전송에 이용하여서는 아니 된다.<br></p>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <footer class="ft fix">
+            <nav class="fnb">
+                <ul class="fnb_fr">
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">사진갤러리</a></li>
+                    <li><a href="">업소등록</a></li>
+                    <li><a href="">로그인</a></li>
+                    <li><a href="">여수시청</a></li>
+                </ul>
+            </nav>
+            <div class="ft_wrap">
+                <div class="copyright">
+                    <p class="addr"><br>[59675] 전남 여수시 시청로 1 (학동)시청콜센터 : 1899-2012 / 관광통역안내 : 1330 / E-mail:ksu2020@korea.kr</p>
+                    <p class="copy">COPYRIGHT(C) 2015 BY YEOSUCITY. ALL RIGHT RESERVED.</p>
+                </div>
+                <div class="wa"><img src="img/ft_logo.png" alt="여수로고"></div>
+            </div>
+        </footer>
+    </div>            
+</body>
+</html>

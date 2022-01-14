@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 만들기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; }
+    ul { list-style: none; }
+    a { text-decoration: none; }
+    
+    .wrap { clear:both; width: 100%; border-top:5px solid #ccc; }
+    .title { text-align: center; line-height: 3; padding-top: 40px; }
+    .table_wrap { width: 960px; margin:24px auto; }
+    .table { display:table; width: 100%; border-collapse: collapse; }
+    .table tbody { display:table-row-group;}
+    .table tr { display:table-row; }
+    .table td, .table th { display:table-cell; line-height: 38px; border-left:1px solid #333; border-top:1px solid #333; }
+    .table th { background-color:gold; }
+    .table .ca1 { width: 89px; text-align: center; }
+    .table .ca2 { width: 679px; padding-left: 20px; }
+    .table .ca3 { text-align: center; border-right:1px solid #333; }
+    .table tr:last-child td { border-bottom:1px solid; }
+    .table tr:nth-child(2n) td { background-color: rgb(212, 245, 255);}
+
+
+    .lst1 { width: 460px; margin: 40px auto; }
+    .lst1:after { content:""; display:block; width: 100%; clear:both; }
+    .lst1 li { width: 90px; float:left; margin-right: 33px; }
+    .lst1 li:last-child { margin-right: 0; }
+    .lst1 li a { display:block; }
+    .lst1 li div { width: 90px; height: 90px; overflow:hidden; border-radius:46px; }
+    .lst1 li .ico { text-align:center; }
+    .lst1 li p.ico { line-height: 36px;  color:#333; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h2 class="title">텍스트 리스트</h2>
+    <div class="table_wrap">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="ca1">번호</th>
+                    <th class="ca2">제목</th>
+                    <th class="ca3">작성자</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ca1">1</td>
+                    <td class="ca2">제목입니다1</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">2</td>
+                    <td class="ca2">제목입니다2</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">3</td>
+                    <td class="ca2">제목입니다3</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">4</td>
+                    <td class="ca2">제목입니다4</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">5</td>
+                    <td class="ca2">제목입니다5</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">6</td>
+                    <td class="ca2">제목입니다6</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+                <tr>
+                    <td class="ca1">7</td>
+                    <td class="ca2">제목입니다7</td>
+                    <td class="ca3">작성자</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="wrap">
+    <h2 class="title">아이콘 리스트</h2>
+    <ul class="lst1">
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘1</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘2</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘3</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="ico"><img src="http://placehold.it/90x90/333" alt=""></div>
+                <p class="ico">아이콘4</p>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

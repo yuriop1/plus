@@ -1,0 +1,21 @@
+
+	마이바티스 호출 메서드
+
+	SQL세션.메서드("네임스페이스.맵아이디")
+
+	sqlSession.select : 검색
+
+	sqlSession.selectOne : 하나의 레코드만 검색
+
+	sqlSession.selectList : 리스트로 결과가 여러 레코드일 경우
+
+	sqlSession.insert : 레코드 추가
+
+	sqlSession.update : 레코드 갱신
+
+	sqlSession.delete : 레코드 삭제
+
+
+
+	
+	

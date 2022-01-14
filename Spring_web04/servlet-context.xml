@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 서블릿에서 jsp로 디스패치하기 위한 인프라, 방법, 규격 등을 정의 -->
+	
+	<!-- 서블릿에서 애노테이션을 사용하여 컨트롤러를 활용하겠음을 선언 -->
+	<annotation-driven />
+
+	<!-- /webapp/resources/ 디렉토리 안에 있는 파일을 활용가능하게 하겠음 -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- 서블릿의 @Controller 애니테이션에서 지정한 경로인 /WEB-INF/views 디렉토리 안에 있는 .jsp로 디스패치하기 위한 규격 설정 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="kr.co.controller" />
+</beans:beans>
