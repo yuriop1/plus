@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>한국표준협회</title>
+    <!-- 메타포 -->
+    <meta name="title" content="" comment="사이트 제목" />
+    <meta name="keywords" content="" comment="검색어" />
+    <meta name="decription" content="" comment="사이트 설명"/>
+    <!-- 오픈그래프 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <!-- 파비콘 -->
+    <link rel="favicon" href="" comment="URL입력칸왼쪽의파비콘"/>
+    <link rel="shortcut icon" href="" comment="웹브라우저왼쪽상단의 아이콘"/>
+    <link rel="icon" href="" comment="즐겨찾기했을때의 웹사이트의 대표 아이콘" />
+    <!-- 필요한 라이브러리 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그분석 -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109283150-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109283150-1');
+    </script>
+
+    <!-- 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 
+    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    -->
+    <!-- 사용자 외부 스타일 연결 -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
+    .main_color1 { background-color: #1d4bb0;}
+    .main_color2 { background-color: #ef4c84;}
+    .base_color1 { background-color: #fff; }
+    .base_color2 { background-color: #202020; }
+
+    .contact_wrap { width:1000px; margin:30px auto; height: 600px; }
+    .noti_box { width: 400px; float:left; }
+    .ra_item { display:none; }
+    .noti_wrap { clear:both; }
+    .noti_wrap .noti { display:none; width: 400px; height: 450px; }
+    #ra1:checked ~ .noti_wrap .noti.item1 { display:block; background-color:deeppink;}
+    #ra2:checked ~ .noti_wrap .noti.item2 { display:block; background-color: deepskyblue; }
+    .noti_lb_box { clear:both; height: 48px; }
+    .noti_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .noti_lb_box li.more_item { float:right; }
+    .noti_lb_box li label { color:#000; font-weight: normal;}
+    #ra1:checked ~ .noti_lb_box li.item1 label { color:red; font-weight:bold; }
+    #ra2:checked ~ .noti_lb_box li.item2 label { color:red; font-weight:bold; }
+
+    .news_box { width: 400px; float:left; }
+    .news_wrap { clear:both; }
+    .news_wrap .news { display:none; width: 400px; height: 450px; }
+    #ra3:checked ~ .news_wrap .news.item1 { display:block; background-color:deeppink;}
+    #ra4:checked ~ .news_wrap .news.item2 { display:block; background-color: deepskyblue; }
+    .news_lb_box { clear:both; height: 48px; }
+    .news_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .news_lb_box li.more_item { float:right; }
+    .news_lb_box li label { color:#000; font-weight: normal;}
+    #ra3:checked ~ .news_lb_box li.item1 label { color:red; font-weight:bold; }
+    #ra4:checked ~ .news_lb_box li.item2 label { color:red; font-weight:bold; }
+
+    .tel_box { width: 200px; height: 500px; float:right; background-color: gold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./data/ksa_logo.png" alt="로고타입">
+            </a>
+            <div class="search_wrap">
+                <form action="" method="">
+                    <div class="search_fr">
+                        <input type="text" id="keyword" name="keyword" placeholder="검색어 입력">
+                        <input type="submit" class="search_btn" value="검색">
+                    </div>
+                </form>
+            </div>
+            <div class="lang_link">
+                <a href="" class="en_ico">English</a>
+                <a href="" class="ch_ico">Chinese</a>
+            </div>
+        </div>
+        <nav class="gnb">
+            <ul class="l_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">표준</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">표준소개</a>
+                            <dl class="dep3">
+                                <dt>표준소개</dt>
+                                <dd><a href="" class="dp3">표준 개요</a></dd>
+                                <dd><a href="" class="dp3">국제표준화</a></dd>
+                                <dd><a href="" class="dp3">적합성평가</a></dd>
+                                <dd><a href="" class="dp3">지식재산권</a></dd>
+                                <dd><a href="" class="dp3">스마트표준</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">표준연구</a>
+                            <dl class="dep3">
+                                <dt>표준연구</dt>
+                                <dd><a href="" class="dp3">이슈리포트</a></dd>
+                                <dd><a href="" class="dp3">인포그래픽</a></dd>
+                                <dd><a href="" class="dp3">글로벌표준화웹진</a></dd>
+                                <dd><a href="" class="dp3">용역공고</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">표준진흥교육</a>
+                            <dl class="dep3">
+                                <dt>표준진흥교육</dt>
+                                <dd><a href="" class="dp3">세계표준의 날</a></dd>
+                                <dd><a href="" class="dp3">국제표준올림피아드</a></dd>
+                                <dd><a href="" class="dp3">글로벌 기술표준 전문인력양성</a></dd>
+                                <dd><a href="" class="dp3">기술규제 대응개선</a></dd>
+                                <dd><a href="" class="dp3">국가표준코디네이터</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">표준보급</a>
+                            <dl class="dep3">
+                                <dt>표준보급</dt>
+                                <dd><a href="" class="dp3">구입가능표준</a></dd>
+                                <dd><a href="" class="dp3">표준검색 및 구입</a></dd>
+                                <dd><a href="" class="dp3">디지털라이브러리</a></dd>
+                                <dd><a href="" class="dp3">핸드북</a></dd>
+                                <dd><a href="" class="dp3">표준품질도서</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">표준개발</a>
+                            <dl class="dep3">
+                                <dt>표준개발</dt>
+                                <dd><a href="" class="dp3">서비스 표준화</a></dd>
+                                <dd><a href="" class="dp3">국제회의 결과보고서</a></dd>
+                                <dd><a href="" class="dp3">단체표준</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">인증</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">KS인증</a>
+                            <dl class="dep3">
+                                <dt>KS인증</dt>
+                                <dd><a href="" class="dp3">KS인증 소개</a></dd>
+                                <dd><a href="" class="dp3">심사신청</a></dd>
+                                <dd><a href="" class="dp3">재발급 및 자료제출</a></dd>
+                                <dd><a href="" class="dp3">인증업체 검색</a></dd>
+                                <dd><a href="" class="dp3">품질담당자 정보검색</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">국제인증</a>
+                            <dl class="dep3">
+                                <dt>국제인증</dt>
+                                <dd><a href="" class="dp3">경영시스템 인증</a></dd>
+                                <dd><a href="" class="dp3">인증 취득효과 사례</a></dd>
+                                <dd><a href="" class="dp3">인증신청 및 유지</a></dd>
+                                <dd><a href="" class="dp3">경영시스템 인증조직 검색</a></dd>
+                                <dd><a href="" class="dp3">관련기관</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">민간인증</a>
+                            <dl class="dep3">
+                                <dt>민간인증</dt>
+                                <dd><a href="" class="dp3">AI+ 인증</a></dd>
+                                <dd><a href="" class="dp3">인권경영우수기업인증</a></dd>
+                                <dd><a href="" class="dp3">블라인드공정채용인증</a></dd>
+                                <dd><a href="" class="dp3">대한민국로하스인증</a></dd>
+                                <dd><a href="" class="dp3">실내공기질인증</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">JIS인증</a>
+                            <dl class="dep3">
+                                <dt>JIS인증</dt>
+                                <dd><a href="" class="dp3">JIS마크 안내</a></dd>
+                                <dd><a href="" class="dp3">품질인증 물품</a></dd>
+                                <dd><a href="" class="dp3">품질인증 신청</a></dd>
+                                <dd><a href="" class="dp3">품질인증 유지</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">인증심사원</a>
+                            <dl class="dep3">
+                                <dt>인증심사원</dt>
+                                <dd><a href="" class="dp3">국제인증심사원</a></dd>
+                                <dd><a href="" class="dp3">에너지온실가스검증심사원</a></dd>
+                                <dd><a href="" class="dp3">으뜸상품검증심사원</a></dd>
+                                <dd><a href="" class="dp3">라돈안전인증심사원</a></dd>
+                                <dd><a href="" class="dp3">공정인재채용인증심사원</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a href="" class="dp1">교육</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">교육안내</a>
+                            <dl class="dep3">
+                                <dt>교육안내</dt>
+                                <dd><a href="" class="dp3">KSA교육 특징</a></dd>
+                                <dd><a href="" class="dp3">HRD탑재 서비스</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">공개교육</a>
+                            <dl class="dep3">
+                                <dt>공개교육</dt>
+                                <dd><a href="" class="dp3">개인 교육</a></dd>
+                                <dd><a href="" class="dp3">비대면 교육</a></dd>
+                                <dd><a href="" class="dp3">단체교육</a></dd>
+                                <dd><a href="" class="dp3">우수사례교육</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">이러닝</a>
+                            <dl class="dep3">
+                                <dt>이러닝</dt>
+                                <dd><a href="" class="dp3">이러닝 교육</a></dd>
+                                <dd><a href="" class="dp3">마이크로러닝 교육</a></dd>
+                                <dd><a href="" class="dp3">독서통신 교육</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">맞춤형위탁교육</a>
+                            <dl class="dep3">
+                                <dt>맞춤형위탁교육</dt>
+                                <dd><a href="" class="dp3">사내교육</a></dd>
+                                <dd><a href="" class="dp3">파견교육</a></dd>
+                                <dd><a href="" class="dp3">채용약정교육</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">경영자교육</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a href="" class="dp1">품질˙서비스</a>
+                    <ul class="sub">
+                        <li class="menu_thumb1">
+                            <a href="" class="menu_thumb_link">국가품질상<br>품질분임조<br>KNQA</a>
+                        </li>
+                        <li class="menu_thumb2">
+                            <a href="" class="menu_thumb_link">한국서비스<br>품질지수<br>KS-SQI</a>
+                        </li>
+                        <li class="menu_thumb3">
+                            <a href="" class="menu_thumb_link">한국품질<br>만족지수<br>KS_QEI</a>
+                        </li>
+                        <li class="menu_thumb4">
+                            <a href="" class="menu_thumb_link">콜센터<br>품질지수<br>KS-CQI</a>
+                        </li>
+                        <li class="menu_thumb5">
+                            <a href="" class="menu_thumb_link">프리미엄<br>브랜드지수<br>KS-PBI</a>
+                        </li>
+                        <li class="menu_thumb6">
+                            <a href="" class="menu_thumb_link">한국소비자<br>웰빙지수<br>KS-WEI</a>
+                        </li>
+                        <li class="menu_thumb7">
+                            <a href="" class="menu_thumb_link">대한민국<br>지속가능성지수<br>KS-KSI</a>
+                        </li>
+                        <li class="menu_thumb8">
+                            <a href="" class="menu_thumb_link">한국<br>서비스대상<br>KSGP</a>
+                        </li>
+                        <li class="menu_thumb9">
+                            <a href="" class="menu_thumb_link">대한민국<br>혁신대상</a>
+                        </li>
+                        <li class="menu_thumb10">
+                            <a href="" class="menu_thumb_link">대한민국<br>지속가능성<br>보고서상</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="r_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">KSA소개</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">KSA소개</a>
+                            <dl class="dep3">
+                                <dt>KSA소개</dt>
+                                <dd><a href="" class="dp3">CEO메시지</a></dd>
+                                <dd><a href="" class="dp3">설립목적</a></dd>
+                                <dd><a href="" class="dp3">KSA연혁</a></dd>
+                                <dd><a href="" class="dp3">미션&비젼</a></dd>
+                                <dd><a href="" class="dp3">주요사업</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">조직안내</a>
+                            <dl class="dep3">
+                                <dt>조직안내</dt>
+                                <dd><a href="" class="dp3">임원현황</a></dd>
+                                <dd><a href="" class="dp3">조직도</a></dd>
+                                <dd><a href="" class="dp3">담당업무별 연락처</a></dd>
+                                <dd><a href="" class="dp3">지역본부 홈페이지</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">찾아오시는 길</a>
+                            <dl class="dep3">
+                                <dt>찾아오시는 길</dt>
+                                <dd><a href="" class="dp3">본부</a></dd>
+                                <dd><a href="" class="dp3">가산디지털센터</a></dd>
+                                <dd><a href="" class="dp3">KSA인재개발원</a></dd>
+                                <dd><a href="" class="dp3">지역본부</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">홍보존</a>
+                            <dl class="dep3">
+                                <dt>홍보존</dt>
+                                <dd><a href="" class="dp3">홍보자료</a></dd>
+                                <dd><a href="" class="dp3">KSA사이버역사관</a></dd>
+                                <dd><a href="" class="dp3">방송영상</a></dd>
+                                <dd><a href="" class="dp3">유튜브</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">경영공시</a>
+                            <dl class="dep3">
+                                <dt>경영공시</dt>
+                                <dd><a href="" class="dp3">일반현황</a></dd>
+                                <dd><a href="" class="dp3">기부안내</a></dd>
+                                <dd><a href="" class="dp3">윤리경영</a></dd>
+                                <dd><a href="" class="dp3">고객만족경영</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">인재채용</a>
+                            <dl class="dep3">
+                                <dt>인재채용</dt>
+                                <dd><a href="" class="dp3">핵심가치 및 인재상</a></dd>
+                                <dd><a href="" class="dp3">채용 프로세스</a></dd>
+                                <dd><a href="" class="dp3">채용정보</a></dd>
+                                <dd><a href="" class="dp3">강사지원</a></dd>
+                                <dd><a href="" class="dp3">KSA행복나눔회</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">회원사</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">회원사(상장법인)</a>
+                            <dl class="dep3">
+                                <dt>회원사(상장법인)</dt>
+                                <dd><a href="" class="dp3">기계/금속</a></dd>
+                                <dd><a href="" class="dp3">화학</a></dd>
+                                <dd><a href="" class="dp3">전기/전자</a></dd>
+                                <dd><a href="" class="dp3">금융</a></dd>
+                                <dd><a href="" class="dp3">기타</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a href="" class="dp1">고객센터</a>
+                    <ul class="sub">
+                        <li>
+                            <a href="" class="dp2">KSA알리미</a>
+                            <dl class="dep3">
+                                <dt>KSA알리미</dt>
+                                <dd><a href="" class="dp3">공지사항</a></dd>
+                                <dd><a href="" class="dp3">보도자료</a></dd>
+                                <dd><a href="" class="dp3">입찰정보</a></dd>
+                                <dd><a href="" class="dp3">채용공고</a></dd>
+                                <dd><a href="" class="dp3">대한민국 HRD성숙도 조사</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">증빙안내</a>
+                            <dl class="dep3">
+                                <dt>증빙안내</dt>
+                                <dd><a href="" class="dp3">사업자등록증</a></dd>
+                                <dd><a href="" class="dp3">계좌안내</a></dd>
+                                <dd><a href="" class="dp3">전자계산서 확인</a></dd>
+                                <dd><a href="" class="dp3">대금지급조회서비스</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">QA</a>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">민원신청</a>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="" class="dp2">개인정보처리방침</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a href="" class="dp1">사이트맵</a>
+                </li>
+            </ul>
+        </nav>  
+    </header>
+    <section class="content">
+        <figure class="vs">
+            <ul class="vs_pic_box">
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+            <ul class="btn_box1">
+                <li><button class="vs_btn prev"></button></li>
+                <li><button class="vs_btn next"></button></li>
+            </ul>
+            <ul class="btn_box2">
+                <li><button class="btn1"></button></li>
+                <li><button class="btn2"></button></li>
+                <li><button class="btn3"></button></li>
+                <li><button class="btn4"></button></li>
+                <li><button class="play_btn"></button></li>
+            </ul>
+        </figure>
+        <div class="ico_box">
+            <ul class="ico_wrap">
+                <li class="ico1">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목1</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+                <li class="ico2">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목2</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+                <li class="ico3">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목3</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+                <li class="ico4">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목4</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+                <li class="ico5">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목5</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+                <li class="ico6">
+                    <a href="">
+                        <h3 class="ico_tit">아이콘제목6</h3>
+                        <p class="more_txt">MORE &gt;</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="over_sl_box">
+            <ul>
+                <li><a href=""><img src="./data/ban1.jpg" alt="배너이미지1"></a></li>
+                <li><a href=""><img src="./data/ban2.jpg" alt="배너이미지2"></a></li>
+                <li><a href=""><img src="./data/ban3.jpg" alt="배너이미지3"></a></li>
+                <li><a href=""><img src="./data/ban4.png" alt="배너이미지4"></a></li>
+                <li><a href=""><img src="./data/ban5.jpg" alt="배너이미지5"></a></li>
+                <li><a href=""><img src="./data/ban6.jpg" alt="배너이미지6"></a></li>
+                <li><a href=""><img src="./data/ban7.jpg" alt="배너이미지7"></a></li>
+                <li><a href=""><img src="./data/ban8.jpg" alt="배너이미지8"></a></li>
+                <li><a href=""><img src="./data/ban9.jpg" alt="배너이미지9"></a></li>
+                <li><a href=""><img src="./data/ban10.jpg" alt="배너이미지10"></a></li>
+            </ul>
+        </div>
+        <div class="contact_box">
+            <div class="contact_wrap" style="">
+                <div class="noti_box">
+                    <input type="radio" name="ra1" class="ra_item" id="ra1" checked>
+                    <input type="radio" name="ra1" class="ra_item" id="ra2">
+                    <ul class="noti_lb_box">
+                        <li class="item1"><label for="ra1">공지사항</label></li>
+                        <li class="item2"><label for="ra2">채용정보</label></li>
+                        <li class="more_item"><a href="">더보기</a></li>
+                    </ul>
+                    <ul class="noti_wrap">
+                        <li class="item1 noti">
+                            <div class="noti_con">
+                                공지사항 테이블 요소
+                            </div>
+                        </li>
+                        <li class="item2 noti">
+                            <div class="noti_con">
+                                채용정보 테이블 요소
+                            </div>
+                        </li>
+                    </ul>   
+                </div>
+                <div class="news_box">
+                    <input type="radio" name="ra2" class="ra_item" id="ra3" checked>
+                    <input type="radio" name="ra2" class="ra_item" id="ra4">
+                    <ul class="news_lb_box">
+                        <li class="item1"><label for="ra3">보도자료</label></li>
+                        <li class="item2"><label for="ra4">입찰구매</label></li>
+                        <li class="more_item"><a href="">더보기</a></li>
+                    </ul>
+                    <ul class="news_wrap">
+                        <li class="item1 news">
+                            <div class="news_con">
+                                보도자료 테이블 요소
+                            </div>
+                        </li>
+                        <li class="item2 news">
+                            <div class="news_con">
+                                입찰구매 테이블 요소
+                            </div>
+                        </li>
+                    </ul>   
+                </div>
+                <div class="tel_box">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_box">
+                <nav class="sns_link">
+                    <ul>
+                        <li class="item1"><a href=""></a></li>
+                        <li class="item2"><a href=""></a></li>
+                        <li class="item3"><a href=""></a></li>
+                        <li class="item4"><a href=""></a></li>
+                        <li class="item5"><a href=""></a></li>
+                    </ul>
+                </nav>
+                <nav class="relation_link">
+                    <a href="" class="hot_link">지역 본부 홈페이지</a>
+                    <div class="rel_sel_box">
+                        <select name="" id="">
+                            <option value="site1">링크1</option>
+                            <option value="site2">링크2</option>
+                            <option value="site3">링크3</option>
+                            <option value="site4">링크4</option>
+                            <option value="site5">링크5</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="ft_wrap">
+            <div class="ft_box">
+                <nav class="ft_link">
+                    <ul>
+                        <li><a href="">하단링크1</a></li>
+                        <li><a href="">하단링크2</a></li>
+                        <li><a href="">하단링크3</a></li>
+                        <li><a href="">하단링크4</a></li>
+                        <li><a href="">하단링크5</a></li>
+                        <li><a href="">하단링크6</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">여기는 카피라이트</p>
+                <ul class="wa_group">
+                    <li class="item1"></li>
+                    <li class="item2"></li>
+                </ul>    
+            </div>
+        </div>
+    </footer>
+</div>    
+</body>
+</html>
