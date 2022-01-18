@@ -1,0 +1,1 @@
+document.write("<h1>외부파일 연습</h1>")

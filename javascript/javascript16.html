@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 표준 객체 - String</title>
+</head>
+<body>
+    <script>
+        var str1 =" 임유리망쟈라무뎌히  . Nice go ㅅ 굿 ~!Q쀼ㅇ도도리묵   Nice 간장게장을 줄이면 간게   ";
+        console.log("글자수 : "+str1.length)
+        console.log("Nice의 단어 위치 : "+str1.indexOf('Nice')); //r공뱍포함해서 어디있는지 알려줌
+        console.log("Nice의 단어 위치 뒤에 있는 글자 수 : "+str1.lastIndexOf('Nice')); //r공뱍포함해서 어디있는지 알려줌
+        console.log("8번째 글자 추출 : "+str1.charAt(7));
+        var str2 = str1.split(".");
+        var str3 = str1.split(",");
+        console.log(".로 구분하여 분리한 문자 배열 : "+str2);
+        console.log(".로 구분하여 분리한 문자 배열 : "+str3);
+        var str4 = "Fighting~!";
+        console.log("문자열 결합 : "+str1.concat("즈어말~!", str4));
+
+
+    </script>
+</body>
+</html>

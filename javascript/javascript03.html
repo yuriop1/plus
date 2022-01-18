@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 연산자 </title>
+</head>
+<body>
+    숫자1 : <input type="text" id="num1" name="num1" required><br><br>
+    숫자2 : <input type="text" id="num2" name="num2" required><br><br>
+    <button class="btn" id="btn1">+</button>    &nbsp;
+    <button class="btn" id="btn2">-</button>    &nbsp;
+    <button class="btn" id="btn3">*</button>    &nbsp;
+    <button class="btn" id="btn4">/</button>    &nbsp;
+    <button class="btn" id="btn5">나머지</button>   <br><br>
+    <div id="result"></div>
+    
+    <script>
+        //+버튼을 누르면 num1과 num2의 값을 더하여 result에 그 결과를 출력
+        var num1, num2, result;
+        function numInit() {
+            num1 = parseInt(document.getElementById("num1").value);
+            num2 = parseInt(document.getElementById("num2").value);
+            result = document.getElementById("result");
+        }    
+        document.getElementById("btn1").addEventListener("click", function() {
+            numInit();
+            document.getElementById("result").innerHTML =  num1 + num2;
+        });
+
+        document.getElementById("btn2").addEventListener("click", function() {
+            numInit();
+            document.getElementById("result").innerHTML =  num1 - num2;
+        });
+
+        document.getElementById("btn3").addEventListener("click", function() {
+            numInit();
+            document.getElementById("result").innerHTML =  num1 * num2;
+        });
+
+        document.getElementById("btn4").addEventListener("click", function() {
+            numInit();
+            document.getElementById("result").innerHTML =  num1 / num2;
+        });
+
+        document.getElementById("btn5").addEventListener("click", function() {
+            numInit();
+            document.getElementById("result").innerHTML =  num1 % num2;
+        });
+    </script>
+
+
+</body>
+</html>

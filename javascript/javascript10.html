@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+    <script> 
+        var obj1 = {num:1, name:"유리리", age:42, method1: function(this) {
+
+        }
+    };
+    </script>
+
+    <input type="text" name="indata" id="indata" value="" /><br>
+    <input type="button" name="num1" id="num1" value="1" />
+    <input type="button" name="num2" id="num2" value="2" />
+    <input type="button" name="num3" id="num3" value="3" />
+    <input type="button" name="num4" id="num4" value="4" />
+    <input type="button" name="num5" id="num5" value="5" />
+    <input type="button" name="num6" id="num6" value="6" />
+    <input type="button" name="num7" id="num7" value="7" />
+    <input type="button" name="num8" id="num8" value="8" />
+    <input type="button" name="num9" id="num9" value="9" />
+    <input type="button" name="num0" id="num0" value="0" />
+    <br><br>
+    <input type="button" name="plus" id="plus" value="+" /><br>
+    <input type="button" name="minus" id="minus" value="-" /><br>
+    <input type="button" name="multiply" id="multiply" value="*" /><br>
+    <input type="button" name="divide" id="divide" value="/" /><br>
+    <input type="button" name="result" id="result" value="=" /><br>
+    <input type="button" name="ce" id="ce" value="ce" /><br>
+
+    <script>
+    var indata = document.getElementById("indata");
+    var num1 = Document.getElementById("num1");
+    var num2 = Document.getElementById("num2");
+    var num3 = Document.getElementById("num3");
+    var num4 = Document.getElementById("num4");
+    var num5 = Document.getElementById("num5");
+    var num6 = Document.getElementById("num6");
+    var num7 = Document.getElementById("num7");
+    var num8 = Document.getElementById("num8");
+    var num9 = Document.getElementById("num9");
+    var num0 = Document.getElementById("num0");
+    var plus = document.getElementById("plus");
+    var minus = document.getElementById("minus");
+    var multiply = document.getElementById("multply");
+    var divide = document.getElementById("divide");
+    var result = document.getElementById("result");
+
+    </script>
+    <script>
+        plus.addEventListener("click", function() {
+            indata.value = indata.value + this.value;
+        });
+        minus.addEventListener("click", function() {
+            indata.value = indata.value + this.value;
+        });
+        multiply.addEventListener("click", function() {
+            indata.value = indata.value + this.value;
+        });
+        divide.addEventListener("click", function() {
+            indata.value = indata.value + this.value;
+        });
+        result.addEventListener("click", function() {
+            indata.value = indata.value + this.value;
+        });
+    </script>
+</body>
+</html>

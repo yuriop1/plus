@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트08 - 반복문</title>
+</head>
+<body>
+    <script>
+        //방법1
+        var wk = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"];
+        var day = new Date().getDay();
+        console.log(wk[day]);
+
+        //방법2
+        switch(day){
+            case 1:
+                console.log("월요일");
+                break;
+            case 2:
+                console.log("화요일");
+                break;    
+            case 3:
+                console.log("수요일");
+                break;
+            case 4:
+                console.log("목요일");
+                break;
+            case 5:
+                console.log("금요일");
+                break;
+            case 6:
+                console.log("토요일");
+                break;
+            default:
+                console.log("일요일");
+                break;
+        }
+    //alert("알림 메세지"), confirm("의사를 확인하는 메세지"), prompt("입력 안내 메세지")
+    // var login = confirm("로그인 하시겠습니까?");
+    // if(login) document.write("로그인 성동!");
+    // else document.write("로으인 취소!");    
+
+    var sum=0;
+    //예전에 java할 때는 var가 아니라 int였는데 이것만 바꾼거야
+    for(var i=0;i<=10;i++){
+        document.write("<h1>"+i+"</h1>");
+        sum+=i;
+    }    
+    document.write("<h1>합산결과 : "+sum+"</h1>");
+
+
+    </script>
+</body>
+</html>

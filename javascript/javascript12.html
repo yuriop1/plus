@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <!-- 객체의 종류 : 사용자 정의 객체, 자바스크립트 내장 객체(데이터 객체, BOM, DOM) -->
+    <script>
+    //obj1은 생성자가 없이 만들어진 객체는 재사용성이 떨어짐
+    var obj1 = {num:1, name:"김천재", iq:89, age:42, prt:function(){
+            alert("당신의 이름은 "+this.name+"입니다.");
+        }
+    };
+    confirm(obj1.name+"이 이름이 맞습니까");
+    obj1.prt();
+
+    function Dog(color, type, name, age) {  //생성자 함수 - Constructor -> Prototype
+        this.color = color;
+        this.type = type;
+        this.name = name;
+        this.age = age;
+        this.method1 = function(){
+            document.write("<ul><li>"+this.color+"</li><li>"+this.type+"</li><li>"+this.name+"</li></ul>");
+        }
+    }
+    var myDog1 = new Dog("흰색", "말티즈", "해피", 3);  // 생성자에 의한 객체
+    var myDog2 = new Dog("흰색", "진도견", "진순이", 4);  // 생성자에 의한 객체2
+    //myDog1.color;
+    //myDog1.method1();
+    document.write("우리집 강아지는 "+myDog1.color+"이며, 이름은 "+myDog1.name+"입니다.");
+    </script>
+</body>
+</html>

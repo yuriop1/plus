@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연산자</title>
+</head>
+<body>
+    <script>
+    var a=10, b=3, c;
+    document.write("<h3>산술연산<h3>");
+    document.write("a + b = "+(a+b)+"<br");
+    document.write("a - b = "+(a-b)+"<br>");    
+    document.write("a * b = "+(a*b)+"<br>");
+    document.write("a / b = "+(a/b)+"<br>");
+    document.write("a % b = "+(a%b)+"<br>");
+    document.write("<h3>대입연산<h3>");
+    document.write("c = a"+(c=a)+"<br>");
+    document.write("a+=2 : "+(a+=2)+"<br>");    //a=a+2
+    document.write("a-=2 : "+(a-=2)+"<br>");    //a=a-2
+    document.write("a*=2 : "+(a*=2)+"<br>");    //a=a*2
+    document.write("a/=2 : "+(a/=2)+"<br>");    //a=a/2
+    document.write("a%=2 : "+(a%=2)+"<br>");    //a=a%2
+    document.write("<h3>증감연산<h3>");
+    document.write("++c"+(++c)+"<br>");    //전위 연산자 - 1씩 증가
+    document.write("c++"+(c++)+"<br>");    //후위 연산자 - 1씩 증가
+    document.write("++c"+(--c)+"<br>");    //전위 연산자 - 1씩 감소
+    document.write("c++"+(c--)+"<br>");    //후위 연산자 - 1씩 감소
+    document.write("<h3>비교연산<h3>");
+    document.write("a==c"+(a==c)+"<br>");    //같은지 비교
+    document.write("a===c"+(a===c)+"<br>");    //동등 비교(값과 타입이 모두 같은지)
+    document.write("a!=c"+(a!=c)+"<br>");    //다른지 비교
+    document.write("a!==c"+(a!==c)+"<br>");    //값이 다르거나 타입이 다른지
+    document.write("a>c"+(a>c)+"<br>");    //a가 큰지 비교
+    document.write("a<c"+(a<c)+"<br>");    //a가 작은지 비교
+    document.write("a>=c"+(a>=c)+"<br>");    //a가 이상인지 비교
+    document.write("a<=c"+(a<=c)+"<br>");    //a가 이하인지 비교
+    document.write("<h3>논리연산<h3>");
+    document.write("a>c && a>b : "+(a>c && a>b)+"<br>");    //and 연산자 : 주어진 조건이 모두 만족한지
+    document.write("a>c || a>b : "+(a>c || a>b)+"<br>");    //or 연산자 : 주어진 어느 하나라도 만족한지
+    document.write("!(a>c) : "+ (!(a>c))+"<br>"); //not 연산자 : 주어진 조건의 결과를 반대로
+    document.write("<h3>비트연산<h3>");
+    document.write("a & b : "+(a & b)+"<br>");     //a와 b를 2진수로 바꾸어 and 연산함
+    document.write("a | b : "+(a | b)+"<br>");     //a와 b를 2진수로 바꾸어 or 연산함    
+    document.write("a ^ b : "+(a ^ b)+"<br>");     //a와 b를 2진수로 바꾸어 xor 연산함 - 입력된 두 수가 서로 다를 경우만 1
+    document.write("~a : "+(~a)+"<br>");    //a를 2진수로 바꾸어 그 결과가 1은 0으로 0은 1로 반대로 변환
+    document.write("a >> 2 : "+(a >> 2)+"<br>");  //a를 오른쪽 시프트 2번(나누기 2를 2번)
+    document.write("a << 2 : "+(a << 2)+"<br>");  //a를 왼쪽 시프트 2번(곱하기 2를 2번)
+    document.write("<h3>삼항연산<h3>");
+    document.write("a>9 ? 큰값 : 작은값 : "+(a>9 ? "큰값" : "작은값")); //조건? 참 : 거짓
+    </script>
+</body>
+</html>

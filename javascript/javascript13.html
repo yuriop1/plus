@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 데이터 표준 객체</title>
+</head>
+<body>
+    <script>
+    //데이터 표준 객체 - Number, Math, Date, String, Array 객체
+    //데이터 응용 객체 - Media, Audio, Video, File, ... 객체 -> Multipart
+
+    var num = 248;  //Number 객체
+    var txt = "2진수 : "+num.toString(2)+", 8진수 : "+num.toString(8)+", 10진수 : "+num.toString(10)+", 16진수 : "+num.toString(16);
+    //alert(txt);
+    console.log(txt);
+    //Number 객체의 기본 개념
+    var x = 10 / 0; //Infinity(무한대 = 불능) : 0으로 나누는 경우와 같이 불능상태인 경우
+    var y = x * 1000;   //Infinity
+    var z = 1 / x;      //Infinity
+    var a = 100 - "10"; //90
+    var b = 100 - "김기태"; //NaN   : 숫자가 아니라서 연산이 불가한 경우
+    var c = 0 / 0;  //NaN
+    var d;
+    d=d+1;  //undefined : 값이 초기화 되어 있지 않은 경우
+    //전역함수  - Number객체의 메서드
+    //parseInt(num) - num.parseInt()
+    //parseFloat(num) - num.parseFloat()
+    //isNan(num)    - num.isNaN()
+    //isFinite(num) - num.isFinite()
+    //isInteger(num) - num.isInteger()
+    
+    var data1 = 12.3456;    //부동 소숫점 수 = 실수
+    var data2 = 0.0123456;  //Number.toExponential() : 지수형태로 표시
+    data1.toExponential();   //1.23456e+1
+    data2.toExponential();   //1.23456e-2
+    data1.toExponential(2); //1.23e+1
+    data2.toExponential(2); //1.23e-2
+    data1.toFixed();    //12    Number.toFixed() : 소숫점 이하 자릿수를 지정한 만큼 표시
+    data1.toFixed(2);   //12.34
+    data1.toFixed(4);   //12.3456
+    data1.toFixed(6);   //12.345600
+    data1.toPrecision();    //12.3456 - Number.toPrecision() : 전체 자릿수를 지정한 만큼 표시
+    data1.toPrecision(2);   //12
+    data1.toPrecision(4);   //12.34
+    data1.toPrecision(6);   //12.3456
+    //Number.toString(진법) - 숫자를 지정한 진법으로 변환하여 표시
+    //Object.valueOf() : Object를 Number로 형변환
+    var k = new Number(1004);
+    typeof k;       //object
+    var j = k.valueOf();    
+    typeof j;       //number
+    </script>
+</body>
+</html>

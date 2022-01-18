@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 선언과 스코프</title>
+</head>
+<body>
+    <div id="result">
+        
+
+
+    </div> 
+    <script>
+    //primitive type
+    var num = 1004;       //number
+    var name="동그라미";   //string 
+    var data;             //undefinde
+    var pass = ture;      //boolean
+
+    alert(typeof num);
+    alert(typeof name);
+    alert(typeof data);
+    alert(typeof pass);
+     
+    
+    //doject type
+    var now = Date();               //Date - 자바스크립트의 데이터 내장 객체(Number, Math, Date, String, Array, Audio, File, Video, Interval)
+    var loc = location.href;        //location - 자바스크립트의 BOM객체(history, navigator, window, screen, location)
+    var kbs = document.getElementById("kbs").textContent;       //자바스크립트의 DOM객체(태그)
+    //ㄴ 자바스크립트 표준객체 = 내장객체_이미 정해져 있어서 그냥 쓰기만 하면돼
+    //      (데이터 내장 객체, BOM객체, DOM객체)
+    
+    var arr = [1, "임유리", 16];     //Array
+    var obj = {num:7, name="호랑이", age:25};   //Customize Object
+
+    alert(typeof now);    
+    alert(typeof loc);
+    alert(typeof kbs);
+    alert(typeof arr);
+    alert(typeof obj);
+
+    function fnc1() {   //함수만들기1 - 
+        var num = 20;   //지역변수_지금 이 fnc2안에서만 사용가능
+        alert("NUM : "+num);
+    }
+
+    var fnc2 = function () {    //함수만들기2
+        var num = 50;           //지역변수 - local scope
+        alert("NUM : "+num);
+    }
+
+    //함수호출
+    fnc1();
+    fnc2();
+
+    function fnc3() {   //리턴만 있는 함수
+        return "헤이~ 보리차"
+    }
+
+    var y = 0;
+    function fnc4(x) {   //매개변수만 있는 함수_()안에 있는건 매개변수
+       y = x*x;
+    }
+
+    function fnc5(x, y) {   //매개변수와 리턴이 모두 있는 함수
+        return x*y;
+    }
+
+    alert(fnc3());
+    fnc4(40);//매개변수가 있기 땨문에 x에 해당하는 값 넣어줘야해 
+    alert(y);
+    alert(fnc5(30,20));
+
+    </script>   
+</body>
+</html>

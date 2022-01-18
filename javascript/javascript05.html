@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 초기화와 형변환</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        var age;    //선언만
+        //alert(age);   -> 값이 undefined 이므로 에러발생
+        age = 42;   //초기화
+        var num = 1004;     //선언과 초기화를 동시에
+        var age = 29;       //여러번 선언할 수도 있고, 값도 얼마든지 변경 할 수 있음.
+        let kbs = 40;       //(let) 한 번만 선언이 가능하며, 얼마든지 값은 변경할 수 있음.    
+        const pi = 3.141592; //(const) 한 번만 선언하고, 값도 변경할 수 없음 -> 상수 선언
+        var data0 = 10;     //data0은 number
+        data0 = data0 = "임";   //data0은 String으로 묵시적 형변환(AutoCasting)이 이루어짐
+        data1 = "20";   //문자열   
+        data2 = "true"; //문자열
+        data3 = ture;   //불리언    
+        data4 = 20;     //숫자
+        data5 = 3.141592; //숫자-실수
+        data6 = "6.28"; //문자
+        alert(typeof data1);      //->String 이 나올꺼야
+        alert(typeof Number(data1));    //Number은 숫자형 문자열을 숫자로 변환
+        alert(typeof Number(data6))
+        alert(typeof parseFloat(data6)) //parsFloat은 실수형 문자열을 실수로 변환
+        alert(typeof parseInt(data6));  //parseInt는 숫자형문자열을 정수로 형변환
+        alert(typeof data2);
+        alert(typeof Boolean(data2));   //Boolean은 논리형문자열을 논리형으로 형변환
+        alert(typeof String(data3));    //String은 모든 데이터를 문자열로 형변환
+        //data5.toExponential() : 지수형을 문자열로 변환
+        //data5.toFixed() : 실수의 특정 소수점이하 자리수 만큼 문자열로 형변환
+        //data5.toPrecision() : 지정한 유효 자릿수 만큼 문자열로 형변환
+        //data2.toString() : 어떠한 데이터든 문자열로 형변환
+        alert(typeof Object(data5));    //Object는 모든 데이터를 객체형으로 형변환
+    </script>
+</body>
+</html>
