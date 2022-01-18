@@ -53,12 +53,31 @@
     <!--사용자 외부 스타일 연결-->
 <link rel="stylesheet" href="reset.css">
 <link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
 <style>
 /* 'Noto Sans KR', sans-serif; */
 /* font-family: 'MaruBuriSemiBold'; */
 
 
+.content { clear:both; width: 100%; min-height:2000px; }   
+.vs { clear:both; width: 100%; position: relative; overflow-x:hidden; } 
+.vs .img_box { width: 300%;}
+.vs .img_box li { width: 25%; float:left; position:relative; } 
 
+.btn_box li { display:none; } 
+    .ra { display:none; }
+    #ra1:checked ~ .btn_box li.item1 { display:block; }
+    #ra2:checked ~ .btn_box li.item2 { display:block; }  
+    #ra3:checked ~ .btn_box li.item3 { display:block; }  
+    .img_box { width: 400%; transition-duration: 2.2s; }
+    .img_box li { width: 25%; float:left; }
+    #ra1:checked ~ .img_box { margin-left: 0; }
+    #ra2:checked ~ .img_box { margin-left:-100%; }
+    #ra3:checked ~ .img_box { margin-left:-200%; }
+    .btn_box li label { display:block; width: 100px; height: 100px; position:absolute; 
+        top:330px; z-index:10; text-indent:-10000px; background-repeat: no-repeat; }
+    .btn_box li label.prev { left:60px; background-image: url(./img/left.png)}
+    .btn_box li label.next { right:60px; background-image: url(./img/right.png)}
 
 </style>
 </head>
@@ -311,44 +330,50 @@
     </div>
     <section class="content">
         <figure class="vs">
-            <ul>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-            </ul>
+            <input type="radio" name="ra" class="ra" id="ra1" checked>
+            <input type="radio" name="ra" class="ra" id="ra2">
+            <input type="radio" name="ra" class="ra" id="ra3">
             <ui class="img_box">
                 <li>
-                    <img src="" alt="팝업알림1" class="vs_img">
+                    <img src="./img/pop3.jpg" alt="팝업알림1" class="vs_img">
                     <div class="tit_box">
                         <h2 class="vs_tit">알림1</h2>
                         <p class="vs_com"></p>
                     </div>
                 </li>
                 <li>
-                    <img src="" alt="팝업알림2" class="vs_img">
+                    <img src="./img/pop2.jpg" alt="팝업알림2" class="vs_img">
                     <div class="tit_box">
                         <h2 class="vs_tit">알림2</h2>
                         <p class="vs_com"></p>
                     </div>
                 </li>
                 <li>
-                    <img src="" alt="팝업알림3" class="vs_img">
+                    <img src="./img/pop1.jpg" alt="팝업알림3" class="vs_img">
                     <div class="tit_box">
                         <h2 class="vs_tit">알림3</h2>
                         <p class="vs_com"></p>
                     </div>
                 </li>
-                <li>
-                    <img src="" alt="팝업알림4" class="vs_img">
-                    <div class="tit_box">
-                        <h2 class="vs_tit">알림4</h2>
-                        <p class="vs_com"></p>
-                    </div>
-                </li>
             </ui>
+            <ul class="btn_box">
+                <li class="item1">
+                    <label for="ra4" class="prev">이전3</label>
+                    <label for="ra2" class="next">다음2</label>
+                </li>
+                <li class="item2">
+                    <label for="ra1" class="prev">이전1</label>
+                    <label for="ra3" class="next">다음3</label>
+                </li>
+                <li class="item3">
+                    <label for="ra2" class="prev">이전2</label>
+                    <label for="ra4" class="next">다음1</label>
+                </li>
+            </ul>
         </figure>
+
+        <!-- ul.btn_box>li.btn$2>button -->
+
         <div class="buttonbar">
             <div class="quick-menu">
                 <ul>
