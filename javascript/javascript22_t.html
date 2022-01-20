@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지도 api 탭으로 구현하기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }    
+    ul { list-style: none; }
+    a { text-decoration: none;}
+    img { border: 0; }
+    button, input[type=button], input[type=submit], input[type=reset] { border:0; outline:0; background-color:#333; color:#fff; }
+    button:hover, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover { background-color:deeppink; }
+
+    .ra1 { display:none; }
+    .btn_group { clear:both; width: 1200px; margin: 0 auto; height: 60px; }
+    .btn_group li { float:left; margin:14px; }
+    .btn_group li label { display:block; width: 120px; line-height: 42px; height: 42px; background-color: #fff; color:#333; 
+    border:1px solid #333; text-align: center; cursor:pointer; }
+    .content_group { clear:both; width: 1200px; height: 600px; 
+    margin: 0 auto; }
+    .content_group li { clear:both; width: 1200px; height: 600px;
+    display:none;  }
+    #ra01:checked ~ .content_group li.item1 { display:block; }
+    #ra02:checked ~ .content_group li.item2 { display:block; }
+    #ra03:checked ~ .content_group li.item3 { display:block; }
+    #ra01:checked ~ .btn_group li.item1 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    #ra02:checked ~ .btn_group li.item2 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    #ra03:checked ~ .btn_group li.item3 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hd">
+            <nav id="gnb">메인메뉴</nav>
+        </header>
+        <div class="content">
+            <div id="map_group1" class="map_group">
+                <input type="radio" name="ra1" id="ra01" class="ra1" checked>
+                <input type="radio" name="ra1" id="ra02" class="ra1">
+                <input type="radio" name="ra1" id="ra03" class="ra1">
+                <ul class="btn_group">
+                    <li class="item1">
+                        <label for="ra01" class="btn">서울 본사</label>
+                    </li>
+                    <li class="item2">
+                        <label for="ra02" class="btn">일산 지사</label>
+                    </li>
+                    <li class="item3">
+                        <label for="ra03" class="btn">수원 지사</label>
+                    </li>
+                </ul>
+                <ul class="content_group">
+                    <li class="item1">
+                        <div class="map_area">
+                            <h2 class="tit">서울 본사 위치</h2>
+                            <div id="map_canvas1" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="map_area">
+                            <h2 class="tit">일산 지사 위치</h2>
+                            <div id="map_canvas2" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="map_area">
+                            <h2 class="tit">수원 지사 위치</h2>
+                            <div id="map_canvas3" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="ft">카피라이트</footer>
+    </div>
+</body>
+</html>

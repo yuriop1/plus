@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* { margin: 0; padding: 0; }
+body, html { width: 100%; font-family: 'Noto Sans KR', sans-serif; overflow-x:hidden; }
+ul { list-style: none; }
+button, input[type=button], input[type=submit], input[type=reset] { outline:0; border:0; }
+a { text-decoration: none; } 
+.wrap { width: 100%; clear:both; }
+
+
+.lst2 { width: 920px; margin: 20px auto; }
+.lst2 li { float: left; width: 220px; min-width: 30px; margin-bottom: 30px; position: relative; 
+height: 300px; overflow: hidden; }
+.lst2 li:nth-child(4n) { margin-right: 0; }
+.thumb_tit_box { position: absolute; width: 220px; height: 60px; 
+background-color: rgba(255, 255, 255, 0.65); bottom: 0; left: 0;
+display: none; }
+.lst2 li:hover .thumb_tit_box { display: block; }
+.thumb_wrap { width: 220px; height: 300px; overflow: hidden; }
+.thumb_wrap img { display: block; width: auto; height: 300px; min-width: 220px; }
+.thumb_tit_box > * { line-height: 1.8; padding-left: 14px; padding-right: 14px; 
+text-overflow: ellipsis; overflow: hidden; white-space:nowrap; }
+
+
+.lst3 {  clear: both; width: 960px; margin: 10px auto; }
+.lst3 li { float: left; width: 300px; margin-right: 30px; margin-bottom: 30px;
+height: 400px; border-radius: 6px; overflow: hidden; background-color: #eee;  }
+.lst3 li:nth-child(3n) { margin-right: 0; }
+.lst3 li a { display: block; height: 398px; border: 1px solid #000; border-radius: 6px; }
+.card_wrap { width: 298px; height: 300px; overflow: hidden; }
+.card_wrap img { min-width: 298px; height: auto; }
+/*이미지태그  알아서 맞추기*/
+.card_tit_box { padding-left: 14px; padding-top: 14px; }
+.card_tit { color: rgb(31, 31, 31); font-style: 16px; line-height: 1.8; }
+.card_com { color: rgb(70, 66, 66); font-style: 14px; line-height: 1.6; }
+
+</style>
+<body>
+    <div class="wrap">
+        <div class="content">
+        <h2 class="title">썸네일 리스트</h2>
+            <ul class="lst2">
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/메인동백꽃5.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/진남관.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/서브돌산갓김치.png" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/여수해상케이블카.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/서브1오동도.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/서브일출.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/서브불꽃놀이.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="thumb_wrap"><img src="/img/서브걷기여행.jpg" alt="사진"></div>
+                        <div class="thumb_tit_box">
+                            <h3 class="thumb_tit">잼ㅎㄱ11111111111111111111111111111111111</h3>
+                            <p class="thumb_com">울릉도 동남쪽 뱃길따라 이백리 외로운 섬하나 새들의고향 그누가 아무리 자기네 땅이라고 우겨도 독도는 우리땅 우리땅!</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="wrap">
+            <h2 class="title">카드형 리스트</h2>
+            <ul class="lst3">
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/서브자전거코스2.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목1</h3>
+                            <p class="card_com">설명1</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/오동도.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목2</h3>
+                            <p class="card_com">설명2</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/서브버스킹.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목3</h3>
+                            <p class="card_com">설명3</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/서브이순신.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목4</h3>
+                            <p class="card_com">설명4</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/서브게장백반.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목5</h3>
+                            <p class="card_com">설명5</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="card_wrap"><img src="./img/동백꽃1.jpg" alt=""></div>
+                        <div class="card_tit_box">
+                            <h3 class="card_tit">제목6</h3>
+                            <p class="card_com">설명6</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

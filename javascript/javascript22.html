@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }    
+    ul { list-style: none; }
+    a { text-decoration: none;}
+    img { border: 0; }
+    button, input[type=button], input[type=submit], input[type=reset] { border:0; outline:0; background-color:#333; color:#fff; }
+    button:hover, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover { background-color:deeppink; }
+
+    .ra1 { display:none; }
+    .btn_group { clear:both; width: 1200px; margin: 0 auto; height: 60px; }
+    .btn_group li { float:left; margin:14px; }
+    .btn_group li label { display:block; width: 120px; line-height: 42px; height: 42px; background-color: #fff; color:#333; 
+    border:1px solid #333; text-align: center; cursor:pointer; }
+    .content_group { clear:both; width: 1200px; height: 600px; 
+    margin: 0 auto; }
+    .content_group li { clear:both; width: 1200px; height: 600px;
+    display:none;  }
+        #ra01:checked ~ .content_group li.item1 { display: block; }
+        #ra02:checked ~ .content_group li.item2 { display: block; }
+        #ra03:checked ~ .content_group li.item3 { display: block; }
+        #ra01:checked ~ .btn_group li.item1 label { background-color: rgb(199, 130, 130); color: black; border: 1px solid rgb(255, 230, 0);}
+        #ra02:checked ~ .btn_group li.item2 label { background-color: rgb(199, 130, 130); color: black; border: 1px solid rgb(255, 230, 0);}
+        #ra03:checked ~ .btn_group li.item3 label { background-color: rgb(199, 130, 130); color: black; border: 1px solid rgb(255, 230, 0);}
+        .map_canvas { width: 1011px; height: 600px; }
+
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+    <script src="https://cloud.google.com/maps-platform"></script>
+    <script> 
+    //등촌동 : 37.565046620045656, 126.84008787457591
+    //일산본점 : 37.668018323931655, 126.77521481146321
+    //행신점 :37.618822841441414, 126.83353016860745
+    function initialize() {
+      var myLatlng1 = new google.maps.LatLng(37.668018323931655, 126.77521481146321);
+      var myLatlng2 = new google.maps.LatLng(37.565046620045656, 126.84008787457591);
+      var myLatlng3 = new google.maps.LatLng(37.618822841441414, 126.83353016860745);
+
+      var mapOptions1 = { zoom: 17, center: myLatlng1 }
+      var mapOptions2 = { zoom: 17, center: myLatlng2 }
+      var mapOptions3 = { zoom: 17, center: myLatlng3 }
+
+      var map1 = new google.maps.Map(document.getElementById('map_canvas1'), mapOptions1);
+      var map2 = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions2);
+      var map3 = new google.maps.Map(document.getElementById('map_canvas3'), mapOptions3);
+     
+      var marker1 = new google.maps.Marker({
+          position: myLatlng1,
+          map: map,
+          title: '등촌칼국수 일산 본점'	  //레이블을 바꿔서 입력
+      });
+      var marker2 = new google.maps.Marker({
+          position: myLatlng2,
+          map: map,
+          title: '등촌 등촌칼국수'	  //레이블을 바꿔서 입력
+      });
+      var marker3 = new google.maps.Marker({
+          position: myLatlng3,
+          map: map,
+          title: '행신 등촌칼국수'	  //레이블을 바꿔서 입력
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+     </script>
+</head>
+<body onload="initialize()">
+    <div class="wrap">
+        <header class="hd">
+            <nav id="gnb">메인메뉴</nav>
+        </header>
+        <div class="content">
+            <div id="map_group1" class="map_group">
+                <input type="radio" name="ra1" id="ra01" class="ra1" checked>
+                <input type="radio" name="ra1" id="ra02" class="ra1">
+                <input type="radio" name="ra1" id="ra03" class="ra1">
+                <ul class="btn_group">
+                    <li class="item1">
+                        <label for="ra01" class="btn">일산 본점</label>
+                    </li>
+                    <li class="item2">
+                        <label for="ra02" class="btn">등촌 지사</label>
+                    </li>
+                    <li class="item3">
+                        <label for="ra03" class="btn">행신 지사</label>
+                    </li>
+                </ul>
+                <ul class="content_group">
+                    <li class="item1">
+                        <div class="map_area">
+                            <h2 class="tit">일산 본점 위치</h2>
+                            <div id="map_canvas1" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="map_area">
+                            <h2 class="tit">등촌 지사 위치</h2>
+                            <div id="map_canvas2" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="map_area">
+                            <h2 class="tit">행신 지사 위치</h2>
+                            <div id="map_canvas3" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="ft">카피라이트</footer>
+    </div>    
+</body>
+</html>

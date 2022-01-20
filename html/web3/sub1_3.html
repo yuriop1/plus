@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관광명소_거문도백도</title>
+        <!-- 파비콘-->
+
+    <!-- 메타포-->
+    <meta name="title" content="여수 관광문화 홈페이지">
+    <meta name="description" content="전라남도 여수시 관광안내, 관광명소, 문화유적, 축제문화행사, 숙박 등 정보 제공">
+    <meta name="keywords" content="여수관광안내, 돌산갓김치, 게장백반, 서대회, 여수한정식, 갯장어회, 갯장어 샤브샤브, 굴구이, 장어구이, 갈치조림, 새조개샤브샤브, 전어회, 전어구이,오동도, 거문도,백도,향일암, 금오도비렁길, 비렁길, 여수세계박람회장, 진남관, 충무공, 이순신, 여수밤바다, 산단야경, 영취산, 영취산진달래, 진달래, 해상케이블카, 이순신대교, 거북선, 거북선축제, 국제청소년축제, 국제범선축제, 여자만, 여자만갯벌, 진달래체험,갯벌노을체험,향일암일출">
+    <!-- 오픈그래프-->
+    <meta property="og:url" content="http://www.yeosu.go.kr/tour/tour">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:site_name" content="여수관광문화">
+    <meta property="og:article:author" content="https://www.facebook.com/goystour">
+    <meta property="og:article:publisher" content="https://www.facebook.com/goystour">
+    <meta property="og:article:thumbnailUrl" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:article:author" content="생명의 푸르름 가득한, 여수관광문화">
+    <meta property="og:article:author:url" content="http://www.yeosu.go.kr/tour/">
+    <!-- 폰트로딩-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung:400" rel="stylesheet">
+   <!--필수 API로딩 (js)-->
+
+   <!-- 외부 스타일 연결-->
+   <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="grid.css">
+   <link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
+
+   <style>
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+    /*font-family: 'Black Han Sans', sans-serif;*/
+    /*font-family: 'Song Myung', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+
+    .vs { clear: both; width: 100%; height: 500px; 
+        background-image: url("./img/sub_main3.jpg"); background-position: center center;
+    background-repeat: no-repeat;}
+    .vs_tit { color: #fff; font-family: 'Song Myung'; padding-right: 360px; padding-top: 140px; float: right; text-align: right; text-shadow: 1px 1px 2px rgb(44, 44, 44); }
+    .vs_tit1 { font-size: 30px;  }
+    .vs_tit2 { font-size: 50px;  }
+    .content_wrap { clear: both; width: 1200px; margin: 0 auto; margin-top: -150px; }
+    .sub_tit { font-family: 'Song Myung'; height: 94px; font-weight: 200; font-size: 35px; background-color: rgb(17, 49, 132); 
+    text-align: center; width: 190px; float: left; color: azure; padding-top: 56px;} 
+    .sub_pic_com { clear:both; font-size:14px; line-height: 1.6; padding-bottom: 24px; width: 970px;}
+    .bread_box { height: 125px; background-color: #fff; width: 980px; float: right; 
+    padding-left: 30px; padding-top: 24px; border-bottom: 1px solid #000; 
+    position: relative;}
+    .cate_tit { color: black; font-size: 40px; font-family: 'Song Myung' }
+    .bread { padding-top: 24px; line-height: 1.6; font-style: 16px; }
+    .bread a, .bread span { color: #333; }
+    .bread span.cur { color: rgb(241, 59, 59); font-weight: 600; }
+
+    .leftbar{ width: 189px; float: left; min-height: 100vh; background-color: #ffffff; }
+    .lnb{ clear: both; padding-top: 1px;}
+    .lnb li { clear: both; margin: 5px 6px; border: 1px solid #333;
+    line-height: 52px; width: 172px; }
+    .lnb li a { color: #000; font-style: 14px; padding-left: 1em; }
+    
+    .page_box { width: 980px; float: left; }
+
+    .page { padding-top: 40px; height: auto; min-height: 70vh; width: 100%; }
+    .page_tit { padding-bottom: 36px; color: #000; }
+    .sub_pic img { display: block; width: 100%; height: auto; }
+
+    .page { display:none; }
+    .page:target { display:block; }
+
+    .dong { display: block; width: 990px; padding: 10px; }
+
+
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <script>
+            $(document).ready(function(){
+                $(".lnb ul li").click(function(){
+                    $(".lnb ul li").removeClass("act");
+                    $(this).addClass("act");
+                });
+                $(".sub > li").click(function(){
+                    $(".lnb ul li").removeClass("act");
+                    var t = $(this).index();
+                    $(".lnb ul li").eq(t).addClass("act");
+                });
+            });    
+            </script>
+        
+        <header class="hd fix">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.png" alt="로고">
+                </a>
+
+                <!-- nav.tnb>ul>li*5>a{상단$} -->
+                <nav class="tnb">
+                    <ul>        
+                        <li><a href="sub5_1_add.html">글쓰기</a></li>
+                        <li><a href="join.html">회원가입</a></li>    
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="https://www.badatime.com/41.html?idx=41">물때표</a></li>
+                    </ul>
+                </nav>
+
+               <!--nav.gnb>ul>li*5>a.dp1+(ul>li*5>a{서브$}) -->   
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="sub1_1.html" class="dp1">관광명소</a>
+                            <ul class="sub">
+                                <li><a href="sub1_1.html">오동도</a></li>                              
+                                <li><a href="sub1_2.html">진남관</a></li>
+                                <li><a href="sub1_3.html">거문도백도</a></li>
+                                <li><a href="sub1_4.html">여수해상케이블카</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">문화/축제</a>
+                            <ul class="sub">
+                                <li><a href="sub2_1.html">낭만버스킹</a></li>
+                                <li><a href="sub2_2.html">여수거북선축제</a></li>
+                                <li><a href="sub2_3.html">여수불꽃축제</a></li>
+                                <li><a href="sub2_4.html">향일 일출제</a></li>                           
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="" class="dp1">여수대표음식</a>
+                            <ul class="sub">
+                                <li><a href="sub3_1.html">돌산갓김치</a></li>
+                                <li><a href="sub3_2.html">게장백반</a></li>
+                                <li><a href="sub3_3.html">여수한정식</a></li>
+                                <li><a href="sub3_4.html">굴구이</a></li>                              
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">여행/체험</a>
+                            <ul class="sub">
+                                <li><a href="sub4_1.html">자전거코스</a></li>
+                                <li><a href="sub4_2.html">걷기여행</a></li>                            
+                                <li><a href="sub4_3.html">이순신코스</a></li>
+                                <li><a href="sub4_4.html">여수낭만버스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub5_1.html" class="dp1">관광안내</a>
+                            <ul class="sub">
+                                <li><a href="sub5_1.html">관광소식</a></li>
+                                <li><a href="sub5_2.html">관광웹툰</a></li>
+                                <li><a href="sub5_3.html">관광캐릭터</a></li>
+                                <li><a href="sub5_4.html">여수여행사</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> 
+            </div>    
+        </header>  
+        <div class="content fix">
+            <figure class="vs" id="vs">
+                <!--채움-->
+                <div class="vs_tit">
+                    <span class="vs_tit1">희귀조류와 식물들의 천국</span><br>
+                    <span class="vs_tit2"><u>자연</u>그대로를 간직한 섬</span>
+                </div>
+            </figure>
+            <div class="content_wrap">
+                <div class="sub_box">
+                    <h2 class="sub_tit">관광명소</h2>
+                    <div class="bread_box">
+                        <h3 class="cate_tit">거문도와 백도</h3>
+                        <p class="bread"><a href="index.html" class="home">홈</a> 
+                            &gt; <a href="">관광명소</a>
+                            &gt; <span class="cur">거문도와 백도</span>
+                        </p>
+                    </div>
+                </div>
+                <aside class="leftbar">
+                    <nav class="lnb">
+                        <ul>
+                            <li><a href="#page1">남해의 해금강</a></li>
+                            <li><a href="#page2">거문(巨門)</a></li>
+                            <li><a href="#page3">천연생태계의 보고</a></li>
+                            <li><a href="#page4">위치</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <div class="page_box">
+                    <section class="onepage">
+                        <h2 class=""></h2>
+                        <img src="./img/sub_sub3.jpg" alt="거문도백도" class="dong"><br>
+                    </section>
+                    <section class="page" id="page1">
+                        <h2 class="page_tit">남해의 아름다운 섬 거문도와 백도</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    남해안 최초로 불을 밝힌 거문도, 남해의 해금강이라 불리는 백도
+                                    거문도 백도 지구는 100년 넘는 역사와 함께 남해안 최초로 불을 밝힌 거문도 등대와 녹산등대가는 길, 거문도 동백 숲과
+                                    더불어 남해의 해금강이라 불리는 백도의 기암괴석과 천혜의 비경을 자랑한다.    
+                                
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="page" id="page2">
+                        <p class="sub_pic_com"></p>
+                        뱃길따라 삼백리 다도해해상국립공원 거문도와 백도, 이국적인 몽환을 지닌 거문도는 열강들의 수난사를 대변하고 있고 천연 비경을 담은 백도는 여전히 하늘의 것이다. 영국, 러시아, 미국, 일본 등 세계 열강들의 각축장이 되었던 거문도가 인간의 이해관계가 만든 역사라면, 천제의 아들이 내려와 올라가지 않았다는 백도는 환상적인 서른아홉개의 바위가 만든 전설의 야사이다.
+                        <br><br><br><br>
+                        </p>
+                        <h2 class="page_tit">큰 문이 되는 섬 거문도</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    흔히들 거문도를 거문(巨門), 즉 '큰 문이 되는 섬'으로 생각한다. 맞는 얘기다. 거문도는 그 지형학적 위치 때문에 고대부터 동아시아 뱃길의 중심이었다. 또 같은 이유로 근대 서구 열강들의 틈바구니에서 수난을 당하기도 했다. 그래서 거문(巨門)이라는 이름이 더없이 잘 어울리는 섬이라 할 수도 있다. 그럼에도 불구하고 거문도라는 지명은 인물에서 비롯되었다는 얘기가 더 설득력 있게 들린다. 거문(巨文), 즉 ‘학문을 하는 큰 인물이 많은 섬＇이라는 뜻이다. 대부분의 지명 유래가 지형이나 산천에서 비롯된 것에 비하면 이는 극히 이례적인 경우라 하겠다. 그렇다면 왜 이런 이름을 얻었을까? 그건 거문도에 일찍부터 뱃길을 통한 문물과 문화의 교류가 활발했기 때문이다. 이것이 남도 끝자락 작은 섬에서 훌륭한 인물들을 길러내는 토양이 된것이다.
+
+19세기 말 거문도엔 이미 당구장, 전깃불, 전화 등 육지에서도 구경하기 힘들었던 근대화의 물결이 상륙했다. 그리고 20세기 초업인 1905년엔 이미 근대학교인 낙영학교가 설립될 정도로 거문도의 문화흡수는 빠르고 전방위적이었다. 그것들이 큰 인물을 만들어 냈고, 그래서 거문이라는 영광스러운 이름도 얻게 된 것이다. 거문도가 서구 열강들의 틈에서도 살아남을 수 있었고 동학운동과 치열한 항일운동을 끝까지 펼칠 수 있었던 것도 이런 학식있는 인물들이 섬을 지키고 있었기 때문일 것이다.
+
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="page" id="page3">
+                        <h2 class="page_tit">천연생태계의 보고 백도</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    백도는 1979년 12월에 명승 제7호로 지정되었다. 39개의 무인군도로 이루어져 있고 상백도, 하백도로 구분한다. 거문도에서 출발하는 유람선을 타고 섬 주위를 한 바퀴 도는 데는 약 40분이 걸리나 섬에 내릴 수는 없다. 덕분에 천연 희귀 조류와 식물들은 제대로 보존되어있다. 천연기념물 15호인 흑비둘기를 비롯하여 팔색조, 가마우지, 휘파람새 등 30여종의 희귀조류가 서식하고 있고, 풍란, 석곡, 눈향나무, 후박나무, 동백 등 아열대 식물들이 353종에 이르며, 큰 붉은 산호, 꼬산호, 해면 등 70여종의 해양식물이 서식하고 있는 천연생태계의 보고이다.
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="page" id="page4">
+                        <h2 class="page_tit">위치</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    주소 : 전라남도 여수시 삼산면 거문리 거문도
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <footer class="ft fix">
+                <nav class="fnb">
+                    <ul class="fnb_fr">
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">사진갤러리</a></li>
+                        <li><a href="">업소등록</a></li>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">여수시청</a></li>
+                    </ul>
+                </nav>
+                <div class="ft_wrap">
+                    <div class="copyright">
+                        <p class="addr"><br>[59675] 전남 여수시 시청로 1 (학동)시청콜센터 : 1899-2012 / 관광통역안내 : 1330 / E-mail:ksu2020@korea.kr</p>
+                        <p class="copy">COPYRIGHT(C) 2015 BY YEOSUCITY. ALL RIGHT RESERVED.</p>
+                    </div>
+                    <div class="wa"><img src="./img/ft_logo.png" alt="여수로고"></div>
+                </div>
+            </footer>  
+        </div>
+    </div>
+</body>
+</html>

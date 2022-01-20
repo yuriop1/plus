@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지도 api 탭으로 구현하기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }    
+    ul { list-style: none; }
+    a { text-decoration: none;}
+    img { border: 0; }
+    button, input[type=button], input[type=submit], input[type=reset] { border:0; outline:0; background-color:#333; color:#fff; }
+    button:hover, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover { background-color:deeppink; }
+
+    .ra1 { display:none; }
+    .btn_group { clear:both; width: 1200px; margin: 0 auto; height: 60px; }
+    .btn_group li { float:left; margin:14px; }
+    .btn_group li label { display:block; width: 120px; line-height: 42px; height: 42px; background-color: #fff; color:#333; 
+    border:1px solid #333; text-align: center; cursor:pointer; }
+    .content_group { clear:both; width: 1200px; height: 600px; 
+    margin: 0 auto; }
+    .content_group li { clear:both; width: 1200px; height: 600px;
+    display:none;  }
+    #ra01:checked ~ .content_group li.item1 { display:block; }
+    #ra02:checked ~ .content_group li.item2 { display:block; }
+    #ra03:checked ~ .content_group li.item3 { display:block; }
+    #ra01:checked ~ .btn_group li.item1 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    #ra02:checked ~ .btn_group li.item2 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    #ra03:checked ~ .btn_group li.item3 label { background-color: deeppink; color:#fff; border:1px solid red; }
+    .map_canvas { width: 1011px; height: 600px; }
+
+    #pop_box { position:fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index:9999; background-color:rgba(0,0,0,0.6); display:none; }
+    #pop_box .close_btn { display:block; width: 100px; height: 60px; line-height: 60px; 
+    text-align: center; background-color: deeppink; color:#fff; position:absolute; 
+    top:40px; right:50px; z-index:9998; }
+    #ck1:checked ~ #pop_box { display:block; }
+    </style>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=발급받은api키"></script> -->
+<!-- https://cloud.google.com/maps-platform 에서 개발자 API키를 발급받아서 넣어 주세요 -->
+<script> 
+//좌표 값을 바꿔서 입력 36.3491563,127.3776857
+//서울지사 좌표값 : 37.566315, 126.968432
+//일산지사 좌표값 : 37.678763, 126.768242
+//수원지사 좌표값 : 37.271333550465904, 127.01539649005038
+//제주지사 좌표값 : 33.51156203953721, 126.52505667832443
+function initialize() {
+  var myLatlng1 = new google.maps.LatLng(37.566315, 126.968432);
+  var myLatlng2 = new google.maps.LatLng(37.678763, 126.768242);
+  var myLatlng3 = new google.maps.LatLng(37.271333550465904, 127.01539649005038);
+  var myLatlng4 = new google.maps.LatLng(33.51156203953721, 126.52505667832443);
+
+  var mapOptions1 = { zoom: 17, center: myLatlng1 }
+  var mapOptions2 = { zoom: 17, center: myLatlng2 }
+  var mapOptions3 = { zoom: 17, center: myLatlng3 }
+  var mapOptions4 = { zoom: 17, center: myLatlng4 }
+
+  var map1 = new google.maps.Map(document.getElementById('map_canvas1'), mapOptions1);
+  var map2 = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions2);
+  var map3 = new google.maps.Map(document.getElementById('map_canvas3'), mapOptions3);
+  var map4 = new google.maps.Map(document.getElementById('map_canvas4'), mapOptions4);
+
+  var marker1 = new google.maps.Marker({
+      position: myLatlng1,
+      map: map1,
+      title: '서울 농협 본사'	  //레이블을 바꿔서 입력
+  });
+
+  var marker2 = new google.maps.Marker({
+      position: myLatlng2,
+      map: map2,
+      title: '일산 농협 지사'	  //레이블을 바꿔서 입력
+  });
+
+  var marker3 = new google.maps.Marker({
+      position: myLatlng3,
+      map: map3,
+      title: '수원 농협 지사'	  //레이블을 바꿔서 입력
+  });
+
+  var marker4 = new google.maps.Marker({
+      position: myLatlng4,
+      map: map4,
+      title: '농협 제주 본사'	  //레이블을 바꿔서 입력
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+ </script>
+</head>
+<body onload="initialize()">
+    <div class="wrap">
+        <header class="hd">
+            <nav id="gnb">메인메뉴</nav>
+        </header>
+        <div class="content">
+            <div id="map_group1" class="map_group">
+                <input type="radio" name="ra1" id="ra01" class="ra1" checked>
+                <input type="radio" name="ra1" id="ra02" class="ra1">
+                <input type="radio" name="ra1" id="ra03" class="ra1">
+                <ul class="btn_group">
+                    <li class="item1">
+                        <label for="ra01" class="btn">서울 본사</label>
+                    </li>
+                    <li class="item2">
+                        <label for="ra02" class="btn">일산 지사</label>
+                    </li>
+                    <li class="item3">
+                        <label for="ra03" class="btn">수원 지사</label>
+                    </li>
+                </ul>
+                <ul class="content_group">
+                    <li class="item1">
+                        <div class="map_area">
+                            <h2 class="tit">서울 본사 위치</h2>
+                            <div id="map_canvas1" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item2">
+                        <div class="map_area">
+                            <h2 class="tit">일산 지사 위치</h2>
+                            <div id="map_canvas2" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item3">
+                        <div class="map_area">
+                            <h2 class="tit">수원 지사 위치</h2>
+                            <div id="map_canvas3" class="map_canvas">
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="linkbox">
+                <a href="http://map.naver.com/?mapmode=0&amp;lng=abd5ef7b6d0d198c4c29ec3551daadee&amp;pinId=37604053&amp;pinType=site&amp;lat=079f727694bcb186ef4fe525c5bb1298&amp;dlevel=11&amp;enc=b64" title="약도보기" target="_blank">약도보기</a>
+            </div> -->
+            <a href="https://www.google.co.kr/maps/place/%EB%86%8D%ED%98%91%EC%9D%80%ED%96%89+%EA%B0%95%EB%A6%89%EC%8B%9C%EC%A7%80%EB%B6%80/@37.7521437,128.8921543,18.56z/data=!4m5!3m4!1s0x3561e5f770eed9fd:0xe7aac0f647c2a61c!8m2!3d37.7521567!4d128.8928957?hl=ko" target="_blank">강릉지부</a>
+            <div class="pop_btn_box" style="clear:both; width:100%; height:100px; margin-top: 60px;">
+                <label for="ck1">지도 팝업으로 열기</label>
+            </div>
+        </div>
+        <footer class="ft">카피라이트</footer>
+    </div>
+    <input type="checkbox" class="ra1" id="ck1">
+    <div class="pop_box" id="pop_box">
+        <label for="ck1" class="close_btn">닫기</label>
+        <div id="map_canvas4" class="map_canvas"></div>
+    </div>
+</body>
+</html>

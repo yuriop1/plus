@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 테스트 페이지</title>
+</head>
+<body>
+    모바일 테스트 페이지
+    <script>
+var os = "win16|win32|win64|mac|macintel|linux";
+    if(navigator.platform){
+        if(os.indexOf(navigator.platform.toLowerCase()) < 0){   //해당 운영체제가 없으면, -1을 반환
+            console.log("모바일");
+            //location.href="m.naver.com";
+        } else {
+            console.log("데스크탑");
+           //location.href="www.naver.com";
+        }
+    }
+
+    </script>
+</body>
+</html>

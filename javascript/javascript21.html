@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator 객체를 활용한 GPS 사용</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <script>
+    //첫 번째 방법
+    // function getLocation(){
+    //     if(navigator.geolocation) { //GPS를 지원한다면
+    //         navigator.geolocation.getCurrentPosition(function(position){
+    //             console.log("위도 : "+position.coords.latitude);
+    //             console.log("경도 : "+position.coords.longitude);
+    //         }, function(error) {
+    //             console.log(error);
+    //         });
+    //     } else {
+    //         console.log("GPS 기능을 지원하지 않음");
+    //     }
+    // }
+    // getLocation();  
+
+    // 두 번째 방법
+    $(document).ready(function(){
+        if(navigator.geolocation) { //GPS를 지원한다면
+             navigator.geolocation.getCurrentPosition(function(position){
+                console.log(position.coords.latitude); 
+                console.log(position.coords.longitude); 
+                $.each(position.coords, function(key, item) {
+                    $("<h3></h3>").html(key+" : "+item).appendTo("body");
+                });
+             }, function(error) {
+                 console.log(error.message);
+             });
+         } else {
+             console.log("GPS 기능을 지원하지 않음");
+         }
+        if (!!navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(successCallback,errorCallback); 
+        } else {
+                alert("이 브라우저는 Geolocation를 지원하지 않습니다");
+        }
+        function successCallback(position) {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+        
+            document.getElementById("msg").innerHTML = "위도" + lat + ", 경도:"+lng
+        }
+        function errorCallback(error){
+            alert(error.message);
+        }   
+
+        // 세 번째 방법
+        // var options = {
+        //     enableHighAccuracy: true,
+        //     timeout: 5000,
+        //     maximumAge: 0
+        // };
+        // function success(pos) {
+        //     var crd = pos.coords;
+            
+        //     console.log('Your current position is:');
+        //     console.log('Latitude : ' + crd.latitude);
+        //     console.log('Longitude: ' + crd.longitude);
+        //     console.log('More or less ' + crd.accuracy + ' meters.');
+        // };
+        // function error(err) {
+        //     console.warn('ERROR(' + err.code + '): ' + err.message);
+        // };
+        // navigator.geolocation.getCurrentPosition(success, error, options);
+
+    });  
+    </script>
+</body>
+</html>

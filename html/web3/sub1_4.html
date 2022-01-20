@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관광명소_케이블카</title>
+        <!-- 파비콘-->
+
+    <!-- 메타포-->
+    <meta name="title" content="여수 관광문화 홈페이지">
+    <meta name="description" content="전라남도 여수시 관광안내, 관광명소, 문화유적, 축제문화행사, 숙박 등 정보 제공">
+    <meta name="keywords" content="여수관광안내, 돌산갓김치, 게장백반, 서대회, 여수한정식, 갯장어회, 갯장어 샤브샤브, 굴구이, 장어구이, 갈치조림, 새조개샤브샤브, 전어회, 전어구이,오동도, 거문도,백도,향일암, 금오도비렁길, 비렁길, 여수세계박람회장, 진남관, 충무공, 이순신, 여수밤바다, 산단야경, 영취산, 영취산진달래, 진달래, 해상케이블카, 이순신대교, 거북선, 거북선축제, 국제청소년축제, 국제범선축제, 여자만, 여자만갯벌, 진달래체험,갯벌노을체험,향일암일출">
+    <!-- 오픈그래프-->
+    <meta property="og:url" content="http://www.yeosu.go.kr/tour/tour">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:site_name" content="여수관광문화">
+    <meta property="og:article:author" content="https://www.facebook.com/goystour">
+    <meta property="og:article:publisher" content="https://www.facebook.com/goystour">
+    <meta property="og:article:thumbnailUrl" content="http://www.yeosu.go.kr/contents/fb_ystour_logo.png">
+    <meta property="og:article:author" content="생명의 푸르름 가득한, 여수관광문화">
+    <meta property="og:article:author:url" content="http://www.yeosu.go.kr/tour/">
+    <!-- 폰트로딩-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung:400" rel="stylesheet">
+   <!--필수 API로딩 (js)-->
+
+   <!-- 외부 스타일 연결-->
+   <link rel="stylesheet" href="common.css">
+   <link rel="stylesheet" href="grid.css">
+   <link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
+
+   <style>
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+    /*font-family: 'Black Han Sans', sans-serif;*/
+    /*font-family: 'Song Myung', sans-serif;*/
+    /*font-family: 'East Sea Dokdo', sans-serif;*/
+
+    .vs { clear: both; width: 100%; height: 500px; 
+    background-image: url("./img/sub_main4.jpg"); background-position: center center;
+    background-repeat: no-repeat;}
+    .vs_tit { color: #263452; font-family: 'Song Myung'; padding-right: 845px; padding-top: 85px; float: right; text-shadow: 1px 1px 2px rgb(62 69 92); }
+    .vs_tit1 { font-size: 30px;  }
+    .vs_tit2 { font-size: 50px;  }
+    .content_wrap { clear: both; width: 1200px; margin: 0 auto; margin-top: -150px; }
+    .sub_tit { font-family: 'Song Myung'; height: 94px; font-weight: 200; font-size: 35px; background-color: rgb(17, 49, 132); 
+    text-align: center; width: 190px; float: left; color: azure; padding-top: 56px;} 
+    .sub_pic_com { clear:both; font-size:14px; line-height: 1.6; padding-bottom: 24px; width: 970px;}
+    .bread_box { height: 125px; background-color: #fff; width: 980px; float: right; 
+    padding-left: 30px; padding-top: 24px; border-bottom: 1px solid #000; 
+    position: relative;}
+    .cate_tit { color: black; font-size: 40px; font-family: 'Song Myung' }
+    .bread { padding-top: 24px; line-height: 1.6; font-style: 16px; }
+    .bread a, .bread span { color: #333; }
+    .bread span.cur { color: rgb(241, 59, 59); font-weight: 600; }
+
+    .leftbar{ width: 189px; float: left; min-height: 100vh; background-color: #ffffff; }
+    .lnb{ clear: both; padding-top: 1px;}
+    .lnb li { clear: both; margin: 5px 6px; border: 1px solid #333;
+    line-height: 52px; width: 172px; }
+    .lnb li a { color: #000; font-style: 14px; padding-left: 1em; }
+    
+    .page_box { width: 980px; float: left; }
+
+    .page { padding-top: 40px; height: auto; min-height: 70vh; width: 100%; }
+    .page_tit { padding-bottom: 36px; color: #000; }
+    .sub_pic img { display: block; width: 100%; height: auto; }
+
+    .page { display:none; }
+    .page:target { display:block; }
+
+    .dong { display: block; width: 990px; padding: 10px; }
+
+
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <script>
+            $(document).ready(function(){
+                $(".lnb ul li").click(function(){
+                    $(".lnb ul li").removeClass("act");
+                    $(this).addClass("act");
+                });
+                $(".sub > li").click(function(){
+                    $(".lnb ul li").removeClass("act");
+                    var t = $(this).index();
+                    $(".lnb ul li").eq(t).addClass("act");
+                });
+            });    
+            </script>
+        
+        <header class="hd fix">
+            <div class="hd_wrap">
+                <a href="index.html" class="logo">
+                    <img src="./img/logo.png" alt="로고">
+                </a>
+
+                <!-- nav.tnb>ul>li*5>a{상단$} -->
+                <nav class="tnb">
+                    <ul>        
+                        <li><a href="sub5_1_add.html">글쓰기</a></li>
+                        <li><a href="join.html">회원가입</a></li>    
+                        <li><a href="login.html">로그인</a></li>
+                        <li><a href="https://www.badatime.com/41.html?idx=41">물때표</a></li>
+                    </ul>
+                </nav>
+
+               <!--nav.gnb>ul>li*5>a.dp1+(ul>li*5>a{서브$}) -->   
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="sub1_1.html" class="dp1">관광명소</a>
+                            <ul class="sub">
+                                <li><a href="sub1_1.html">오동도</a></li>                              
+                                <li><a href="sub1_2.html">진남관</a></li>
+                                <li><a href="sub1_3.html">거문도백도</a></li>
+                                <li><a href="sub1_4.html">여수해상케이블카</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">문화/축제</a>
+                            <ul class="sub">
+                                <li><a href="sub2_1.html">낭만버스킹</a></li>
+                                <li><a href="sub2_2.html">여수거북선축제</a></li>
+                                <li><a href="sub2_3.html">여수불꽃축제</a></li>
+                                <li><a href="sub2_4.html">향일 일출제</a></li>                           
+                            </ul>
+                        </li>
+                        <li> 
+                            <a href="" class="dp1">여수대표음식</a>
+                            <ul class="sub">
+                                <li><a href="sub3_1.html">돌산갓김치</a></li>
+                                <li><a href="sub3_2.html">게장백반</a></li>
+                                <li><a href="sub3_3.html">여수한정식</a></li>
+                                <li><a href="sub3_4.html">굴구이</a></li>                              
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" class="dp1">여행/체험</a>
+                            <ul class="sub">
+                                <li><a href="sub4_1.html">자전거코스</a></li>
+                                <li><a href="sub4_2.html">걷기여행</a></li>                            
+                                <li><a href="sub4_3.html">이순신코스</a></li>
+                                <li><a href="sub4_4.html">여수낭만버스</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="sub5_1.html" class="dp1">관광안내</a>
+                            <ul class="sub">
+                                <li><a href="sub5_1.html">관광소식</a></li>
+                                <li><a href="sub5_2.html">관광웹툰</a></li>
+                                <li><a href="sub5_3.html">관광캐릭터</a></li>
+                                <li><a href="sub5_4.html">여수여행사</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav> 
+            </div>    
+        </header>  
+        <div class="content fix">
+            <figure class="vs" id="vs">
+                <!--채움-->
+                <div class="vs_tit">
+                    <span class="vs_tit1">국내 최초 바다 횡단</span><br>
+                    <span class="vs_tit2"><u>해상</u> 케이블카</span>
+                </div>
+            </figure>
+            <div class="content_wrap">
+                <div class="sub_box">
+                    <h2 class="sub_tit">관광명소</h2>
+                    <div class="bread_box">
+                        <h3 class="cate_tit">여수 해상 케이블카</h3>
+                        <p class="bread"><a href="index.html" class="home">홈</a> 
+                            &gt; <a href="">관광명소</a>
+                            &gt; <span class="cur">여수 해상 케이블카</span>
+                        </p>
+                    </div>
+                </div>
+                <aside class="leftbar">
+                    <nav class="lnb">
+                        <ul>
+                            <li><a href="#page1">탁 트인 전망</a></li>
+                            <li><a href="#page2">잊지 못할 추억</a></li>
+                            <li><a href="#page3">위치</a></li>
+                            
+                        </ul>
+                    </nav>
+                </aside>
+                <div class="page_box">
+                    <section class="onepage">
+                        <h2 class=""></h2>
+                        <img src="./img/sub_sub4.jpg" alt="거문도백도" class="dong"><br>
+                    </section>
+                    <section class="page" id="page1">
+                        <h2 class="page_tit">끝없이 펼쳐진 바다경관</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    여수 돌산과 자산공원을 잇는 1.5Km 구간의 국내 첫 해상 케이블카로 바닥이 투명한 크리스탈 캐빈 15대(5인승)와 일반 캐빈 35대(8인승), 총 50대가 운행되고 있다.
+                                    박람회장과 오동도 중심으로 다도해의 탁 트인 전망과 여수의 밤바다 풍경이 아름답다.
+                                    
+                                    바다 위를 지나 섬과 육지를 연결하는 국내 최초의 해상 케이블카
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="page" id="page2">
+                        <h2 class="page_tit">노을 지는 여수 밤바다를 배경으로 펼쳐지는 아름다움</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    여수 해상 케이블카는 거북선 대교의 옆으로 지나고 지상에서 보는 여수 앞바다와는 다르게 흔히 항공 촬영된 사진으로만 보아오던 아름다운 풍광을 직접 볼 수 있는 매력을 지니고 있다. 케이블카를 이용한 관광에는 3가지 포인트가 있다.
+한낮에는 햇빛에 반짝이는 아름다운 바다를 바라볼 수 있고 크리스탈 캐빈은 마치 바다 위를 걸어가는 듯 한 짜릿함을 느낄 수 있다.
+노을이 지기 시작하면 여수의 바다는 더욱 아름다운 빛으로 물든다.
+케이블카에서 바라보는 여수의 해질녘 노을은 그 황홀함에 평생 잊지 못할 추억의 한 장이 될 것이다.
+마지막으로 해가 진 후 여수의 색다른 아름다움이 펼쳐진다.
+돌산대교와 거북선대교, 장군도와 해양공원의 아름다운 밤바다 조명이 어우러져 마치 내가 아름다운 빛 속에 어우러져 있는 듯 한 기분이 들게 된다.
+아시아에서는 홍콩, 싱가폴, 베트남에 이어 네번째로 바다 위를 통과하는 해상 케이블카로써, 이제 국내에서도 바다 위를 통과하는 해상 케이블카에서 바람을 가르는 짜릿한 스릴감과 함께 아름다운 바다와 하늘을 온 몸으로 느낄 수 있습니다.
+                                 </p>
+                            </figure>
+                        </div>
+                    </section>
+                    <section class="page" id="page3">
+                        <h2 class="page_tit">위치</h2>
+                        <div class="page_wrap">
+                            <figure class="sub_pic">
+                                <h3 class="sub_pic_tit"></h3>
+                                <p class="sub_pic_com">
+                                    주소 : 전라남도 여수시 돌산읍 돌산로 3600-1(돌산공원), 수정동 332-55(오동도 주차타워)
+                                </p>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <footer class="ft fix">
+                <nav class="fnb">
+                    <ul class="fnb_fr">
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">사진갤러리</a></li>
+                        <li><a href="">업소등록</a></li>
+                        <li><a href="">로그인</a></li>
+                        <li><a href="">여수시청</a></li>
+                    </ul>
+                </nav>
+                <div class="ft_wrap">
+                    <div class="copyright">
+                        <p class="addr"><br>[59675] 전남 여수시 시청로 1 (학동)시청콜센터 : 1899-2012 / 관광통역안내 : 1330 / E-mail:ksu2020@korea.kr</p>
+                        <p class="copy">COPYRIGHT(C) 2015 BY YEOSUCITY. ALL RIGHT RESERVED.</p>
+                    </div>
+                    <div class="wa"><img src="./img/ft_logo.png" alt="여수로고"></div>
+                </div>
+            </footer>  
+        </div>
+    </div>
+</body>
+</html>

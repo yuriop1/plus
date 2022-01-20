@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트로 아날로그 시계 만들기</title>
+    <style>
+    * { margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; }
+    ul { list-style: none; }
+    #clock { clear:both; width: 100%; }
+    #clock_frame { clear:both; width: 375px; height: 375px; padding-top: 100px; 
+    margin: 20px auto; }
+    .clock_base { width: 375px; height: 375px; position:relative; }
+    .clock_base li.clock_item img { position:absolute; top: 0; left: 0; }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="clock_frame">
+            <ul class="clock_base">
+                <li class="clock_item"><img src="pannel.png" alt="패널" id="pannel"></li>
+                <li class="clock_item"><img src="second.png" alt="초침" id="second"></li>
+                <li class="clock_item"><img src="minute.png" alt="분침" id="minute"></li>
+                <li class="clock_item"><img src="hour.png" alt="시침" id="hour"></li>
+                <li class="clock_item"><img src="circle.png" alt="시침" id="circle"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+    function kitaeClock() {
+        var cur = new Date();
+        var curHour = cur.getHours();  //24시간제로 추출
+        var curMin = cur.getMinutes();
+        var curSec = cur.getSeconds();  
+        var ampm;        
+        if(curHour>=12) {
+            curHour-=12;
+            ampm = "PM";
+        } else {
+            ampm = "AM";
+        }
+        console.log(ampm+" "+curHour+":"+curMin+":"+curSec);
+        imgRotate(curHour, curMin, curSec);
+    }
+    function imgRotate(hh, mm, ss){
+        var hour = document.getElementById("hour");
+        var minute = document.getElementById("minute");
+        var second = document.getElementById("second");
+
+        hh=360/12*hh;   //현재 시침에 대한 각도값 계산
+        mm=360/60*mm;   //현재 분침에 대한 각도값 계산
+        ss=360/60*ss;   //현재 초침에 대한 각도값 계산 
+
+        hour.style.transform = 'rotate('+hh+'deg)';
+        minute.style.transform = 'rotate('+mm+'deg)';
+        second.style.transform = 'rotate('+ss+'deg)';
+    }
+    kitaeClock();
+    var intv = setInterval(function(){ kitaeClock(); }, 1000);
+    </script>
+</body>
+</html>

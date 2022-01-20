@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung:400" rel="stylesheet">
+    <style>
+        .study_group { clear: both; width: 1280px; margin: 60px auto; }
+        .sample { width: 100%; min-height: 800px; background-color: rgb(223, 215, 215); 
+        position: relative;}
+        .box { width: 252px; height: 223px; background-image: url(/캐릭터.png); 
+        font-size: 36px; font-family: 'Song Myung'; font-weight: 600;}
+        #transition1 .box { position: absolute; top: 0; left: 0; 
+        transition-property: top, left, transform; transition-duration: 1s, 1.2s, 3s;
+        transition-timing-function: ease-out, ease-in, ease-in-out; }
+        #transition1:hover .box { left: 1000px; top: 400px; transform: rotate(720deg);}
+
+        .animation1 .box { animation-name:ani1; animation-duration:10s; animation-delay: 0.3s;
+                              /* in-out: 가속됐다가 감속*/
+        animation-timing-function: ease-in-out; animation-fill-mode: both;
+        animation-iteration-count: 3; animation-direction: normal; }
+        .animation1:hover .box { animation-play-state: paused; }
+        @keyframes ani1 {
+            from { transform: scale(1) rotate(0deg) translate(0px, 0px); background-color: rgb(255, 0, 0);}   /* form = 0% */
+            25% { transform: scale(2) rotate(720deg) translate(800px, 500px); background-color: rgb(255, 136, 0); }
+            50% { transform: scale(0.5) rotate(-720deg) translate(-100px, -100px); background-color: rgb(255, 217, 0); }
+            75% { transform: scale(1.2) rotate(-180deg) translate(300px, 200px); background-color: rgb(79, 180, 39);}
+            to { transform: scale(1) rotate(90deg) translate(0px, 0px); background-color: rgb(36, 33, 197);}     /* to = 100% */
+        }    
+ 
+    
+
+    </style>
+</head>
+<body>
+    <div class="sample" id="transition1">
+        <div class="box">여수</div>    
+    </div>
+    <hr>
+    <div class="study_group">
+        <h2>애니매이션</h2>
+    </div>
+</body>
+</html>
