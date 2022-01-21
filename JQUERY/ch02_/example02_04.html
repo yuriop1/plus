@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택된 jQuery 확장 객체 집합에서 자손 엘리먼트에 스타일시트 적용하기-“ancestor descendant”</title>
+<style type="text/css">
+   em { font-size: 12pt; line-height: 40pt}
+</style>
+<script src="jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//인라인 스타일 = css 스타일을 적용해라
+//div의 자식 요소인 em 요소에는 글자색이 빨강으로 인라인스타일 적용  
+//div의 후손 요소인 em 요소에는 배경색이 하늘으로 인라인스타일 적용
+//span의 자식 요소인 em 요소에는 글자색이 남색으로 인라인스타일 적용
+//span의 후손 요소인 em 요소에는 배경색이 금색으로 인라인스타일 적용
+
+   $(document).ready(function(){
+      $("div > em").css("color", "red");
+   
+      $("div em").css("background-color", "blue");
+
+      $("span > em").css("color", "deepblue");
+
+      $("span em").css("background-color", "gold");
+   });
+</script>
+</head>
+<body>
+<div>
+   <em>Hello!</em>   <em>jQuery</em>   <em>forever</em>
+   <div>
+      <em>one</em>   <em>two</em>
+   </div>
+</div>
+<span>
+   <em>Good Bye!</em>   <em>javascript</em>
+   <span><em>three</em></span>
+</span> 
+</body>
+</html>

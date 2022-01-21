@@ -41,10 +41,9 @@ padding-right:20px; font-size:14px; color:#333; box-sizing: border-box; font-wei
 .gnb li:hover .sub { display: block;  }
 .gnb li .sub li a { display: block; background-color: #c9bfbf;  color: rgb(0, 0, 0); padding: 5px; text-align: center;}
 .gnb li .sub li a:hover { color: rgb(255, 255, 255); background-color: #412c2c; }
-
-
-.gnb .sub .sub_tit0 a { color: rgb(255, 255, 255); font-weight: 900; margin-left: 4px; 
-    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.75); border-bottom:1px solid #555;} 
+.gnb .sub .sub_tit0 { color: rgb(255, 255, 255); font-weight: 900; margin-left: 4px; 
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.75); border-bottom:1px solid #555;
+    text-align: center; margin: 10px 30px; padding-bottom: 8px;} 
 
 
 /*footer*/
@@ -61,6 +60,6 @@ padding-right:20px; font-size:14px; color:#333; box-sizing: border-box; font-wei
 
 
 /*content}*/
-.content { width: 100%; position:relative; }
+.content { clear:both; width: 100%; min-height:1700px; margin: 0px auto; position:relative; }  
 .page { width: 100%; height: 100vh; overflow:hidden; clear:both; position:relative; }
 .page_wrap { width: 1200px; margin: 0 auto; }

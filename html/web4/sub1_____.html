@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국토교통부</title>
+    <!-- 메타포 -->
+    <meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/popcon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 -->
+
+    <!-- 필요한 라이브러리   -->
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+
+    <script type="text/javascript" src="/main2018/mltm.js"></script>
+	<script type="text/javascript" src="/js/www2019/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/www2019/jquery.easing.1.3.min.js"></script>
+	<script type="text/javascript" src="/js/www2019/jquery.bxslider.js"></script>
+	<script type="text/javascript" src="/js/www2019/lightslider.min.js"></script>
+	<script type="text/javascript" src="/js/www2019/galleryView.js"></script>
+	<script type="text/javascript" src="/js/www2019/common.js"></script>
+	<script type="text/javascript" src="/js/www2019/main.js?date=201116"></script>
+	<script type="text/javascript" src="/js/www2019/search.js"></script>
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" 교차 출처>
+    <link href="https: //fonts.googleapis.com/css2? family= 노토+산스+KR:wght@100;400;500;900 & display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;400;500;900&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그 분석 -->
+        <!-- Global site tag (gtag.js) - Google Analytics   
+                사이트마다 이것만 붙여넣으면 사람 수 측정할 수 있어
+                   설정에 웹 스트림 -> (( > )) 누르고 
+                -> 새로운 온페이지 태그 추가 
+                -> 전체사이트 태그 웹사이트~~ 이 태그 사용 
+                -> 태그 복사해서 비주얼스튜디오에 붙여넣기 
+        -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVBP0F5DCB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVBP0F5DCB');
+        </script>
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2789720,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+
+    <!--사용자 외부 스타일 연결-->
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="jquery.bxslider/jquery.bxslider.css">
+    <style>
+    /* sub_common.css */
+    .con_wrap { clear:both; width: 100%; min-height:100vh; }
+    .con_wrap:after { content:""; display:block; clear:both; } /* clear-fix */
+    .page { clear:both; width: 100%; min-height:100vh; }
+    .page_tit { text-align: center; padding-top: 24px; line-height: 3; font-size:32px;; color:navy; }
+    .bread_box { clear:both; width: 100%; height: 70px; border-bottom:2px solid #f1f1f1; }
+    .bread_lst { width: 1200px; margin: 0 auto; height: 70px; }
+    .bread_lst li { float:left; height: 48px; line-height: 48px; margin-top:9px; 
+    margin-right: 24px; background-color: #fff; padding-left: 14px; padding-right: 14px; border:1px solid #333; position:relative; color:#fff; background-color:#222; }
+    .bread_lst li a { color:#fff; }
+    .bread_lst li select { border:0; outline:0; background-color: #222; color:#fff; }
+    .bread_lst li select option { border:0; outline:0; }
+    .bread_lst li.cate3 { width: 120px; border:0; box-sizing:border-box;  }
+
+    #sel3 { position:absolute; width: 120px; height: 46px; overflow:hidden; 
+    top: 0; left: 0; z-index:30; border:1px solid #333; background-color: #222;
+color:#fff; }
+    #sel3.on { height: 200px; }
+    #sel3 dl { width: 120px; }
+    #sel3 dt, #sel3 dd { line-height: 40px; height: 40px; padding-left: 14px; 
+    width: 120px; } 
+
+    ::marker {  color:#fff; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <script>
+    $(document).ready(function(){
+        //URL을 전부 String으로 처리하는 방법
+        var loc = location.href;        //sub1.html?page=1
+        var page = parseInt(loc.substring(loc.indexOf("=")+1,loc.length)) - 1;  //0
+
+        //URL에서 QueryString(getParameter)로 처리하는 방법
+        /* var queryStr = new URL(location.href); //sub1.html?page=1&cate=2
+        queryStr = queryStr.searchParams;   //page=1&cate=2
+        queryStr = queryStr.get('page');    //1
+        var page = parseInt(queryStr) - 1;  //0
+        */
+
+        $(".page").css("display", "none");
+        $(".page").eq(page).css("display", "block");
+    });    
+    </script>
+  
+    <section class="content">
+        <div class="bread_box">
+            <ul class="bread_lst">
+                <li class="main_cate">
+                    <a href="index.html" class="home_ico">HOME</a>
+                </li>
+                <li class="cate1">
+                    <select name="sel1" id="sel1">
+                        <option value="sub1.html">표준</option>
+                        <option value="sub1.html?page=2">인증</option>
+                        <option value="sub1.html?page=3">교육</option>
+                        <option value="sub1.html?page=4">품질.서비스</option>
+                        <option value="sub1.html?page=5">KSA소개</option>
+                    </select>
+                </li>
+                <li class="cate2">
+                    <details name="sel2" id="sel2">
+                        <summary>교육안내</summary>
+                        <ul>
+                            <li><a href="sub1.html?page=2">표준연구</a></li>
+                            <li><a href="sub1.html?page=3">표준진흥.연구</a></li>
+                            <li><a href="sub1.html?page=4">표준보급</a></li>
+                            <li><a href="sub1.html?page=5">표준개발</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li class="cate3">
+                    <div id="sel3">
+                        <dl class="sel_lst">
+                            <dt>표준</dt>
+                            <dd><a href="sub1.html?page=11">링크1</a></dd>
+                            <dd><a href="sub1.html?page=12">링크2</a></dd>
+                            <dd><a href="sub1.html?page=13">링크3</a></dd>
+                            <dd><a href="sub1.html?page=14">링크4</a></dd>
+                        </dl>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+        $(function(){
+            $("#sel1").change(function(){
+                location.href = $(this).val();
+            });
+            var sel_sw = true;
+            $(".bread_lst li.cate3").click(function(){
+                if(sel_sw) {
+                    $("#sel3").addClass("on");
+                    sel_sw = false;
+                } else {
+                    $("#sel3").removeClass("on");
+                    sel_sw = true;
+                }    
+            });
+        });    
+        </script>
+        <figure class="vs">
+
+        </figure>
+        <div class="con_wrap">
+            <section class="page" id="page1">
+                <h2 class="page_tit">페이지 제목1</h2>
+                <div class="page_wrap"></div>
+            </section>
+            <section class="page" id="page2">
+                <h2 class="page_tit">페이지 제목2</h2>
+                <div class="page_wrap"></div>
+            </section>
+            <section class="page" id="page3">
+                <h2 class="page_tit">페이지 제목3</h2>
+                <div class="page_wrap"></div>
+            </section>
+            <section class="page" id="page4">
+                <h2 class="page_tit">페이지 제목4</h2>
+                <div class="page_wrap"></div>
+            </section>
+            <section class="page" id="page5">
+                <h2 class="page_tit">페이지 제목5</h2>
+                <div class="page_wrap"></div>
+            </section>
+        </div>
+    </section>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_box">
+                <nav class="sns_link">
+                    <ul>
+                        <li class="item1"><a href=""></a></li>
+                        <li class="item2"><a href=""></a></li>
+                        <li class="item3"><a href=""></a></li>
+                        <li class="item4"><a href=""></a></li>
+                        <li class="item5"><a href=""></a></li>
+                    </ul>
+                </nav>
+                <nav class="relation_link">
+                    <a href="" class="hot_link">지역 본부 홈페이지</a>
+                    <div class="rel_sel_box">
+                        <select name="rel_sel" id="rel_sel">
+                            <option value="site1">링크1</option>
+                            <option value="site2">링크2</option>
+                            <option value="site3">링크3</option>
+                            <option value="site4">링크4</option>
+                            <option value="site5">링크5</option>
+                        </select>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="ft_wrap">
+            <div class="ft_box ft_logo">
+                <nav class="ft_link">
+                    <ul>
+                        <li><a href="">하단링크1</a></li>
+                        <li><a href="">하단링크2</a></li>
+                        <li><a href="">하단링크3</a></li>
+                        <li><a href="">하단링크4</a></li>
+                        <li><a href="">하단링크5</a></li>
+                        <li><a href="">하단링크6</a></li>
+                    </ul>
+                </nav>
+                <p class="copyright">여기는 카피라이트</p>
+                <ul class="wa_group">
+                    <li class="item1">인적자원개발우수기관</li>
+                    <li class="item2"></li>
+                </ul>    
+            </div>
+        </div>
+    </footer>
+</div>    
+</body>
+</html>
