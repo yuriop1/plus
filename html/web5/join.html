@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국토교통부</title>
+    <!-- 메타포 -->
+    <meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/popcon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 -->
+
+    <!-- 필요한 라이브러리   -->
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;400;500;900&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그 분석 -->
+        <!-- Global site tag (gtag.js) - Google Analytics   
+                사이트마다 이것만 붙여넣으면 사람 수 측정할 수 있어
+                   설정에 웹 스트림 -> (( > )) 누르고 
+                -> 새로운 온페이지 태그 추가 
+                -> 전체사이트 태그 웹사이트~~ 이 태그 사용 
+                -> 태그 복사해서 비주얼스튜디오에 붙여넣기 
+        -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVBP0F5DCB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVBP0F5DCB');
+        </script>
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2789720,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+
+    <!--사용자 외부 스타일 연결-->
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common.css">
+
+
+<style>
+/* sub_common.css */
+.con_wrap { clear:both; width: 1200px; min-height:100vh; margin: 0 auto;}
+.con_wrap:after { content:""; display:block; clear:both; } /* clear-fix */
+.page { clear:both; width: 100%; min-height:100vh; }
+.page_tit { text-align: center;line-height: 3; font-size:32px;; color:navy; 
+    border-bottom: 2px solid; width: 800px; margin: 0 auto;}
+.bread_box { margin-top: -24px; clear:both; width: 100%; height: 65px; border-bottom:2px solid #f1f1f1; }
+.bread_lst { width: 1200px; margin: 0 auto; height: 70px; }
+.bread_lst li { float:left; height: 48px; line-height: 48px; margin-top:-4px; 
+margin-right: 24px; background-color: #fff; padding-left: 14px; padding-right: 14px; border:1px solid #333; position:relative; color:rgb(0, 0, 0);}
+.bread_lst li a { color:rgb(0, 0, 0); }
+.bread_lst li select { border:0; outline:0; background-color: rgb(255, 255, 255); color:rgb(0, 0, 0); font-size: 16px;}
+.bread_lst li select option { border:0; outline:0; }
+.main_cate a {font-family: 'Song Myung';}
+.select option:first-child{display: none;}
+.sub_main { height: auto; width: 100%; height: 200px; margin-top: 40px;}
+.sub_main_img { width: 100%; position: relative;}
+.sub_main_img1 { width: 100%; height: 190px;}
+.news { font-size: 50px;  position: absolute; top: 180px; left: 50%; margin-left: -330px; color: #f1f1f1ff}
+.page_wrap {width: 700px; margin: 0 auto;}
+
+.form-group { margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 8px;}
+.control-label { width: 170px; background-color: #e7e7f1; display: block;
+    float: left; text-align: center; height: 36px; padding-top: 12px; }
+.form-control { height: 44px; border: 1px solid #fff; width: 400px; font-size: 18px; margin-left: 10px;}
+.idChkBtn0 { width: 100px; height: 30px; background-color: #e7e7f1; }
+.btn1 {  width: 120px; height: 45px; background-color: #e7e7f1; display: block; float: left; margin-left: 200px; font-size: 18px;}
+.btn2 {  width: 120px; height: 45px; background-color: #e7e7f1; display: block; float: right; margin-right: 200px; font-size: 18px; }
+
+.join_wrap { margin-top: 50px; }
+
+
+</style>
+</head>
+<body> 
+<div class="warp"> 
+    <script>
+        $(document).ready(function(){
+            //URL을 전부 String으로 처리하는 방법
+            var loc = location.href;        //sub1.html?page=1
+            var page = parseInt(loc.substring(loc.indexOf("=")+1,loc.length)) - 1;  //0
+    
+            //URL에서 QueryString(getParameter)로 처리하는 방법
+            /* var queryStr = new URL(location.href); //sub1.html?page=1&cate=2
+            queryStr = queryStr.searchParams;   //page=1&cate=2
+            queryStr = queryStr.get('page');    //1
+            var page = parseInt(queryStr) - 1;  //0
+            */
+    
+            $(".page").css("display", "none");
+            $(".page").eq(page).css("display", "block");
+        });    
+    </script>
+   <header class="hd">
+    <div class="hd_wrap">
+        <a href="index.html" class="logo">
+            <img src="./img/logo_1.png" alt="로고타입">
+        </a>
+        <div class="search_wrap">
+            <div class="search_fr">
+                <input type="text" id="keyword" name="keyword" placeholder="검색어 입력"/>
+                <input type="submit" class="search_btn" value="검색"/>
+            </div>
+        </div>
+        <div class="lang_link">
+            <a href="login.html?page=1" class="ch_ico">로그인</a>
+            <a href="join.html?page=2" class="en_ico">회원가입</a>
+        </div>
+    </div>    
+    <nav class="gnb">
+        <ul class="left_gnb">
+            <li class="item1">
+                <a href="" class="dp1">뉴스소식</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>보도자료</dt>
+                            <dd><a href="sub1-1.html">국토도시</a></dd>
+                            <dd><a href="">주택토지</a></dd>
+                            <dd><a href="">건설</a></dd>
+                            <dd><a href="">항공</a></dd>
+                            <dd><a href="">도로철도</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>설명, 반박자료</dt>
+                            <dd><a href="">국토도시</a></dd>
+                            <dd><a href="">주택토지</a></dd>
+                            <dd><a href="">건설</a></dd>
+                            <dd><a href="">항공</a></dd>
+                            <dd><a href="">도로철도</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>디지털자료</dt>
+                            <dd><a href="">포토뉴스</a></dd>
+                            <dd><a href="">카드뉴스</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>일자리정보</dt>
+                            <dd><a href="">직원채용정보</a></dd>
+                            <dd><a href="">개방형직위</a></dd>
+                            <dd><a href="">공모직위</a></dd>
+                            <dd><a href="">산하기관채용</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="item2">
+                <a href="" class="dp1">국민참여</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>국민소통</dt>
+                            <dd><a href="">정책참여</a></dd>
+                            <dd><a href="">국민제안</a></dd>
+                            <dd><a href="">여론광장</a></dd>
+                            <dd><a href="">청렴홍보방</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>규제개혁</dt>
+                            <dd><a href="">규제개혁 건의</a></dd>
+                            <dd><a href="">규제현황</a></dd>
+                            <dd><a href="">규제혁신과 과제현황</a></dd>
+                            <dd><a href="">규제입증요청</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>적극행정</dt>
+                            <dd><a href="">제도소개</a></dd>
+                            <dd><a href="">공무원.정책 국민추천</a></dd>
+                            <dd><a href="">소극행정 신고</a></dd>
+                            <dd><a href="">자료실</a></dd>
+                            <dd><a href="">적극행정 우수공무원</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>e-클린센터</dt>
+                            <dd><a href="">공직자부조리신고</a></dd>
+                            <dd><a href="">감사정보창구</a></dd>
+                            <dd><a href="">예산낭비신고센터</a></dd>
+                            <dd><a href="">도로이용불편신고</a></dd>
+                            <dd><a href="">부실공사신고</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="item3">
+                <a href="" class="dp1">정책자료</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>정책정보</dt>
+                            <dd><a href="">국토도시</a></dd>
+                            <dd><a href="">주택토지</a></dd>
+                            <dd><a href="">건설</a></dd>
+                            <dd><a href="">항공</a></dd>
+                            <dd><a href="">도로철도</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>법령정보</dt>
+                            <dd><a href="">최근 제.개정법령</a></dd>
+                            <dd><a href="">법령</a></dd>
+                            <dd><a href="">행정규칙</a></dd>
+                            <dd><a href="">입법예고.행정예고</a></dd>
+                            <dd><a href="">전자관보</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>감사결과공개</dt>    
+                            <dd><a href="">감사결과</a></dd>          
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>Q&A</dt>
+                            <dd><a href="">정책Q&A</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                        <dt>정보시스템</dt>
+                        <dd><a href="">국토교통정보시스템</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+            <li class="item4">
+                <a href="" class="dp1">기관소개</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>일반현황</dt>
+                            <dd><a href="">비전과 목표</a></dd>
+                            <dd><a href="">연혁</a></dd>
+                            <dd><a href="">주요업무계획</a></dd>
+                            <dd><a href="">MI-배너</a></dd>
+                        </dl>    
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>조직/직원안내</dt>
+                            <dd><a href="sub4-2.html?page=1">조직안내</a></dd>
+                            <dd><a href="sub4-2.html?page=2">부서별직원안내</a></dd>
+                            <dd><a href="sub4-2.html?page=3">실국별구요업무</a></dd>
+                        </dl>    
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>차관소개</dt>
+                            <dd><a href="sub4-3.html?page=1">1차관</a></dd>
+                            <dd><a href="sub4-3.html?page=2">2차관</a></dd>
+                        </dl>    
+                    </li>
+                    <li>
+                        <dl>
+                        <dt>위치</dt>
+                        <dd><a href="">찾아오시는길</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="right_gnb">
+            <li class="item1">
+                <a href="" class="dp1">신고센터</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>신고센터</dt>
+                            <dd><a href="sub5.html?page=1">국토부 부조리신고</a></dd>
+                            <dd><a href="sub5.html?page=2">산하기관 부조리신고</a></dd>
+                            <dd><a href="sub5.html?page=3">행동강령 위반행위신고</a></dd>
+                            <dd><a href="sub5.html?page=4">재정부정 청구행위신고</a></dd>
+                        </dl>  
+                    </li>
+                </ul>
+            </li>
+            <li class="item2">
+                <a href="" class="dp1">정보공개</a>
+                <ul class="sub">
+                    <li>
+                        <dl>
+                            <dt>행정정보공개</dt>
+                            <dd><a href="sub6.html?page=1">정보공개제도안내</a></dd>
+                            <dd><a href="sub6.html?page=2">정보공개청구</a></dd>
+                            <dd><a href="sub6.html?page=3">사전정보공개</a></dd>
+                            <dd><a href="sub6.html?page=4">사전공표정보게시판</a></dd>
+                            <dd><a href="sub6.html?page=5">정보목록</a></dd>
+                        </dl>    
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>협동조합 경영공시</dt>
+                            <dd><a href="">경영공시조회</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl>
+                            <dt>공공데이터개방</dt>
+                            <dd><a href="">국토교통 데이터 통합채널</a></dd>
+                        </dl>
+                    </li><li>
+                        <dl>
+                            <dt>정책실명제</dt>
+                            <dd><a href="">중점관리 대상사업</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </li>
+        </ul>            
+    </nav>  
+</header>
+    <div class="sub_main">
+        <div class="sub_main_img">
+            <img src="./img/sub1-1_main.png" alt="메인" class="sub_main_img1">
+        </div>
+        <p class="news">회원정보</p>
+    </div>
+    <div class="content fix">
+        <div class="bread_box">
+            <ul class="bread_lst">
+                <li class="main_cate">
+                    <a href="index.html" class="home_ico">HOME</a>
+                </li>
+                <li class="cate1">
+                    <select name="sel1" id="sel1">
+                        <option value="">회원정보</option>
+                        <option value="login.html?page=1">로그인</option>
+                        <option value="join.html?page=2">회원가입</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <script>
+        $(function(){
+            $("#sel1").change(function(){
+                location.href = $(this).val();
+            });
+            var sel_sw = true;
+            $(".bread_lst li.cate3").click(function(){
+                if(sel_sw) {
+                    $("#sel3").addClass("on");
+                    sel_sw = false;
+                } else {
+                    $("#sel3").removeClass("on");
+                    sel_sw = true;
+                }    
+            });
+        });    
+        </script>
+        <div class="con_wrap">
+            <section class="page" id="page1">
+                <div class="login">
+                <h2 class="page_tit">로그인</h2>
+                    <div class="page_wrap">
+                        <div class="login_wrap">
+                            <ul class="form_group">
+                                <li class="login_row">
+                                    <input type="text" class="form-control" id="id" name="id" placeholder="아이디 입력">
+                                </li> 
+                                <li class="login_row">
+                                    <input type="password" id="pass" name="pass" class="form-control" maxlength="20" placeholder="비밀번호 입력" required />
+                                </li> 
+                                <li class="login_row"><br>
+                                    <input type="submit" class="btn3" value="로그인" id="login_submit" />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="button" class="btn4" onclick="location.href='/member/reg.do'">회원가입</button>
+                                </li>
+                            </ul>
+                        </div>    
+                    </div>
+                </div>    
+            </section>
+            <section class="page" id="page2">
+                <h2 class="page_tit">회원가입</h2>
+                <div class="page_wrap">
+                    <div class="content">
+                        <div class="join_wrap">
+                            <div class="form-group">
+                                <label class="control-label" for="userId">아이디 : </label>
+                                <input class="form-control" type="text" id="userId" name="userId" required />
+                                <button class="idChkBtn0" type="button" id="idChkBtn" onclick="">중복확인</button>
+                                <input type="hidden" id="idChk" value="N"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="userPass">패스워드 : </label>
+                                <input class="form-control" type="password" id="userPass" name="userPass" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="userPass2">패스워드 확인 : </label>
+                                <input class="form-control" type="password" id="userPass2" name="userPass2" required/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="userName">성명 : </label>
+                                <input class="form-control" type="text" id="userName" name="userName" required />
+                            </div>
+                            <div class="form-group0">
+                                <button class="btn1" type="submit" id="submit">회원가입</button>
+                                <button class="btn2" type="button">취소</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>                    
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="https://www.facebook.com/landkorea" ><img src="./img/facebook.png" alt="페이스북"></a></li>
+                <li><a href="https://www.youtube.com/user/korealand"><img src="./img/utube.png" alt="유튜브"></a></li>
+                <li><a href="https://blog.naver.com/mltmkr"><img src="./img/blog.png" alt="블로그"></a></li>
+                <li><a href="https://twitter.com/korea_land"><img src="./img/t_logo.png" width="55" height="54" alt="트위터"></a></li>
+                <li><a href="https://story.kakao.com/ch/molit"><img src="./img/story_logo.png" width="55" height="54" alt="카카오스토리"></a></li>
+            </ul>
+        </nav>
+       
+        <div class="ft_wrap">
+            <div class="copyright">
+                <p class="addr">(우)30103 세종특별자치시 도움6로 11 국토교통부<br>
+
+                    전화 :(주)1599-0001 (야)044-201-4672 / 팩스 :(주)044-860-9500 (야)044-201-5700</p>
+                <p class="copy">Copyright (c) Ministry of Land, Infrastructure and Transport. All Rights reserved.</p>
+            </div>
+            <div class="wa"><img src="./img/wa.png" alt="로고"></div>
+        </div>
+    </footer>  
+</div>
+</body>
+</html>

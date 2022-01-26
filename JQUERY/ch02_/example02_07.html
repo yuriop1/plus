@@ -10,6 +10,15 @@
 </style>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//첫 번째 tr요소의 자식 td 요소와 마지막 tr 요소의 자식 td 요소에 selectedstyle 클래스를 추가하기
+//첫 번째 tr요소의 자식 td 요소의 텍스트를 result1 클래스에 출력
+//마지막 tr요소의 자식 td 요소의 텍스트를 result2 클래스에 출력
+$(document).ready(function(){
+   $("td:first, td:last").addClass("selectedstyle");
+   //$("tr:first-child td, tr:last-child td").addClass("selectedstyle");
+   $(".result1").text($("td:first").text());
+   $(".result2").text($("td:last").text());
+});
 
 </script>
 </head>

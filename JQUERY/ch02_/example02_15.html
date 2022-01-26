@@ -9,8 +9,19 @@
 </style>
 <script src="../js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//폼 요소의 button 요소에는 크기 W100 H40 LH40, 배경색 검은색, 글자색 흰색, 글자가운데정렬
+//폼 요소의 text요소에는 W200 H40 LH40, 테두리 #666의 1px실선, 안쪽왼쪽여백 14px 배경색 투명, 글자색 #444
+//폼요소의 password요소애는 W200 H40 LH40, 테두리 
+
+$(document).ready(function(){    
+   $("input:button").css({"width":"200px", "height":"40px", "line-height":"40px", "border":"1px soild #f60", "padding-left":"14px", "backgroungColor":"rgba(255, 255, 255, 0)", "color":"#f60"});
+
+   
+   $("input:password").css({"width":"200px", "height":"40px", "line-height":"40px", "border":"1px soild #f60", "padding-left":"14px", "backgroungColor":"rgba(255, 255, 255, 0)", "color":"#f60"});
+});
 
 </script>   
+
 </head> 
 <body>
    <center>   

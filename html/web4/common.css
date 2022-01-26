@@ -16,14 +16,13 @@ a { text-decoration: none; }
 #keyword { display:block; height:38px; line-height:38px; width: 308px; padding-left: 10px; 
 border:1px solid #000; margin-top: 8px; margin-left: -2px;}
 .search_btn { display:block; width:50px; height:40px; text-indent:-99999px; background-color:transparent; 
-outline:0; border:0; background-position:center center; background-image: url("./data/sch-img.jpg"); 
+outline:0; border:0; background-position:center center; background-image: url("./img/sch-img.jpg"); 
 position:absolute; right:0; top:0;  }
 .lang_link { float:right; margin-top:24px; }
-.lang_link a { display:block; width: 128px; height: 42px; float:left; margin-left: 10px; 
+.lang_link a { display:block; width: 128px; height: 42px; float:left; margin-left: -50px;
     background-repeat: no-repeat; background-position:10px center; line-height:42px; text-align:right; 
 padding-right:20px; font-size:14px; color:#333; box-sizing: border-box; font-weight: bold; }
-.lang_link a.en_ico { background-image: url("./img/eng.jpg"); }
-.lang_link a.ch_ico { background-image: url("./img/chi.jpg"); }
+
 
 .tnb { float: right; }
 .tnb li { clear: left; color:rgb(0, 0, 0) ; float: right; margin: 20px; }

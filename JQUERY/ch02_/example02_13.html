@@ -5,6 +5,15 @@
 <title>조건에 반대되는 엘리먼트 검색하기-:not()</title>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//checkbox가 체크되어 있는 곳의 다음 span요소에 글자색을 빨강, 배경색을 초록으로 하기
+//checkbox가 체크되어 있지 않은 곳의 다음 span요소에 글자색을 파랑, 배경색을 노랑으로 하기
+
+$(document).ready(function(){
+   $("input:checked + span").css("color", "red").css("backgroundColor", "green");
+   $("input:not(:checked) + span").css({"color":"blue", "backgroundColor":"yellow"});
+});
+
+//$("선택자".이벤트명(function(){실행내용; }).이벤트명(); -> 트리거 (trigger)
 
 </script>
 </head>

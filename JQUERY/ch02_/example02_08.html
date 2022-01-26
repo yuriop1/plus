@@ -5,10 +5,23 @@
 <title>조건에 만족하는 짝수와 홀수에 위치한 엘리먼트에 스타일을 적용하기-:odd, :even</title>
 <style>
    table {   table-layout:auto;   width: 75%;}      
-}
+
 </style>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+   //인덱스가 짝수인 요소 tr의 자식 td요소에 배경색을 노란색으로 하기러기  -> td:even(짝수)  또는 tr:even > td
+   //인덱스가 홀수인 요소 tr의 자식 td요소에 배경색을 빨간색으로 하기      -> td:odd(홀수)   또는 tr:odd > td
+
+   $(document).ready(function(){
+      $("td:even").css("background-color", "gold")
+   });
+
+   $(document).ready(function(){
+      $("td:odd").css("background-color", "silver")
+   });
+
+
+
 
 </script>
 </head>
@@ -20,6 +33,7 @@
       <tr><td>three</td></tr>
       <tr><td>four</td></tr>
       <tr><td>five</td></tr>
+      
    </table>
 </body>
 </html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 집합들을 한 번에 처리하기</title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+   //img 요소에 src속성에 랜덤이미지 url을 무작위로 넣고 , alt속성과 title속성에 랜덤이미지1234 와 같이 속성을 추가 - each ㅜ문과 attr(), index()를 할용
+
+   $(document).ready(function(){
+      $("img").each(function(){
+         $(this).attr({"src":"https://placeimg.com/300/200/animals/sepia",
+         "alt":"랜덤이미지"+($(this).index()+1), "title":"동물 랜덤 이미지"+($(this).index()
+         +1) });
+      });
+   });
+</script>
+</head>
+<body>
+   <center>
+      <img /> <img /> <img /> 
+   </center>
+</body>
+</html>

@@ -5,6 +5,14 @@
 <title>첫 번째와 마지막 자식 엘리먼트에 스타일 적용하기 :first-child, :last-child</title>
 <script src="jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
+//div의 첫번째 자식 span 요소의 글자색을 오렌지로
+//div의 마지막 자식 span요소 글자색을 초록으로
+
+$(document).ready(function(){
+  $("span:first-child").css("color", "orange");
+  $("span:last-child").css("color", "orange");
+});
+
 
 </script> 
 </head> 

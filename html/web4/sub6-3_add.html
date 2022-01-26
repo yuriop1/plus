@@ -20,17 +20,6 @@
 
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 
-
-    <script type="text/javascript" src="/main2018/mltm.js"></script>
-	<script type="text/javascript" src="/js/www2019/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="/js/www2019/jquery.easing.1.3.min.js"></script>
-	<script type="text/javascript" src="/js/www2019/jquery.bxslider.js"></script>
-	<script type="text/javascript" src="/js/www2019/lightslider.min.js"></script>
-	<script type="text/javascript" src="/js/www2019/galleryView.js"></script>
-	<script type="text/javascript" src="/js/www2019/common.js"></script>
-	<script type="text/javascript" src="/js/www2019/main.js?date=201116"></script>
-	<script type="text/javascript" src="/js/www2019/search.js"></script>
-
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" 교차 출처>
@@ -80,7 +69,7 @@
 .con_wrap { clear:both; width: 1200px; min-height:100vh; margin: 0 auto;}
 .con_wrap:after { content:""; display:block; clear:both; } /* clear-fix */
 .page { clear:both; width: 100%; min-height:100vh; }
-.page_tit { text-align: center; padding-top: 24px; line-height: 3; font-size:32px;; color:navy; }
+.page_tit { text-align: center;line-height: 3; font-size:32px;; color:navy; }
 .bread_box { margin-top: -24px; clear:both; width: 100%; height: 65px; border-bottom:2px solid #f1f1f1; }
 .bread_lst { width: 1200px; margin: 0 auto; height: 70px; }
 .bread_lst li { float:left; height: 48px; line-height: 48px; margin-top:-4px; 
@@ -88,26 +77,50 @@ margin-right: 24px; background-color: #fff; padding-left: 14px; padding-right: 1
 .bread_lst li a { color:rgb(0, 0, 0); }
 .bread_lst li select { border:0; outline:0; background-color: rgb(255, 255, 255); color:rgb(0, 0, 0); font-size: 16px;}
 .bread_lst li select option { border:0; outline:0; }
-
-
-#sel3 { position:absolute; width: 120px; height: 46px; overflow:hidden; 
-top: 0; left: 0; z-index:30; border:1px solid #333; background-color: #222;
-color:#fff; }
-#sel3.on { height: 200px; }
-#sel3 dl { width: 120px; }
-#sel3 dt, #sel3 dd { line-height: 40px; height: 40px; padding-left: 14px; 
-width: 120px; } 
-
-::marker {  color:#fff; }
-select option:first-child{display: none;}
-
+.main_cate a {font-family: 'Song Myung';}
 .sub_main { height: auto; width: 100%; height: 200px; margin-top: 40px;}
 .sub_main_img { width: 100%; position: relative;}
 .news { font-size: 50px;  position: absolute; top: 180px; left: 50%; margin-left: -330px; color: #f1f1f1ff}
-
-
 .info_main { margin: 0 auto; display: block;}
+.page_tit { text-align: center; line-height: 3; font-size: 32px; color: navy; border-bottom: 2px solid; width: 800px; margin: 0 auto; }
 
+.add_tit{ margin-right: 35px; }
+.add_con{ margin-right: 35px; }
+.add_wri{ margin-right: 35px; }
+
+#container { width: 600px; margin: 0 auto; padding: 26px 0px; }
+#title { padding: 10px 0px; width: 380px;}
+#content { padding: 10px 0px; width: 380px;}
+#writer {padding: 10px 0px; width: 380px;}
+
+.page_box { width: 1200px; float: left; margin: 40px 0px; min-height: 600px;}
+
+    .page { padding-top: 40px; height: auto; min-height: 70vh; width: 100%; }
+    .sub_pic img { display: block; width: 100%; height: auto; }
+
+    .form { clear:both; width: 100%; padding-left: 120px; min-height: 800px; }
+    .from_wrap { display:table; } /* table */
+    .form_group { display:table-row-group; } /* tbody */
+    .form_group li { display:table-row; }  /* tr */
+    .form_group li .control_wrap { padding: 10px; }  /* td */
+    .form-control { display:block; width: 900px; height: 42px; line-height: 42px; 
+    padding-left: 14px; font-size:18px; }
+    .form-control1 { display:block; width: 900px; height: 42px; line-height: 42px; 
+    padding-left: 14px; font-size:18px; }
+    .form-control2 { display:block; width: 900px; height: 300px; line-height: 42px; 
+    padding-left: 14px; font-size:18px; }
+    .btn { display:block; line-height:32px; width:auto; padding: 5px 40px; 
+    background-color:rgb(162, 173, 197); color:#fff; text-align: center; cursor:pointer; font-size: 18px;}
+    .btn-left { float:left; }
+    .btn-right { float:right; }
+    .btn-mid { float:left; margin-left:24px; margin-right: 24px; }
+
+    .tit_tit { clear: both; float: left; height: 40px; display: block; padding: 2px 26px; 
+        font-size: 30px; background-color: #babfc9; 
+        font-weight: 600; margin-bottom: 10px; margin-bottom: 15px; margin-left: 12px;}
+    .tit_tit2 { clear: both; float: left; height: 40px; display: block; padding: 2px 26px; 
+        font-size: 30px; background-color: #babfc9; margin-top: 30px;
+        font-weight: 600; margin-bottom: 10px; margin-bottom: 15px; margin-left: 12px;}
 
 
 </style>
@@ -131,7 +144,7 @@ select option:first-child{display: none;}
             $(".page").eq(page).css("display", "block");
         });    
     </script>
-    <header class="hd">
+     <header class="hd">
         <div class="hd_wrap">
             <a href="index.html" class="logo">
                 <img src="./img/logo_1.png" alt="로고타입">
@@ -145,8 +158,8 @@ select option:first-child{display: none;}
                 </form>
             </div>
             <div class="lang_link">
-                <a href="" class="en_ico">English</a>
-                <a href="" class="ch_ico">Chinese</a>
+                <a href="login.html?page=1" class="ch_ico">로그인</a>
+                <a href="join.html?page=2" class="en_ico">회원가입</a>
             </div>
         </div>    
         <nav class="gnb">
@@ -157,7 +170,7 @@ select option:first-child{display: none;}
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>보도자료</dt>
-                                <dd><a href="" class="dp3">국토도시</a></dd>
+                                <dd><a href="sub1-1.html" class="dp3">국토도시</a></dd>
                                 <dd><a href="" class="dp3">주택토지</a></dd>
                                 <dd><a href="" class="dp3">건설</a></dd>
                                 <dd><a href="" class="dp3">항공</a></dd>
@@ -282,25 +295,25 @@ select option:first-child{display: none;}
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>일반현황</dt>
-                                <dd><a href="" class="dp3">비전과 목표</a></dd>
-                                <dd><a href="" class="dp3">연혁</a></dd>
-                                <dd><a href="" class="dp3">주요업무계획</a></dd>
-                                <dd><a href="" class="dp3">MI-배너</a></dd>
+                                <dd><a href="sub4-1.html?page=1" class="dp3">비전과 목표</a></dd>
+                                <dd><a href="sub4-1.html?page=2" class="dp3">연혁</a></dd>
+                                <dd><a href="sub4-1.html?page=3" class="dp3">주요업무계획</a></dd>
+                                <dd><a href="sub4-1.html?page=4" class="dp3">MI-배너</a></dd>
                             </d1>    
                         </li>
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>조직/직원안내</dt>
-                                <dd><a href="" class="dp3">조직안내</a></dd>
-                                <dd><a href="" class="dp3">부서별직원안내</a></dd>
-                                <dd><a href="" class="dp3">실국별구요업무</a></dd>
+                                <dd><a href="sub4-2.html?page=1" class="dp3">조직안내</a></dd>
+                                <dd><a href="sub4-2.html?page=2" class="dp3">부서별직원안내</a></dd>
+                                <dd><a href="sub4-2.html?page=3" class="dp3">실국별구요업무</a></dd>
                             </d1>    
                         </li>
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>차관소개</dt>
-                                <dd><a href="" class="dp3">1차관</a></dd>
-                                <dd><a href="" class="dp3">2차관</a></dd>
+                                <dd><a href="sub4-3.html?page=1" class="dp3">1차관</a></dd>
+                                <dd><a href="sub4-3.html?page=2" class="dp3">2차관</a></dd>
                             </d1>    
                         </li>
                         <li>
@@ -319,10 +332,10 @@ select option:first-child{display: none;}
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>신고센터</dt>
-                                <dd><a href="" class="dp3">국토부 부조리신고</a></dd>
-                                <dd><a href="" class="dp3">산하기관 부조리신고</a></dd>
-                                <dd><a href="" class="dp3">행동강령 위반행위신고</a></dd>
-                                <dd><a href="" class="dp3">재정부정 청구행위신고</a></dd>
+                                <dd><a href="sub5.html?page=1" class="dp3">국토부 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=2" class="dp3">산하기관 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=3" class="dp3">행동강령 위반행위신고</a></dd>
+                                <dd><a href="sub5.html?page=4" class="dp3">재정부정 청구행위신고</a></dd>
                             </d1>  
                         </li>
                     </ul>
@@ -333,11 +346,11 @@ select option:first-child{display: none;}
                         <li>
                             <d1 class="dep3">
                                 <dt class=sub_tit0>행정정보공개</dt>
-                                <dd><a href="sub6-1.html" class="dp3">정보공개제도안내</a></dd>
-                                <dd><a href="" class="dp3">정보공개청구</a></dd>
-                                <dd><a href="" class="dp3">사전정보공개</a></dd>
-                                <dd><a href="" class="dp3">사전공표정보게시판</a></dd>
-                                <dd><a href="" class="dp3">정보목록</a></dd>
+                                <dd><a href="sub6.html?page=1" class="dp3">정보공개제도안내</a></dd>
+                                <dd><a href="sub6.html?page=2" class="dp3">정보공개청구</a></dd>
+                                <dd><a href="sub6.html?page=3" class="dp3">사전정보공개</a></dd>
+                                <dd><a href="sub6.html?page=4" class="dp3">사전공표정보게시판</a></dd>
+                                <dd><a href="sub6.html?page=5" class="dp3">정보목록</a></dd>
                             </d1>    
                         </li>
                         <li>
@@ -369,7 +382,6 @@ select option:first-child{display: none;}
         <p class="news">행정정보공개</p>
     </div>
     <section class="content fix">
-
         <div class="bread_box">
             <ul class="bread_lst">
                 <li class="main_cate">
@@ -378,11 +390,11 @@ select option:first-child{display: none;}
                 <li class="cate1">
                     <select name="sel1" id="sel1">
                         <option value="">정보공개제도안내</option>
-                        <option value="sub6-1.html?page=1">정보공개제도안내</option>
-                        <option value="sub6-1.html?page=2">주택토지</option>
-                        <option value="sub6-1.html?page=3">건설</option>
-                        <option value="sub6-1.html?page=4">항공</option>
-                        <option value="sub6-1.html?page=5">도로철도</option>
+                        <option value="sub6.html?page=1">정보공개제도안내</option>
+                        <option value="sub6.html?page=2">정보공개청구</option>
+                        <option value="sub6.html?page=3">사전정보공개</option>
+                        <option value="sub6.html?page=4">사전공표정보게시판</option>
+                        <option value="sub6.html?page=5">정보목록</option>
                     </select>
                 </li>
             </ul>
@@ -405,35 +417,48 @@ select option:first-child{display: none;}
         });    
         </script>
         <figure class="vs">
-            
-        </figure>
-        <div class="con_wrap">
-            <section class="page" id="page1">
-                <h2 class="page_tit">정보공개제도안내</h2>
+            <div class="con_wrap">
+            <h2 class="page_tit">사전 정보 글 등록</h2>
+            <div class="page_box">
+                <div class="" style="height:20px"></div>
                 <div class="page_wrap">
-                    <img src="./img/sub4_1_1.jpg" alt="" class="info_main">
-                </div>
-            </section>
-
-
-            
-            <section class="page" id="page2">
-                <h2 class="page_tit">주택토지</h2>
-                <div class="page_wrap"></div>
-            </section>
-            <section class="page" id="page3">
-                <h2 class="page_tit">건설</h2>
-                <div class="page_wrap"></div>
-            </section>
-            <section class="page" id="page4">
-                <h2 class="page_tit">항공</h2>
-                <div class="page_wrap"></div>
-            </section>
-            <section class="page" id="page5">
-                <h2 class="page_tit">도로철도</h2>
-                <div class="page_wrap"></div>
-            </section>
-        </div>
+                    <div class="login_frm_box">
+                        <form action="" method="post" id="login_frm" class="form">
+                            <div class="from_wrap">
+                                <ul class="form_group">
+                                    <li class="form_row">
+                                        <div class="tit_tit"><u>제목: </u></div>
+                                        <div class="control_wrap">
+                                            <input type="text" class="form-control1" name="userid" id="userid" placeholder="제목을 입력하세요">
+                                        </div>
+                                    </li> 
+                                    <li class="form_row">
+                                        <div class="tit_tit2"><u>작성자: </u></div>
+                                        <div class="control_wrap">
+                                            <input type="text" class="form-control1" name="userid" id="userid" placeholder="작성자를 입력하세요" />
+                                        </div>
+                                    </li> 
+                                    <li class="form_row">
+                                        <div class="tit_tit2"><u>내용: </u></div>
+                                        <div class="control_wrap">
+                                            <input type="text" id="passwd" name="passwd" class="form-control2" maxlength="20" placeholder="내용을 입력하세요" />
+                                        </div>
+                                    </li> 
+                                    <li class="form_row">
+                                        <div class="control_wrap">
+                                            <button type="button" class="btn btn-left" onclick=""><a href="sub6.html?page=3">등록</a></button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <button type="button" class="btn btn-right" onclick=""><a href="sub6.html?page=3">취소</a></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+            </div>
+            </div>       
+        </figure>
     </section>  
     <footer class="ft fix">
         <nav class="fnb">

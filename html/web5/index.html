@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국토교통부</title>
+    <!-- 메타포 -->
+    <meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/popcon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 -->
+
+    <!-- 필요한 라이브러리  -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+
+
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;400;500;900&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그 분석 -->
+        <!-- Global site tag (gtag.js) - Google Analytics   
+                사이트마다 이것만 붙여넣으면 사람 수 측정할 수 있어
+                   설정에 웹 스트림 -> (( > )) 누르고 
+                -> 새로운 온페이지 태그 추가 
+                -> 전체사이트 태그 웹사이트~~ 이 태그 사용 
+                -> 태그 복사해서 비주얼스튜디오에 붙여넣기 
+        -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVBP0F5DCB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVBP0F5DCB');
+        </script>
+
+    <!--사용자 외부 스타일 연결-->
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="fonts.css">
+
+<style>
+/* 'Noto Sans KR', sans-serif; */
+/* font-family: 'MaruBuriSemiBold'; */
+
+.vs { clear:both; width: 100%; position:relative; overflow-x:hidden; }
+.vs .img_box li .vs_img { display:block; width: 1200px; height:500px; margin: 0 auto; }
+.img_box { width: 400%; transition-duration:0.6s; }
+.img_box li { width: 25%; float:left; background-color: #ebebeb;}
+#ra19:checked ~ .img_box { margin-left: 0; }
+#ra29:checked ~ .img_box { margin-left:-100%; }
+#ra39:checked ~ .img_box { margin-left:-200%; }
+#ra49:checked ~ .img_box { margin-left:-300%; }
+.btn_box li label { display:block; position:absolute; top: 300px;  
+    z-index:10; text-indent:-10000px; background-repeat: no-repeat;}
+.btn_box li label.prev { left:100px; background-image: url(./img/left.png); width: 200px; height: 75px; top: 200px;}
+.btn_box li label.next { right:100px; background-image: url(./img/right.png); width: 200px; height: 75px; top: 200px;}
+.btn_box li { display:none; } 
+.ra { display:none; }
+#ra19:checked ~ .btn_box li.item19 { display:block; }
+#ra29:checked ~ .btn_box li.item29 { display:block; }  
+#ra39:checked ~ .btn_box li.item39 { display:block; }  
+#ra49:checked ~ .btn_box li.item49 { display:block; }  
+
+.quick-menu-whole {  width: 100%; background-color: #d9d9dd; }
+.buttonbar { margin: 0px auto; width: 1200px; }
+.quick-menu { padding: 30px 50px; padding-bottom: 60px; padding-left: 16px;}
+.quick-menu ul { overflow: hidden; }
+.quick-menu ul li { float: left; width: 18px; padding: 0px 80px;}
+.quick-menu ul li a { display: block; width: 90px; height: 90px;
+    border-radius: 80px; background-color: #a39d9d; }
+.quick-menu ul li a:hover { background-color: #b2b4d3; }
+.quick-menu ul li p { float: left; }
+.quick_tit p { float: left; color: rgb(0, 0, 0); padding-left: 111px; padding-top: 14px; }
+.quick_tit .ttt { margin-left: -16px; }
+.quick_tit .ttt2 { margin-left: 2px; }
+.quick_tit .ttt3 { margin-left: 8px; }
+.quick_tit .ttt4 { margin-left: 4px; }
+.quick_tit .ttt5 { margin-left: 6px; }
+.quick_tit .ttt6 { margin-left: 6px; }
+
+#page2 { height: 400px; background-color: rgb(238, 238, 238); }
+.ra2 { display:none; }
+.vs2 { clear:both; width: 1080px; position:relative; overflow:hidden; height:300px; margin: 0 auto; margin-top: 60px;}
+.vs2 .event_box li .event { display:block; margin: 0 auto; width:300px; height:200px;}
+.event_box { transition-duration:0.6s; width: 2900px; }
+.event_box li { width:300px; float:left; margin:30px; overflow: hidden; }
+#ra5:checked ~ .event_box{ margin-left: 0; }
+#ra6:checked ~ .event_box { margin-left:-360px; }
+#ra7:checked ~ .event_box { margin-left:-720px; }
+#ra8:checked ~ .event_box { margin-left:-1080px; }
+#ra9:checked ~ .event_box { margin-left:-1440px; }
+.btn_box2 { clear:both; width: 80px; margin:20px auto; height: 30px; }
+.btn_box2 li { float:left; margin: 3px; }
+.btn_box2 li label { display:block; text-indent:-10000px; width: 10px; height: 10px; border-radius:6px; 
+background-color:#999; cursor:pointer; }
+
+#ra5:checked ~ .btn_box li.item5 { display:block; }
+#ra6:checked ~ .btn_box li.item6 { display:block; }  
+#ra7:checked ~ .btn_box li.item7 { display:block; }  
+#ra8:checked ~ .btn_box li.item8 { display:block; }  
+#ra9:checked ~ .btn_box li.item9 { display:block; }
+#ra10:checked ~ .btn_box li.item10 { display:block; }  
+#ra11:checked ~ .btn_box li.item11 { display:block; }  
+
+#ra5:checked ~ .btn_box2 li.item5 label { background-color: #222; }
+#ra6:checked ~ .btn_box2 li.item6 label { background-color: #222; }
+#ra7:checked ~ .btn_box2 li.item7 label { background-color: #222; }
+#ra8:checked ~ .btn_box2 li.item8 label { background-color: #222; }
+#ra9:checked ~ .btn_box2 li.item9 label { background-color: #222; }
+
+
+
+
+.contact_box { clear:both; width: 100%; height: 240px; overflow:hidden;  }
+    .contact_box:after { content:""; display:block; clear:both; }
+    .contact_wrap { width:1200px; margin:30px auto; height:200px; }
+    .noti_box { width: 400px; float:left; margin-right: 50px; }
+    .ra_item { display:none; }
+    .noti_wrap { clear:both; }
+    .noti_wrap .noti { display:none; width: 400px; height: 200px; }
+    #ra1:checked ~ .noti_wrap .noti.item1 { display:block; }
+    #ra2:checked ~ .noti_wrap .noti.item2 { display:block; }
+
+    .noti_lb_box { clear:both; height: 48px; }
+    .noti_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .noti_lb_box li.more_item { float:right;  font-size:14px; font-weight: bold;  }
+    .noti_lb_box li label { color:#000; font-weight: normal; cursor: pointer; }
+    #ra1:checked ~ .noti_lb_box li.item1 label { color:red; font-weight:bold; }
+    #ra2:checked ~ .noti_lb_box li.item2 label { color:red; font-weight:bold; }
+
+    .news_box { width: 400px; float:left; margin-right: 50px; }
+    .news_wrap { clear:both; }
+    .news_wrap .news { display:none; width: 400px; height:200px; }
+    #ra3:checked ~ .news_wrap .news.item1 { display:block; }
+    #ra4:checked ~ .news_wrap .news.item2 { display:block; }
+
+    .news_lb_box { clear:both; height: 48px; }
+    .news_lb_box li { float:left; width: 100px; text-align: center; height: 48px; line-height: 48px;
+     cursor: pointer; }
+    .news_lb_box li.more_item { float:right; font-size:14px; font-weight: bold; }
+    .news_lb_box li label { color:#000; font-weight: normal;  cursor: pointer; }
+    #ra3:checked ~ .news_lb_box li.item1 label { color:red; font-weight:bold; }
+    #ra4:checked ~ .news_lb_box li.item2 label { color:red; font-weight:bold; }
+    .noti_wrap, .news_wrap { border-top:2px solid #333; }
+
+    .tel_box { width: 300px; height: 200px; float:right; background-color:#1d4bb0; 
+    background-image: url("./img/info-mo.png"); background-repeat: no-repeat; background-position:220px bottom; }
+    .tel_wrap { width: 186px; padding: 20px 20px; }
+    .tel_wrap li { line-height:36px; background-repeat: no-repeat; background-position:0px center; }
+    .tel_wrap li a { display:block; color:#fff; font-weight: bold; font-size:14px; padding-left: 32px; }
+    .tel_wrap li.map1 { background-image: url("./img/info-loca.png"); }
+    .tel_wrap li.map2 { background-image: url("./img/info-tel.png"); }
+    .tel_wrap li.map3 { background-image: url("./img/info-com.png"); }
+    .board_tb { display:table; border-collapse: collapse; width:98%; margin: 10px auto; }
+    .board_tb tr { display:table-row; }
+    .board_tb td { display:table-cell; font-size:14px; line-height: 24px; }
+    .board_tb .board_tit { width: 260px; }
+    .board_tb .board_tit a { display:block; width: 250px; color:#666; font-weight:bold; margin: 3px 0px;
+    padding-right: 10px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .board_tb .board_date { text-align:center; }
+    .board_tb td .ico_img { display:none; }
+
+</style>
+</head>
+<body> 
+<div class="warp"> 
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo_1.png" alt="로고타입">
+            </a>
+            <div class="search_wrap">
+                <div class="search_fr">
+                    <input type="text" id="keyword" name="keyword" placeholder="검색어 입력"/>
+                    <input type="submit" class="search_btn" value="검색"/>
+                </div>
+            </div>
+            <div class="lang_link">
+                <a href="login.html?page=1" class="ch_ico">로그인</a>
+                <a href="join.html?page=2" class="en_ico">회원가입</a>
+            </div>
+        </div>    
+        <nav class="gnb">
+            <ul class="left_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">뉴스소식</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>보도자료</dt>
+                                <dd><a href="sub1-1.html">국토도시</a></dd>
+                                <dd><a href="">주택토지</a></dd>
+                                <dd><a href="">건설</a></dd>
+                                <dd><a href="">항공</a></dd>
+                                <dd><a href="">도로철도</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>설명, 반박자료</dt>
+                                <dd><a href="">국토도시</a></dd>
+                                <dd><a href="">주택토지</a></dd>
+                                <dd><a href="">건설</a></dd>
+                                <dd><a href="">항공</a></dd>
+                                <dd><a href="">도로철도</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>디지털자료</dt>
+                                <dd><a href="">포토뉴스</a></dd>
+                                <dd><a href="">카드뉴스</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>일자리정보</dt>
+                                <dd><a href="">직원채용정보</a></dd>
+                                <dd><a href="">개방형직위</a></dd>
+                                <dd><a href="">공모직위</a></dd>
+                                <dd><a href="">산하기관채용</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">국민참여</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>국민소통</dt>
+                                <dd><a href="">정책참여</a></dd>
+                                <dd><a href="">국민제안</a></dd>
+                                <dd><a href="">여론광장</a></dd>
+                                <dd><a href="">청렴홍보방</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>규제개혁</dt>
+                                <dd><a href="">규제개혁 건의</a></dd>
+                                <dd><a href="">규제현황</a></dd>
+                                <dd><a href="">규제혁신과 과제현황</a></dd>
+                                <dd><a href="">규제입증요청</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>적극행정</dt>
+                                <dd><a href="">제도소개</a></dd>
+                                <dd><a href="">공무원.정책 국민추천</a></dd>
+                                <dd><a href="">소극행정 신고</a></dd>
+                                <dd><a href="">자료실</a></dd>
+                                <dd><a href="">적극행정 우수공무원</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>e-클린센터</dt>
+                                <dd><a href="">공직자부조리신고</a></dd>
+                                <dd><a href="">감사정보창구</a></dd>
+                                <dd><a href="">예산낭비신고센터</a></dd>
+                                <dd><a href="">도로이용불편신고</a></dd>
+                                <dd><a href="">부실공사신고</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a href="" class="dp1">정책자료</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>정책정보</dt>
+                                <dd><a href="">국토도시</a></dd>
+                                <dd><a href="">주택토지</a></dd>
+                                <dd><a href="">건설</a></dd>
+                                <dd><a href="">항공</a></dd>
+                                <dd><a href="">도로철도</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>법령정보</dt>
+                                <dd><a href="">최근 제.개정법령</a></dd>
+                                <dd><a href="">법령</a></dd>
+                                <dd><a href="">행정규칙</a></dd>
+                                <dd><a href="">입법예고.행정예고</a></dd>
+                                <dd><a href="">전자관보</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>감사결과공개</dt>    
+                                <dd><a href="">감사결과</a></dd>          
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>Q&A</dt>
+                                <dd><a href="">정책Q&A</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                            <dt>정보시스템</dt>
+                            <dd><a href="">국토교통정보시스템</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a href="" class="dp1">기관소개</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>일반현황</dt>
+                                <dd><a href="">비전과 목표</a></dd>
+                                <dd><a href="">연혁</a></dd>
+                                <dd><a href="">주요업무계획</a></dd>
+                                <dd><a href="">MI-배너</a></dd>
+                            </dl>    
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>조직/직원안내</dt>
+                                <dd><a href="sub4-2.html?page=1">조직안내</a></dd>
+                                <dd><a href="sub4-2.html?page=2">부서별직원안내</a></dd>
+                                <dd><a href="sub4-2.html?page=3">실국별구요업무</a></dd>
+                            </dl>    
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>차관소개</dt>
+                                <dd><a href="sub4-3.html?page=1">1차관</a></dd>
+                                <dd><a href="sub4-3.html?page=2">2차관</a></dd>
+                            </dl>    
+                        </li>
+                        <li>
+                            <dl>
+                            <dt>위치</dt>
+                            <dd><a href="">찾아오시는길</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="right_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">신고센터</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>신고센터</dt>
+                                <dd><a href="sub5.html?page=1">국토부 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=2">산하기관 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=3">행동강령 위반행위신고</a></dd>
+                                <dd><a href="sub5.html?page=4">재정부정 청구행위신고</a></dd>
+                            </dl>  
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">정보공개</a>
+                    <ul class="sub">
+                        <li>
+                            <dl>
+                                <dt>행정정보공개</dt>
+                                <dd><a href="sub6.html?page=1">정보공개제도안내</a></dd>
+                                <dd><a href="sub6.html?page=2">정보공개청구</a></dd>
+                                <dd><a href="sub6.html?page=3">사전정보공개</a></dd>
+                                <dd><a href="sub6.html?page=4">사전공표정보게시판</a></dd>
+                                <dd><a href="sub6.html?page=5">정보목록</a></dd>
+                            </dl>    
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>협동조합 경영공시</dt>
+                                <dd><a href="">경영공시조회</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>공공데이터개방</dt>
+                                <dd><a href="">국토교통 데이터 통합채널</a></dd>
+                            </dl>
+                        </li><li>
+                            <dl>
+                                <dt>정책실명제</dt>
+                                <dd><a href="">중점관리 대상사업</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+            </ul>            
+        </nav>  
+    </header>
+    <section class="content fix">
+        <figure class="vs">
+            <input type="radio" name="ra" class="ra" id="ra19" checked>
+            <input type="radio" name="ra" class="ra" id="ra29">
+            <input type="radio" name="ra" class="ra" id="ra39">
+            <input type="radio" name="ra" class="ra" id="ra49">
+            <ul class="img_box">
+                <li><img src="./img/pop3.jpg" alt="비주얼1" class="vs_img" ></li>
+                <li><img src="./img/pop2.jpg" alt="비주얼2" class="vs_img" ></li>
+                <li><img src="./img/pop1.jpg" alt="비주얼3" class="vs_img" ></li>
+                <li><img src="./img/pop4.jpg" alt="비주얼4" class="vs_img"></li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item19">
+                    <label for="ra49" class="prev">이전4</label>
+                    <label for="ra29" class="next">다음2</label>
+                </li>
+                <li class="item29">
+                    <label for="ra19" class="prev">이전1</label>
+                    <label for="ra39" class="next">다음3</label>
+                </li>
+                <li class="item39">
+                    <label for="ra29" class="prev">이전2</label>
+                    <label for="ra49" class="next">다음4</label>
+                </li>
+                <li class="item49">
+                    <label for="ra39" class="prev">이전3</label>
+                    <label for="ra19" class="next">다음1</label>
+                </li>
+            </ul>
+        </figure>
+        <div class="quick-menu-whole">
+            <div class="buttonbar">
+                <div class="quick-menu">
+                    <ul>
+                        <li class="quick1">
+                            <a href=""><img src="./img/main_icon01.png" alt="" width="90" height="90"></a>                        
+                        </li>
+                        
+                        <li class="quick2">
+                            <a href=""><img src="./img/main_icon02.png" alt="" width="90" height="90"></a>
+                        </li>
+                        
+                        <li class="quick3">
+                            <a href=""><img src="./img/main_icon03.png" alt="" width="90" height="90"></a>
+                        </li>
+                        
+                        <li class="quick4">
+                            <a href=""><img src="./img/main_icon04.png" alt="" width="90" height="90"></a>
+                        </li>
+                        
+                        <li class="quick5">
+                            <a href=""><img src="./img/main_icon05.png" alt="" width="90" height="90"></a>
+                        </li>
+                        
+                        <li class="quick6">
+                            <a href=""><img src="./img/main_icon06.png" alt="" width="90" height="90"></a>
+                        </li>
+                    </ul>
+                    <div class="quick_tit">
+                        <p class="ttt">국토도시</p>
+                        <p class="ttt2">주택토지</p>
+                        <p class="ttt3">건⠀⠀⠀설</p>
+                        <p class="ttt4">교통물류</p>
+                        <p class="ttt5">항⠀⠀⠀공</p>
+                        <p class="ttt6">도로철도</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="page fix" id="page2">
+            <div class="page_wrap">
+                <figure class="vs2">
+                    <input type="radio" name="ra2" class="ra2" id="ra5" checked>
+                    <input type="radio" name="ra2" class="ra2" id="ra6">
+                    <input type="radio" name="ra2" class="ra2" id="ra7">
+                    <input type="radio" name="ra2" class="ra2" id="ra8">
+                    <input type="radio" name="ra2" class="ra2" id="ra9">
+                    <ul class="event_box">
+                        <li>
+                            <img src="./img/news1.jpg" alt="" class="event">
+                        </li>                        
+                        <li>
+                            <img src="./img/news2.jpg" alt="" class="event">
+                        </li>
+                        <li>
+                            <img src="./img/news3.jpg" alt="" class="event">
+                        </li>
+                        <li>
+                            <img src="./img/news4.jpg" alt="" class="event">
+                        </li>
+                        <li>
+                            <img src="./img/news5.jpg" alt="" class="event">
+                        </li>
+                        <li>
+                            <img src="./img/news6.jpg" alt="" class="event">
+                        </li>
+                        <li>
+                            <img src="./img/news7.jpg" alt="" class="event">
+                        </li>
+                    </ul>
+                    <ul class="btn_box2">
+                        <li class="item5">
+                            <label for="ra5" class="next2">다음2</label>
+                        </li>
+                        <li class="item6">
+                            <label for="ra6" class="next2">다음3</label>
+                        </li>
+                        <li class="item7">
+                            <label for="ra7" class="next2">다음4</label>
+                        </li>
+                        <li class="item8">
+                            <label for="ra8" class="next2">다음5</label>
+                        </li>
+                        <li class="item9">
+                            <label for="ra9" class="next2">다음6</label>
+                        </li>
+                    </ul>
+                </figure>    
+            </div>
+        </section>   
+        <div class="contact_box">
+            <div class="contact_wrap" style="">
+                <div class="noti_box">
+                    <input type="radio" name="ra1" class="ra_item" id="ra1" checked>
+                    <input type="radio" name="ra1" class="ra_item" id="ra2">
+                    <ul class="noti_lb_box">
+                        <li class="item1"><label for="ra1">공지사항</label></li>
+                        <li class="item2"><label for="ra2">채용정보</label></li>
+                        <li class="more_item"><a href="">더보기</a></li>
+                    </ul>
+                    <ul class="noti_wrap">
+                        <li class="item1 noti">
+                            <div class="noti_con">
+                                <table class="board_tb">
+                                    <tbody>
+                                        <tr>
+                                            <td class="board_tit"><a href="">고덕 국제화지구 개발사업 및 택지개발사업(2-1단계)준공</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">교통영향평가대행자 등록 공고</a></td>
+                                            <td class="board_date"><span>2022-01-17</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">공공주택건설 사업계획 승인(행정중심복합도시 6-3생활권 M4BL)</a></td>
+                                            <td class="board_date"><span>2022-01-10</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">고덕 택지개발사업 지구지정, 개발 및 실시계획 변경(정정) 고시</a></td>
+                                            <td class="board_date"><span>2022-01-05</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="item2 noti">
+                            <div class="noti_con">
+                                <table class="board_tb">
+                                    <tbody>
+                                        <tr>
+                                            <td class="board_tit"><a href="">2021년 제5회 공무직근로자 발표</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">2021년 제3회 공무직근로자(국도관리원) 채용시험 추가 합격</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">서울지방항공청 공무직(경비, 미화) 채용 최종합격자 공고</a></td>
+                                            <td class="board_date"><span>2022-01-10</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>   
+                </div>
+                <div class="news_box">
+                    <input type="radio" name="ra4" class="ra_item" id="ra3" checked>
+                    <input type="radio" name="ra4" class="ra_item" id="ra4">
+                    <ul class="news_lb_box">
+                        <li class="item1"><label for="ra3">보도자료</label></li>
+                        <li class="item2"><label for="ra4">설명/반박자료</label></li>
+                        <li class="more_item"><a href="">더보기</a></li>
+                    </ul>
+                    <ul class="news_wrap">
+                        <li class="item1 news">
+                            <div class="news_con">
+                                <table class="board_tb">
+                                    <tbody>
+                                        <tr>
+                                            <td class="board_tit"><a href="" class="db_com">사업용 차량 교통사고 사망자를 대폭감축하겠습니다</a></td>
+                                            <td class="board_date"><span>2022-01-20</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="" class="db_com">「감정평가법」 시행령·시행규칙 등 개정안 공포… 21일부터 시행</a></td>
+                                            <td class="board_date"><span>2022-01-20</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="" class="db_com">규제샌드박스 시행 3년, 세상을 바꾸다</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="" class="db_com">건설현장 채용 관련 불법행위를 근절</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="item2 news">
+                            <div class="news_con">
+                                <table class="board_tb">
+                                    <tbody>
+                                        <tr>
+                                            <td class="board_tit"><a href="">[해명] “HDC 현대산업개발 1년 영업정지” 기사내용은 사실과 다릅니다.</a></td>
+                                            <td class="board_date"><span>2022-01-20</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">[참고] 한-스위스 항공회담 17일부터 2일간 개최, 운항횟수 증대 합의</a></td>
+                                            <td class="board_date"><span>2022-01-19</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">[참고] 국토부 장관, 유관기관과 긴급 건설안전 점검 회의 개최</a></td>
+                                            <td class="board_date"><span>2022-01-18</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="board_tit"><a href="">[참고] 국토부 전국 건설현장 긴급 안전점검 추진</a></td>
+                                            <td class="board_date"><span>2022-01-14</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>   
+                </div>
+                <div class="tel_box">
+                    <ul class="tel_wrap">
+                        <li class="map1"><a href="">찾아오시는 길</a></li>
+                        <li class="map2"><a href="">담당자 연락처</a></li>
+                        <li class="map3"><a href="">사업자등록증, 계좌안내</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>   
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="https://www.facebook.com/landkorea" ><img src="./img/facebook.png" alt="페이스북"></a></li>
+                <li><a href="https://www.youtube.com/user/korealand"><img src="./img/utube.png" alt="유튜브"></a></li>
+                <li><a href="https://blog.naver.com/mltmkr"><img src="./img/blog.png" alt="블로그"></a></li>
+                <li><a href="https://twitter.com/korea_land"><img src="./img/t_logo.png" width="55" height="54" alt="트위터"></a></li>
+                <li><a href="https://story.kakao.com/ch/molit"><img src="./img/story_logo.png" width="55" height="54" alt="카카오스토리"></a></li>
+            </ul>
+        </nav>
+       
+        <div class="ft_wrap">
+            <div class="copyright">
+                <p class="addr">(우)30103 세종특별자치시 도움6로 11 국토교통부<br>
+
+                    전화 :(주)1599-0001 (야)044-201-4672 / 팩스 :(주)044-860-9500 (야)044-201-5700</p>
+                <p class="copy">Copyright (c) Ministry of Land, Infrastructure and Transport. All Rights reserved.</p>
+            </div>
+            <div class="wa"><img src="./img/wa.png" alt="로고"></div>
+        </div>
+    </footer>  
+</div>
+</body>
+</html>

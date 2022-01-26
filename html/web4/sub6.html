@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>국토교통부</title>
+    <!-- 메타포 -->
+    <meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/popcon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- 오픈 그래프 -->
+
+    <!-- 필요한 라이브러리   -->
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- 폰트 -->
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Sans+KR:wght@100;400;500;900&family=Noto+Serif+KR:wght@200&display=swap" rel="stylesheet">
+    <!-- 구글 애널리틱스 연결 : 방문자 통계 및 로그 분석 -->
+        <!-- Global site tag (gtag.js) - Google Analytics   
+                사이트마다 이것만 붙여넣으면 사람 수 측정할 수 있어
+                   설정에 웹 스트림 -> (( > )) 누르고 
+                -> 새로운 온페이지 태그 추가 
+                -> 전체사이트 태그 웹사이트~~ 이 태그 사용 
+                -> 태그 복사해서 비주얼스튜디오에 붙여넣기 
+        -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RVBP0F5DCB"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RVBP0F5DCB');
+        </script>
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2789720,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+
+    <!--사용자 외부 스타일 연결-->
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="common.css">
+
+
+<style>
+/* sub_common.css */
+.con_wrap { clear:both; width: 1200px; min-height:100vh; margin: 0 auto;}
+.con_wrap:after { content:""; display:block; clear:both; } /* clear-fix */
+.page { clear:both; width: 100%; min-height:100vh; }
+.page_tit { text-align: center;line-height: 3; font-size:32px;; color:navy; }
+.bread_box { margin-top: -24px; clear:both; width: 100%; height: 65px; border-bottom:2px solid #f1f1f1; }
+.bread_lst { width: 1200px; margin: 0 auto; height: 70px; }
+.bread_lst li { float:left; height: 48px; line-height: 48px; margin-top:-4px; 
+margin-right: 24px; background-color: #fff; padding-left: 14px; padding-right: 14px; border:1px solid #333; position:relative; color:rgb(0, 0, 0);}
+.bread_lst li a { color:rgb(0, 0, 0); }
+.bread_lst li select { border:0; outline:0; background-color: rgb(255, 255, 255); color:rgb(0, 0, 0); font-size: 16px;}
+.bread_lst li select option { border:0; outline:0; }
+.main_cate a {font-family: 'Song Myung';}
+
+#sel3 { position:absolute; width: 120px; height: 46px; overflow:hidden; 
+top: 0; left: 0; z-index:30; border:1px solid #333; background-color: #222;
+color:#fff; }
+#sel3.on { height: 200px; }
+#sel3 dl { width: 120px; }
+#sel3 dt, #sel3 dd { line-height: 40px; height: 40px; padding-left: 14px; 
+width: 120px; } 
+::marker {  color:#fff; }
+select option:first-child{display: none;}
+.sub_main { height: auto; width: 100%; height: 200px; margin-top: 40px;}
+.sub_main_img { width: 100%; position: relative;}
+.news { font-size: 50px;  position: absolute; top: 180px; left: 50%; margin-left: -330px; color: #f1f1f1ff}
+.info_main { margin: 0 auto; display: block;}
+
+.box_wrap { width: 1000px; margin: 0 auto; }
+.box1 { border: 1px solid rgb(179, 179, 179); margin: 10px 0px; padding: 15px; background-color: #f3f3f3; }
+.box_tit { font-size: 25px; font-weight: 900; margin-bottom: 6px; }
+.box2 { border: 1px solid rgb(182, 182, 182); background-color: #eefff0; padding: 15px; float: left; width: 295px; height: 160px;}
+.box3 { border: 1px solid rgb(182, 182, 182); background-color: #eeeeff; padding: 15px; float: left; width: 295px; height: 160px; margin: 0px 10px;}
+.box4 { border: 1px solid rgb(182, 182, 182); background-color: #ffeeee; padding: 15px; float: left; width: 294px; height: 160px;}
+
+.search_wrap0 { position:absolute; width: 100%; border-bottom: 2px solid rgb(44, 44, 97); padding-bottom: 40px;}
+.search_fr0 { position:relative; width: 500px; margin: 0 auto;}
+#keyword0 { display:block; height:38px; line-height:38px; width: 308px; padding-left: 10px; 
+border:1px solid #000; margin-top: 8px; margin-left: -2px;}
+.search_btn0 { display:block; width:50px; height:40px; text-indent:-99999px; background-color:transparent; 
+outline:0; border:0; background-position:center center; background-image: url("./img/sch-img.jpg"); 
+position:absolute; right:0; top:0;  }
+.key { float: left; margin: 8px 30px ;}
+.add { float: right; background-color: #cfcecd; width: 88px;
+    height: 32px; text-align: center; padding-top: 6px; color: #fff; margin-bottom: -12px;}
+
+.page_box { width: 1200px; float: left; min-height: 600px; margin-top: 70px;}
+.sub_pic img { display: block; width: 100%; height: auto; }
+.form { clear:both; width: 100%; padding-left: 120px;}
+.from_wrap { display:table; } /* table */
+.form_group { display:table-row-group; } /* tbody */
+.form_group li { display:table-row; }  /* tr */
+.form_group li .control_wrap { display:table-cell; padding: 10px; }  /* td */
+.form-control { display:block; width: 900px; height: 42px; line-height: 42px; 
+padding-left: 14px; font-size:18px; }
+.btn { display:block; line-height:32px; width:auto; padding: 5px 40px; 
+background-color:rgb(35, 59, 110); color:#fff; text-align: center; cursor:pointer; font-size: 18px;}
+.btn-left { float:left; }
+.btn-right { float:right; }
+.btn-mid { float:left; margin-left:24px; margin-right: 24px; }
+
+
+.table_wrap { width: 960px; margin:24px auto; }
+.table { display:table; width: 100%; border-collapse: collapse; margin-top: 80px;}
+.table tbody { display:table-row-group;}
+.table tr { display:table-row; }
+.table td, .table th { display:table-cell; line-height: 38px; border-top:1px solid #333; }
+.table th { background-color:#cfcecd; }
+.table .ca1 { width: 20%; text-align: center; }
+.table .ca2 { width:30%;; padding-left:20px; }
+.table .ca2 a { display:block; padding-right: 10px; text-overflow:ellipsis; overflow:hidden; 
+    white-space: nowrap; color:#333; width: 500px; }
+.table .ca2 a:hover { text-decoration:underline; }
+.table .ca3 { text-align: center; width: 20%; }
+.table .ca4 { text-align: center; width: 78%;  }
+.table tr:last-child td { border-bottom:1px solid; }
+.qwe { margin-left: 526px; }
+.next {  display: block; float: left; padding: 15px; }
+
+</style>
+</head>
+<body> 
+<div class="warp"> 
+    <script>
+        $(document).ready(function(){
+            //URL을 전부 String으로 처리하는 방법
+            var loc = location.href;        //sub1.html?page=1
+            var page = parseInt(loc.substring(loc.indexOf("=")+1,loc.length)) - 1;  //0
+    
+            //URL에서 QueryString(getParameter)로 처리하는 방법
+            /* var queryStr = new URL(location.href); //sub1.html?page=1&cate=2
+            queryStr = queryStr.searchParams;   //page=1&cate=2
+            queryStr = queryStr.get('page');    //1
+            var page = parseInt(queryStr) - 1;  //0
+            */
+    
+            $(".page").css("display", "none");
+            $(".page").eq(page).css("display", "block");
+        });    
+    </script>
+    <header class="hd">
+        <div class="hd_wrap">
+            <a href="index.html" class="logo">
+                <img src="./img/logo_1.png" alt="로고타입">
+            </a>
+            <div class="search_wrap">
+                <form action="" method="">
+                    <div class="search_fr">
+                        <input type="text" id="keyword" name="keyword" placeholder="검색어 입력">
+                        <input type="submit" class="search_btn" value="검색">
+                    </div>
+                </form>
+            </div>
+            <div class="lang_link">
+                <a href="login.html?page=1" class="ch_ico">로그인</a>
+                <a href="join.html?page=2" class="en_ico">회원가입</a>
+            </div>
+        </div>    
+        <nav class="gnb">
+            <ul class="left_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">뉴스소식</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>보도자료</dt>
+                                <dd><a href="sub1-1.html" class="dp3">국토도시</a></dd>
+                                <dd><a href="" class="dp3">주택토지</a></dd>
+                                <dd><a href="" class="dp3">건설</a></dd>
+                                <dd><a href="" class="dp3">항공</a></dd>
+                                <dd><a href="" class="dp3">도로철도</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>설명, 반박자료</dt>
+                                <dd><a href="" class="dp3">국토도시</a></dd>
+                                <dd><a href="" class="dp3">주택토지</a></dd>
+                                <dd><a href="" class="dp3">건설</a></dd>
+                                <dd><a href="" class="dp3">항공</a></dd>
+                                <dd><a href="" class="dp3">도로철도</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>디지털자료</dt>
+                                <dd><a href="" class="dp3">포토뉴스</a></dd>
+                                <dd><a href="" class="dp3">카드뉴스</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>일자리정보</dt>
+                                <dd><a href="" class="dp3">직원채용정보</a></dd>
+                                <dd><a href="" class="dp3">개방형직위</a></dd>
+                                <dd><a href="" class="dp3">공모직위</a></dd>
+                                <dd><a href="" class="dp3">산하기관채용</a></dd>
+                            </d1>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">국민참여</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>국민소통</dt>
+                                <dd><a href="" class="dp3">정책참여</a></dd>
+                                <dd><a href="" class="dp3">국민제안</a></dd>
+                                <dd><a href="" class="dp3">여론광장</a></dd>
+                                <dd><a href="" class="dp3">청렴홍보방</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>규제개혁</dt>
+                                <dd><a href="" class="dp3">규제개혁 건의</a></dd>
+                                <dd><a href="" class="dp3">규제현황</a></dd>
+                                <dd><a href="" class="dp3">규제혁신과 과제현황</a></dd>
+                                <dd><a href="" class="dp3">규제입증요청</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>적극행정</dt>
+                                <dd><a href="" class="dp3">제도소개</a></dd>
+                                <dd><a href="" class="dp3">공무원.정책 국민추천</a></dd>
+                                <dd><a href="" class="dp3">소극행정 신고</a></dd>
+                                <dd><a href="" class="dp3">자료실</a></dd>
+                                <dd><a href="" class="dp3">적극행정 우수공무원</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>e-클린센터</dt>
+                                <dd><a href="" class="dp3">공직자부조리신고</a></dd>
+                                <dd><a href="" class="dp3">감사정보창구</a></dd>
+                                <dd><a href="" class="dp3">예산낭비신고센터</a></dd>
+                                <dd><a href="" class="dp3">도로이용불편신고</a></dd>
+                                <dd><a href="" class="dp3">부실공사신고</a></dd>
+                            </d1>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item3">
+                    <a href="" class="dp1">정책자료</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>정책정보</dt>
+                                <dd><a href="" class="dp3">국토도시</a></dd>
+                                <dd><a href="" class="dp3">주택토지</a></dd>
+                                <dd><a href="" class="dp3">건설</a></dd>
+                                <dd><a href="" class="dp3">항공</a></dd>
+                                <dd><a href="" class="dp3">도로철도</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>법령정보</dt>
+                                <dd><a href="" class="dp3">최근 제.개정법령</a></dd>
+                                <dd><a href="" class="dp3">법령</a></dd>
+                                <dd><a href="" class="dp3">행정규칙</a></dd>
+                                <dd><a href="" class="dp3">입법예고.행정예고</a></dd>
+                                <dd><a href="" class="dp3">전자관보</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>감사결과공개</dt>    
+                                <dd><a href="" class="dp3">감사결과</a></dd>          
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>Q&A</dt>
+                                <dd><a href="" class="dp3">정책Q&A</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <dt class=sub_tit0>정보시스템</dt>
+                            <dd><a href="" class="dp3">국토교통정보시스템</a></dd>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item4">
+                    <a href="" class="dp1">기관소개</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>일반현황</dt>
+                                <dd><a href="sub4-1.html?page=1" class="dp3">비전과 목표</a></dd>
+                                <dd><a href="sub4-1.html?page=2" class="dp3">연혁</a></dd>
+                                <dd><a href="sub4-1.html?page=3" class="dp3">주요업무계획</a></dd>
+                                <dd><a href="sub4-1.html?page=4" class="dp3">MI-배너</a></dd>
+                            </d1>    
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>조직/직원안내</dt>
+                                <dd><a href="sub4-2.html?page=1" class="dp3">조직안내</a></dd>
+                                <dd><a href="sub4-2.html?page=2" class="dp3">부서별직원안내</a></dd>
+                                <dd><a href="sub4-2.html?page=3" class="dp3">실국별구요업무</a></dd>
+                            </d1>    
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>차관소개</dt>
+                                <dd><a href="sub4-3.html?page=1" class="dp3">1차관</a></dd>
+                                <dd><a href="sub4-3.html?page=2" class="dp3">2차관</a></dd>
+                            </d1>    
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                            <dt class=sub_tit0>위치</dt>
+                            <dd><a href="" class="dp3">찾아오시는길</a></dd>
+                            </d1>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="right_gnb">
+                <li class="item1">
+                    <a href="" class="dp1">신고센터</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>신고센터</dt>
+                                <dd><a href="sub5.html?page=1" class="dp3">국토부 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=2" class="dp3">산하기관 부조리신고</a></dd>
+                                <dd><a href="sub5.html?page=3" class="dp3">행동강령 위반행위신고</a></dd>
+                                <dd><a href="sub5.html?page=4" class="dp3">재정부정 청구행위신고</a></dd>
+                            </d1>  
+                        </li>
+                    </ul>
+                </li>
+                <li class="item2">
+                    <a href="" class="dp1">정보공개</a>
+                    <ul class="sub">
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>행정정보공개</dt>
+                                <dd><a href="sub6.html?page=1" class="dp3">정보공개제도안내</a></dd>
+                                <dd><a href="sub6.html?page=2" class="dp3">정보공개청구</a></dd>
+                                <dd><a href="sub6.html?page=3" class="dp3">사전정보공개</a></dd>
+                                <dd><a href="sub6.html?page=4" class="dp3">사전공표정보게시판</a></dd>
+                                <dd><a href="sub6.html?page=5" class="dp3">정보목록</a></dd>
+                            </d1>    
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>협동조합 경영공시</dt>
+                                <dd><a href="" class="dp3">경영공시조회</a></dd>
+                            </d1>
+                        </li>
+                        <li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>공공데이터개방</dt>
+                                <dd><a href="" class="dp3">국토교통 데이터 통합채널</a></dd>
+                            </d1>
+                        </li><li>
+                            <d1 class="dep3">
+                                <dt class=sub_tit0>정책실명제</dt>
+                                <dd><a href="" class="dp3">중점관리 대상사업</a></dd>
+                            </d1>
+                        </li>
+                    </ul>
+                </li>
+            </ul>            
+        </nav>  
+    </header>
+    <div class="sub_main">
+        <div class="sub_main_img">
+            <img src="./img/sub1-1_main.png" width="100%" alt="">
+        </div>
+        <p class="news">행정 정보 공개</p>
+    </div>
+    <section class="content fix">
+        <div class="bread_box">
+            <ul class="bread_lst">
+                <li class="main_cate">
+                    <a href="index.html" class="home_ico">HOME</a>
+                </li>
+                <li class="cate1">
+                    <select name="sel1" id="sel1">
+                        <option value="">행정 정보 공개</option>
+                        <option value="sub6.html?page=1">정보공개 제도안내</option>
+                        <option value="sub6.html?page=2">정보공개 청구</option>
+                        <option value="sub6.html?page=3">사전 정보공개</option>
+                        <option value="sub6.html?page=4">사전 공표 정보게시판</option>
+                        <option value="sub6.html?page=5">정보 목록</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <script>
+        $(function(){
+            $("#sel1").change(function(){
+                location.href = $(this).val();
+            });
+            var sel_sw = true;
+            $(".bread_lst li.cate3").click(function(){
+                if(sel_sw) {
+                    $("#sel3").addClass("on");
+                    sel_sw = false;
+                } else {
+                    $("#sel3").removeClass("on");
+                    sel_sw = true;
+                }    
+            });
+        });    
+        </script>
+        <figure class="vs">
+            
+        </figure>
+        <div class="con_wrap">
+            <section class="page" id="page1">
+                <h2 class="page_tit">정보공개 제도안내</h2>
+                <div class="page_wrap">
+                    <img src="./img/sub4_1_1.jpg" alt="" class="info_main" width="1000px">
+                    <ul class="box_wrap">
+                        <li class="box1">
+                            <dt class="box_tit">정보공개란,</dt>
+                            <dd class="box_com">공공기관에서 가지고 있는 정보를 국민이 그대로 볼 수 있도록 먼저 공개하는 제도입니다. 정보목록에 없을 경우, 정보공개 청구를 통해 정보를 열람할 수 있습니다.</dd>
+                        </li>
+                        <li class="box2">
+                            <dt class="box_tit" style="color: #6a8f6f;" >국민이 찾기전에,</dt>
+                            <dd class="box_com"><strong>원문 그대로 먼저 공개합니다.</strong><br>
+                                국민생활에 밀접한 정책 정보, 대규모 예산 사업 등 공공기관이 보유,관리하는 정보 중 
+                                국민생활에 도움될 만한 정보를 선정해 미리 공개하고 있습니다.</dd>
+                        </li>
+                        <li class="box3">
+                            <dt class="box_tit" style="color: #515270;" >주제별 쉽게,</dt>
+                            <dd class="box_com">공공기관의 수 많은 문서를 <strong>국민관심 주제 12가지</strong>로 다시 분류해 쉬운 정보 찾기가 가능하고,
+                            <strong>관심정보</strong>를 통한 맞춤형 서비스를 제공하고 있습니다.</dd>
+                        </li>
+                        <li class="box4">
+                            <dt class="box_tit" style="color: #795454;" >정보공개시스템에서는,</dt>
+                            <dd class="box_com">개별기관을 방문할 필요 없이, 정보의 청구, 수수료결제, 
+                                정보의 열람 등 <strong>정보공개 전 과정을 온라인으로 제공</strong>하며 쉬운 정보 공개에 힘쓰고 있습니다.</dd>
+                        </li>
+                    </ul>
+                </div>
+            </section>   
+
+            <section class="page" id="page2">
+                <h2 class="page_tit">정보공개 청구</h2>
+                <div class="page_wrap"></div>
+            </section>
+
+            <section class="page" id="page3">
+                <h2 class="page_tit">사전정보 공개</h2>
+                <div class="page_wrap">
+                    <div class="search_wrap0">
+                        <form action="" method="">
+                            <div class="search_fr0">
+                                <div class="key">· 공개정보검색 : </div>
+                                <input type="text" id="keyword0" name="keyword" placeholder="검색어 입력">
+                                <input type="submit" class="search_btn0" value="검색">
+                            </div>
+                            <div class="add"><a href="sub6-3_add.html">글쓰기</a></div>
+                        </form>
+                    </div>
+                    <div class="page_box">
+                        <div class="" style="height:20px">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="ca1">분야</th>
+                                        <th class="ca2">제목</th>
+                                        <th class="ca3">등록인</th>
+                                        <th class="ca4">담당부서</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="sub6-3_list1.html">항공정책실장 업무추진비 사용내역(21년 4분기)</a></td>
+                                        <td class="ca3">2022-01-24</td>
+                                        <td class="ca4">항공정책과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="">주택토지실장 업무추진비 사용내역(21년 4분기)</a></td>
+                                        <td class="ca3">2022-01-24	</td>
+                                        <td class="ca4">주택기금과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="">철도국장 업무추진비 사용내역(21년 4분기)</a></td>
+                                        <td class="ca3">2022-01-21</td>
+                                        <td class="ca4">철도정책과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">사전공표정보 </td>
+                                        <td class="ca2"><a href="">2022년 주택도시기금 운용계획</a></td>
+                                        <td class="ca3">2022-01-21</td>
+                                        <td class="ca4">주택기금과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="">철도국장 업무추진비 사용내역(21년 3분기)</a></td>
+                                        <td class="ca3">2022-01-21</td>
+                                        <td class="ca4">철도정책과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="">도로국장 업무추진비 사용내역(21년 4분기)</a></td>
+                                        <td class="ca3">2022-01-20</td>
+                                        <td class="ca4">도로정책과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">예산 및 기금 운용상황</td>
+                                        <td class="ca2"><a href="">21년 12월 기금 운용상황(자동차사고 피해지원)</a></td>
+                                        <td class="ca3">2022-01-20</td>
+                                        <td class="ca4">자동차운영보험과</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">업무추진비(실국장) </td>
+                                        <td class="ca2"><a href="">기획조정실장 업무추진비 사용내역(21년 4분기)</a></td>
+                                        <td class="ca3">2022-01-20</td>
+                                        <td class="ca4">재정담당관</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="qwe">
+                                <ul>
+                                    <li class="next"><u>1</u></li>
+                                    <li class="next"><u>2</u></li>
+                                    <li class="next"><u>3</u></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="page4">
+                <h2 class="page_tit">사전정보 공표 게시판</h2>
+                <div class="page_wrap">
+                    <div class="search_wrap0">
+                        <form action="" method="">
+                            <div class="search_fr0">
+                                <div class="key">· 공개정보검색 : </div>
+                                <input type="text" id="keyword0" name="keyword" placeholder="검색어 입력">
+                                <input type="submit" class="search_btn0" value="검색">
+                            </div>
+                            <div class="add"><a href="sub6-4_add.html">글쓰기</a></div>
+                        </form>
+                    </div>
+                    <div class="page_box">
+                        <div class="" style="height:20px">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="ca1">공표항목</th>
+                                        <th class="ca2">공표내용</th>
+                                        <th class="ca3">공표주기(공표시기)</th>
+                                        <th class="ca4">담당부서(연락처)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">공공기관별 지방이전 현황</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">종전부동산 매각 현황</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">종전부동산 매각 공고</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">혁신도시 사업</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시정책총괄과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">	혁신도시별 사업추진현황</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">이전공공기관 지방이전계획 수립지침</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">혁신도시 계획기준</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시계획과 (044-201-4460)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ca1">혁신도시</td>
+                                        <td class="ca2"><a href="">혁신도시 계획기준 일부개정</a></td>
+                                        <td class="ca3">수시 (자료변경시)</td>
+                                        <td class="ca4">혁신도시정책총괄과 (044-201-4490)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="qwe">
+                                <ul>
+                                    <li class="next"><u>1</u></li>
+                                    <li class="next"><u>2</u></li>
+                                    <li class="next"><u>3</u></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="page5">
+                <h2 class="page_tit">정보 목록</h2>
+                <div class="page_wrap"></div>
+            </section>
+        </div>
+    </section>  
+    <footer class="ft fix">
+        <nav class="fnb">
+            <ul class="fnb_fr">
+                <li><a href="https://www.facebook.com/landkorea" ><img src="./img/facebook.png" alt="페이스북"></a></li>
+                <li><a href="https://www.youtube.com/user/korealand"><img src="./img/utube.png" alt="유튜브"></a></li>
+                <li><a href="https://blog.naver.com/mltmkr"><img src="./img/blog.png" alt="블로그"></a></li>
+                <li><a href="https://twitter.com/korea_land"><img src="./img/t_logo.png" width="55px" height="54px" alt="트위터"></a></li>
+                <li><a href="https://story.kakao.com/ch/molit"><img src="./img/story_logo.png" width="55px" height="54px" alt="카카오스토리"></a></li>
+            </ul>
+        </nav>
+       
+        <div class="ft_wrap">
+            <div class="copyright">
+                <p class="addr">(우)30103 세종특별자치시 도움6로 11 국토교통부<br>
+
+                    전화 :(주)1599-0001 (야)044-201-4672 / 팩스 :(주)044-860-9500 (야)044-201-5700</p>
+                <p class="copy">Copyright (c) Ministry of Land, Infrastructure and Transport. All Rights reserved.</p>
+            </div>
+            <div class="wa"><img src="img/wa.png" alt="로고"></div>
+        </div>
+    </footer>  
+</div>
+</body>
+</html>
