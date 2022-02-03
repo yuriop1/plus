@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트의 너비 값 변경하기</title>
+<style type="text/css">
+div{ width: 70px; height: 50px; float:left;
+     background-color: red; cursor: pointer;
+     margin: 5px; transition-duration: 0.2s;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//너비를 구하는 방법
+$(document).ready(function(){
+     var wd1 = $("div:first").css("width");  //px를 초함하여 구함
+     var wd2 = $("div:first").width();       //숫자만 구함 단위를 포함하지 않고
+     console.log(wd1+", "+wd2)
+
+//너비를 적용하는 방법
+     $("div").mouseover(function(){
+          //$("div").css("width","200px");     //전체 다 움직이게
+          $(this).css("width","200px");     //마우스 올린 것 하나만움직이게
+     });
+     $("div").mouseout(function(){
+          //$("div").css("width","70px");
+          $(this).css("width","70px");
+     });
+
+     
+});
+</script>
+</head>
+<body>
+<div></div> <div></div> <div></div> <div></div>
+<div></div> <div></div>
+</body>
+</html>

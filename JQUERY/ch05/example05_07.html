@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 원하는 엘리먼트로 바꾸기</title>
+<style>
+*{   margin:10px;   paddinag:0px 30px;    width: 100px;  }
+.border { border: 2px solid red;  }
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//버튼을 누르면 div.box클래스를 div.border로 교체 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("<div class='border'>변경후</div>").replaceAll("div.box");
+  });
+})
+</script>
+</head>
+<body>
+  <button>마라탕먹고싶다 배로사 ㅏ지나교체바꾸기 샐러드</button>	
+<div>
+  <div class="box one">Racoon's</div>
+  <div class="box two">jQuery</div>
+  <div class="box three">Mobile</div>
+  <div class="box four">Story</div>
+</div>
+</body>
+</html>

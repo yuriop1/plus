@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>margin을 포함한 너비와 높이 값 알아내기</title>
+<style type="text/css">
+div{ width: 70px; height: 50px; 
+     background-color: red; cursor: pointer;
+     margin: 5px
+}
+span { display :block }
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//div에 마우스 포인터를 올리면, 
+//#result1에는 마진을 포함하지 않은 너비와 높이를 계산하여 출력
+//#result2에는 마진을 포함한 너비와 높이를 계산하여 출력
+//마진을 포함한 너비 = outerWidth() | 마진을 포함한 너비 = outerHeight()
+$(document).ready(function(){
+     $("div").mouseover(function(){
+          $("#result1").text("마진을 포함하지 않은 너비와 높이 : " + 
+          $(this).outerWidth()+", "+ $(this).outerHeight());
+
+          $("#result2").text("마진을 포함하는 너비와 높이 : " + 
+          $(this).outerWidth(true)+", "+ $(this).outerHeight(true));
+          
+     });
+});
+
+
+</script>
+</head>
+<body>
+<div></div>
+<span id="result1"></span>
+<span id="result2"></span>
+</body>
+</html>

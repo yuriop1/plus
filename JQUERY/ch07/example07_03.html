@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트를 나타게하고, 사라지게 하기</title>
+<style>
+span{ display:none;}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button:first").click(function(){
+    $(this).next("span").toggle();
+  });
+
+  $("button:last").click(function(){
+    $(this).next("span").toggle("4s", function(){
+      $(this).css("background-color", "red");
+    });
+  });
+});
+</script>
+</head>
+<body>  
+  <button>Show/Hide It</button> 
+  <span>안녕하세요.</span> <br>
+  <button>Show/Hide It slow</button> 
+  <span>반갑습니다.</span>
+</body>
+</html>

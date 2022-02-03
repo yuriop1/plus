@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 메타포 -->
+    <!-- 파비콘 -->
+    <!-- 오픈그래프 -->
+    <title>OOO의 포트폴리오</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var ht = $(window).height();
+        $(".gnb li button").click(function(){
+            var pos = parseInt($(this).attr("pos"));
+            var data = pos * ht;
+            $("body, html").not(":animated").animate({scrollTop : data+"px"}, 800);
+        });
+    });   
+    </script>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hd">
+            <nav class="gnb">
+                <ul>
+                    <li><button pos="0">HOME</button></li>
+                    <li><button pos="1">인트로</button></li>
+                    <li><button pos="2">스킬</button></li>
+                    <li><button pos="3">포트폴리오 갤러리</button></li>
+                    <li><button pos="4">Contact</button></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <figure class="vs">
+                <div class="vs_fr">
+                    <iframe src=""></iframe>
+                </div>
+            </figure>
+            <section class="page" id="page1">
+                <div class="page_wrap">
+                    <h2 class="page_tit">인트로</h2>
+                </div>
+            </section>
+            <section class="page" id="page2">
+                <div class="page_wrap">
+                    <h2 class="page_tit">스킬</h2>
+                </div>
+            </section>
+            <section class="page" id="page3">
+                <div class="page_wrap">
+                    <h2 class="page_tit">포트폴리오 갤러리</h2>
+                </div>
+            </section>
+            <section class="page" id="page4">
+                <div class="page_wrap">
+                    <h2 class="page_tit">Contact</h2>
+                </div>
+            </section>
+        </div>
+        <footer class="ft">
+
+        </footer>
+    </div>
+    <div id="quick">
+        <ul>
+            <li class="item0"><a href="#">메인</a></li>
+            <li class="item1"><a href="#page1">아이템1</a></li>
+            <li class="item2"><a href="#page2">아이템2</a></li>
+            <li class="item3"><a href="#page3">아이템3</a></li>
+            <li class="item4"><a href="#page4">아이템4</a></li>
+        </ul>
+    </div>
+</body>
+</html>

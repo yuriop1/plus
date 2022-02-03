@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>셀렉트된 엘리먼트들 중에서 조건에 맞는 엘리먼트 얻기</title>
+<style>
+div {
+	width: 60px; height: 60px;
+	margin: 5px; float: left;
+	border: 2px white solid;
+}
+.item_group li { display:none; }
+.item_group li.on { display:block; }
+
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//div요소에 배경색을 노랑으로 하고, 선택된 div요소 중에서 middle 요소만 선택하여 테두리 색을 파랑으로 변경
+//이렇듯 특정요소를 선택하고, 작업하고 난 다음에 선택했던 요소 중에서 필요한 요소만 선택하고, 나머지는 선태겡서 배제한 후 작업을 진행하도록 하는 메서드 -> filter
+
+
+$(document).ready(function(){
+	$("div").css("background-color", "yellow").filter(".middle").css("border-color", "red");
+	$(".btn_group li").bind(function(){
+		$(".item")
+	});
+});
+
+$(".btn_group li").click(function(){
+		var att = $(this).attr("data-target");
+		console.log(att);
+		if(att=="all") {
+			$(".item_group li").addClass("on");
+		} else {
+			$(".item_group li").removeClass("on");
+			$(".item_group li").filter(att).addClass("on");
+		}
+	});
+
+
+</script>
+</head>
+<body>
+	<div id="first"></div>
+	
+	<div id="second" class="middle"></div>
+	<div id="third"  class="middle"></div>
+	<div id="fourth"  class="middle"></div>
+	<div id="fifth"  class="middle"></div>
+	
+	<div id="sixth"></div> 
+
+	<ul class="btn_group" style="clear:both;">
+		<li data-target="all">전체</li>
+		<li data-target=".a"><span>동물</span></li>
+		<li data-target=".p"><span>사람</span></li>
+		<li data-target=".b"><span>식물</span></li>
+	</ul>
+	<ul class="item_group" style="clear:both;">
+		<li class="a"><span>고양이</span></li>
+		<li class="b"><span>느티나무</span></li>
+		<li class="a"><span>강아지</span></li>
+		<li class="p"><span>곽규석</span></li>
+		<li class="b"><span>카네이션</span></li>
+		<li class="a"><span>호랑이</span></li>
+		<li class="p"><span>신수진</span></li>
+		<li class="a"><span>사자</span></li>
+	</ul>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 위임하기</title>
+<style type="text/css">
+ p { background:yellow; font-weight:bold; 
+     cursor:pointer; padding:5px; } 
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.js"></script>
+<script type="text/javascript">
+    //p요소를 클릭하면, 다음 요소로 클릭한 p 요소를 추가
+$(document).ready(function(){
+    $("p").live("click", function(){
+        $(this).after("<p>"+$(this).html()+"</p>");
+    });
+});
+</script>
+</head>
+<body>
+	 <p>Click me!</p> 
+</body>
+</html>

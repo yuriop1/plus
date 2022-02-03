@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포커스를 받으면 글씨 지우고 포커스를 잃으면 글씨 나타내기</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//커서가 위치하면  | focus() 또는 focusin()
+//커서가 빠져나가면	| blur() 또는 focusout() 
+//키보드 관련 이벤트 | focus(), blur(), keypress(), keyup()
+//윈도우 관련 이벤트 | load(), ready(), resize()
+//폼 관련 이벤트 | change(), select(), submit()
+$(document).ready(function() {
+	$("input").val("아이디를 입력하세요").css("color", "#693");
+	$("input").focus(function(event){
+		$(event.target).val("").css("color", "black");
+	});
+	$("input").blur(function(event){
+		if($(event.target).val=="") 
+		$(event.target).val("값이 입력되지 않았습니다").css("color", "red")
+	});
+});
+
+</script>
+</head>
+<body>
+	<INPUT TYPE="text" id="ID">
+</body>
+</html>

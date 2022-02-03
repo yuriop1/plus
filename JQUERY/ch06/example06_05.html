@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>필요 없는 이벤트 제거하기 </title>
+<style type="text/css">
+img{ 
+   width: 140px; height: auto;		
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.js"></script>
+<script type="text/javascript">
+//클릭시 이미지가 2배로 커짐 | on() - off()  | bind() - unbind()
+$(document).ready(function(){
+   var cnt = 0;
+   $("img").bind("click", function(e){
+      cnt++;
+      if(cnt>=3) {
+         $(e.target).unbind();
+      }
+      $(e.target).width($(e.target).width()*2);
+   });
+});
+</script>
+</head>
+<body>   
+   <img src="image4.jpg">
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트에 자식 엘리먼트로 추가하기</title>
+<style type="text/css">
+div { float:left; margin:25px; }
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+   //해당 요소(태그)를 추가, 삭제, 변경함에 있어 부모, 자식, 현제냐에 따라 메서드가 달라진다.
+   //fruits = ["사과", "배", "체리", "오렌지", "수박", "메론"];
+   //cars = ["벤츠", "BMW", "크라이슬러", "로터스", "소나타", "아바테"]
+
+   $(document).ready(function(){
+      var fruits = ["사과", "배", "체리", "오렌지", "수박", "메론"];
+      var cars = ["벤츠", "BMW", "크라이슬러", "로터스", "소나타", "아바테"]
+      //내가 좋아하는 과일을 마지막 자식으로 순서대로 li요소 추가 - append
+      for(var i=0;i<fruits.length;i++){
+         $("#fruit_list").append("<li>"+fruits[i]+"</li>");
+      }
+
+      for(var i=0;i<fruits.length;i++){
+         $("#fruit_list").Toappend("<li>"+fruits[i]+"</li>");
+      }
+   });
+
+</script>
+</head>
+<body>   
+ <div> 
+    <b> 내가 좋아하는 과일 </b>
+    <ul id="fruit_list"></ul>
+ </div> 
+ 
+ <div> 
+    <b> 갖고 싶은 차  </b>
+    <ul id="car_list"></ul>
+ </div> 
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>하나의 DOM 엘리멘트에 여러 개의 이벤트 적용하기</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+      //img요소에 마우스포인터를 올리면 src속성의 값이  img5로 변경되고
+      //마우스포인터가 빠져 나가면 , src속성의 값이 img6으로 변경되며
+      //클릭시에는 img7로 바뀐다 
+      // $("선택자").on({
+      //    "이벤트명1" : function(){    },
+      //    "이벤트명2" : function(){    },
+      //    "이벤트명3" : function(){    },
+
+      // });
+
+         $("img").bulid{
+            "mouseover": function(){"src", "image6.jsp"},
+
+      });
+   });
+</script>
+</head>
+<body>   
+   <img src="image6.jpg">
+</body>
+</html>

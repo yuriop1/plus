@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 효과</title>
+<style>
+#region { 
+  position: relative; width: 300px; height:480px;
+  overflow:hidden;  margin:auto;
+}
+
+#images{
+  width: 1500px; height:auto;
+}
+#images a { display:block; float:left; width: 300px; box-sizing: border-box; }
+#images a img { 
+	display:block;	
+  width:300px; height:auto; 
+  border:0; position: relative;}
+
+#direction {
+  width: 360px;  margin:auto;
+}
+.leftbtn{margin-top:10px;}
+.rightbtn{margin-left:290px;margin-top:10px;}
+#btn_box { width: 75px; position:absolute; bottom:190px; left: 50%; 
+margin-left: -38px; z-index:50;   }
+#btn_box button { 
+    display:block;
+    width: 10px; 
+    height: 10px; 
+    outline:0;
+    border:0;
+    border-radius:55%;
+    background-color: white; 
+    position:absolute;
+    bottom:10px; 
+    box-sizing:border-box;
+    cursor: pointer;
+}
+#btn_box button.item1 {
+    left:0px;
+}
+#btn_box button.item2 {
+    left:15px;
+}
+#btn_box button.item3 {
+    left:30px;
+}
+#btn_box button.item4 {
+    left:45px;
+}
+#btn_box button.item5 {
+    left:60px;
+}
+#btn_box button.on {
+    background-color:deeppink; 
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript">
+//Looping advanced effect animate() for sliding visual banner usage
+//auto sliding+left/right sliding
+$(document).ready(function(){
+	var wd = $("#images a img").width();	//하나의 이미지의 폭
+	var len = $("#images a img").length;	//이미지의 개수
+    function ani1() {
+        //오른쪽에서 왼쪽으로 흘러 가는 애니메이션
+        //한 이미지의 너비만큼 왼쪽으로 슬라이딩되고, 그 이후에
+        //첫 번째 a요소를 마지막 요소로 보내고,
+        //이미지 박스의 왼쪽 마진을 0으로 설정
+        $("#images").not(":animated").animate({"margin-left":-wd+"px"}, 600, function(){
+            $("#images a").eq(0).appendTo($("#images"));
+            $("#images").css("margin-left","0px");
+            $("#btn_box button").eq(0).appendTo($("#btn_box"));
+            $("#btn_box button").eq(0).addClass("on");
+            $("#btn_box button").eq(0).siblings().removeClass("on");
+        });
+    }
+    function ani2() {
+        //왼쪽에서 오른쪽으로 흘러 가는 애니메이션
+        //이미지 박스의 마지막 a요소를 첫 번째 요소로 가져옴
+        //이미지 박스의 왼쪽 마진을 -wd 만큼 설정
+        //이미지 박스가 왼쪽 마진이 0으로 슬라이딩 됨
+        $("#images a").eq(len-1).prependTo($("#images"));
+        $("#images").css("margin-left",-wd+"px");
+        $("#images").not(":animated").animate({"margin-left":"0px"}, 600);
+        $("#btn_box button").eq(len-1).prependTo($("#btn_box"));
+        $("#btn_box button").eq(0).addClass("on");
+        $("#btn_box button").eq(0).siblings().removeClass("on");
+    }
+    var intv1 = setInterval(function(){ ani1(); }, 3000); 
+    $(".rightbtn").click(function(){
+        clearInterval(intv1);
+        ani1();
+        intv1 = setInterval(function(){ ani1(); }, 3000);
+    });
+    $(".leftbtn").click(function(){
+        clearInterval(intv1);
+        ani2();
+        intv1 = setInterval(function(){ ani1(); }, 3000);
+    });
+
+    //motion for play or stop button click(재생/중지 버튼 클릭시 모션)
+    var sw=true;
+    $("#play_btn").text("■");
+    $("#play_btn").click(function(){
+        if(sw){
+            clearInterval(intv1);
+            $(this).text("▶");
+        } else {
+            ani1();
+            intv1 = setInterval(function(){ ani1(); }, 3000);
+            $(this).text("■");
+        }
+        sw = !sw;
+    });
+    //번호별 버튼에 대한 슬라이딩 동작
+    //누른 버튼의 앞에 있는 a요소와 #btn_box의 button요소를 맨 끝으로 이동 시킴
+    $("#btn_box button").click(function(){
+        clearInterval(intv1);
+        var idx = $(this).index() - 1;
+        for(var i=0;i<idx;i++){
+            $("#images a").eq(0).appendTo($("#images"));
+            $("#btn_box button").eq(0).appendTo($("#btn_box"));
+        }
+        $("#btn_box button").eq(0).addClass("on");
+        $("#btn_box button").eq(0).siblings().removeClass("on");
+        ani1();
+        intv1 = setInterval(function(){ ani1(); }, 3000);
+    });
+});
+</script>
+</head>
+<body>
+	<div id="region">
+		<div id="images">
+			<a href="#"><img src="./ive01.jpg" id="image1" /></a> 
+			<a href="#"><img src="./ive02.jpg" id="image2" /></a>
+			<a href="#"><img src="./ive03.jpg" id="image3" /></a>
+			<a href="#"><img src="./ive04.jpg" id="image4" /></a>
+			<a href="#"><img src="./ive02.jpg" id="image5" /></a>
+		</div>
+	</div>
+	<div id="direction">
+		<button class="leftbtn">&laquo;</button>
+		<button class="rightbtn">&raquo;</button>
+	</div>
+    <div id="btn_box">
+        <button data-num="1" class="item1 on"></button>
+        <button data-num="2" class="item2"></button>
+        <button data-num="3" class="item3"></button>
+        <button data-num="4" class="item4"></button>
+        <button data-num="5" class="item5"></button>
+    </div>
+    <button id="play_btn"></button>
+</body>
+</html>

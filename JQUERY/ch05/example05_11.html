@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>해당 엘리먼트의 현재 위치 알아내기</title>
+<style type="text/css">
+div.abs{ width: 50px; height: 50px; position: absolute;
+     left:220px; top:35px; background-color: green; 
+     cursor: pointer;
+}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+//div.abs 박스의 위치를 (x,y)로 result에 표시하기
+//떨어진 거리 offsetX, dffsetY
+//.abs에 마우스 포인터를 올리면, 마우스포인터의 위치를 
+//화면기준표시ㅡ 문서기준위치, 페이지기준위치 x,t형태로 표시
+$(document).ready(function(){
+     $(".abs").mousemove(function(e){
+          var txt1 = "화면기준위치" : 
+          var txt2 = "문서기준위치" : 
+     });
+});
+</script>
+</head>
+<body>
+<div id="result"></div>
+<div class="abs"></div>
+</body>
+</html>
+

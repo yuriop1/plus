@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//div요소에 배경색을 노랑으로 하고 그 다음 그의 자식요소 em요소에 빨강으로 하고,
+//p요소의 배경색을 파랑색으로 변경 ->하나의 명령줄로 해결
+$(document).ready(function(){
+	$("div").css("background-color", "yellow").children("em").css("color", "red").end("p").css("bacground-color", "green");
+	});
+//1.3초과 3.0이상에서는 end안먹혀
+</script>
+</head>
+<body>
+	<div> p 엘리먼트 중에서 <em> 이텔릭 단어의 </em>  </div> 
+	<p> 글자 색을  <em> 빨간색으로 </em> 변경한다.</p> 
+</body>
+</html>

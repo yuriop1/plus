@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>탐색한 엘리먼트들에 기준이 되었던 엘리먼트들 추가하기</title>
+<style>
+div { width: 60px;   height: 60px;   margin: 10px;   float: left;}
+p{ clear:both;}
+.redBorder { border: 2px solid red}
+.yellow { background: yellow}
+</style>
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+//버튼을 클릭하면 , div 요소에 redBorder 클래스를 적용하고 , div요소에 선택자 p요소를 추가하여 yellow를 모두 적용
+//DOM 탐색 메서드 :  선택자로 선택하지 못하는 경웅에 선택가능하게 하는 메서드
+
+$(document).ready(function() {
+   $("button").bind("click", function() {
+      $("div").addClass("redBorder").add("p").addClass("yellow");    //틀림ㅋ
+   //선택되었던 요소를 처리하고 나서 , 더 요소를 추가적으로 선택하고, 추가작업을 하려고 할 경우
+      //ㄴ 처리하던 도중에 선택자를 더 추가 < add >
+      });
+   });
+
+</script>
+</head>
+<body>   
+   <div></div>   <div></div>    <div></div>
+   <p> redBorder 클래스의 적용은 받지 못하고 yellow 클래스의 적용 받음</p>
+   <button> 클릭 </button>
+</body>
+</html>
